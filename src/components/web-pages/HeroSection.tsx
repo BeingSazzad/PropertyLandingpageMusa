@@ -3,7 +3,7 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { openDownloadModal, setActiveHeroFilter } from '@/redux/features/uiSlice';
-import { ArrowUpRight, ShieldCheck, CheckCircle2, Building2, KeyRound } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { MOCK_DATA } from '@/Mockdata';
@@ -164,44 +164,6 @@ export const HeroSection: React.FC = () => {
 
           </div>
 
-        </div>
-
-        {/* Partner Trust Strip (Directly matching the Mailchimp, GitHub, Notion, Intercom logo strip in user's reference!) */}
-        <div className="pt-2">
-          <div className="text-center text-[11px] font-semibold tracking-wider uppercase text-slate-400 mb-6">
-            Trusted by UK Property Standards & Leading Institutions
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center sm:justify-between gap-8 px-4 py-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs text-slate-600">
-            <div className="flex items-center gap-2 font-bold text-sm text-slate-700">
-              <ShieldCheck className="w-5 h-5 text-[#0084FF]" />
-              <span>Open Banking</span>
-            </div>
-
-            <div className="flex items-center gap-2 font-bold text-sm text-slate-700">
-              <Building2 className="w-5 h-5 text-[#0084FF]" />
-              <span>Gas Safe Register</span>
-            </div>
-
-            <div className="flex items-center gap-2 font-bold text-sm text-slate-700">
-              <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-              <span>DPS Deposit Scheme</span>
-            </div>
-
-            <div className="flex items-center gap-2 font-bold text-sm text-slate-700">
-              <KeyRound className="w-5 h-5 text-[#0084FF]" />
-              <span>EPC Register UK</span>
-            </div>
-
-            <div className="flex items-center gap-2 font-bold text-sm text-slate-700">
-              <span className="font-mono text-base font-black text-slate-800">stripe</span>
-              <span className="text-xs text-slate-400">Payments</span>
-            </div>
-
-            <div className="flex items-center gap-2 font-bold text-sm text-slate-700">
-              <span className="font-semibold text-slate-700">BARCLAYS</span>
-            </div>
-          </div>
         </div>
 
       </div>
