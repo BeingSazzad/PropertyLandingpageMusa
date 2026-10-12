@@ -70,6 +70,7 @@ export const TestimonialSection: React.FC = () => {
             {/* Circular Slider Controls (Matches Left Outline / Right Black Circle in reference) */}
             <div className="flex items-center gap-3 pt-2">
               <button
+                id="prev-testimonial-btn"
                 type="button"
                 onClick={prev}
                 className="w-12 h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-700 hover:bg-slate-50 hover:border-slate-400 transition-all cursor-pointer shadow-xs active:scale-95"
@@ -78,6 +79,7 @@ export const TestimonialSection: React.FC = () => {
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <button
+                id="next-testimonial-btn"
                 type="button"
                 onClick={next}
                 className="w-12 h-12 rounded-full bg-[#0A192F] text-white flex items-center justify-center hover:bg-black transition-all cursor-pointer shadow-md active:scale-95"
