@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-[#F6F3EC] text-[#0B0F0E] antialiased selection:bg-[#2563EB] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0A192F] antialiased selection:bg-[#0084FF] selection:text-white">
         <ReduxProvider>
           {children}
           <AppDownloadModal />

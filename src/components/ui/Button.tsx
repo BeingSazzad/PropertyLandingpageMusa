@@ -21,27 +21,27 @@ export const Button: React.FC<ButtonProps> = ({
     'inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none rounded-full tracking-tight disabled:opacity-50 disabled:cursor-not-allowed group';
 
   const sizeStyles = {
-    sm: 'text-xs px-3.5 py-1.5 gap-1.5',
-    md: 'text-sm px-5 py-2.5 gap-2',
-    lg: 'text-base px-6 py-3.5 gap-2.5',
+    sm: 'text-xs px-4 py-2 gap-2',
+    md: 'text-sm px-5 py-2.5 gap-2.5',
+    lg: 'text-base px-6 py-3.5 gap-3',
   };
 
   const variantStyles = {
-    // Landlord HQ Blue
+    // Electric Azure AI Vibe (Reference "Solar" button style)
     primary:
-      'bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] shadow-sm hover:shadow-md transform active:scale-95',
-    // Luxury dark button
+      'bg-gradient-to-r from-[#0084FF] to-[#00A3FF] hover:from-[#0070E0] hover:to-[#0092F0] text-white font-bold shadow-md shadow-sky-500/30 transform active:scale-95',
+    // Sleek Midnight Navy
     dark:
-      'bg-[#121514] text-white hover:bg-[#202523] border border-white/10 shadow-sm transform active:scale-95',
+      'bg-[#0A192F] text-white hover:bg-[#132A4C] border border-white/10 shadow-sm transform active:scale-95',
     // Clean outline
     outline:
-      'border border-[#121514]/20 text-[#121514] hover:bg-[#121514]/5 active:scale-95',
+      'border border-slate-300 text-[#0A192F] hover:bg-sky-50/50 hover:border-[#0084FF]/40 active:scale-95',
     // Ghost
     ghost:
-      'text-[#121514] hover:bg-black/5 active:scale-95',
-    // White pill (like Ademi reference)
+      'text-[#0A192F] hover:bg-black/5 active:scale-95',
+    // White pill
     'pill-white':
-      'bg-white text-[#0B0F0E] hover:bg-[#F6F3EC] shadow-sm border border-black/5 active:scale-95',
+      'bg-white text-[#0A192F] hover:bg-slate-50 shadow-sm border border-slate-200 active:scale-95',
   };
 
   return (
@@ -51,8 +51,8 @@ export const Button: React.FC<ButtonProps> = ({
     >
       <span>{children}</span>
       {withArrow && (
-        <span className="w-5 h-5 rounded-full bg-black/10 text-current flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-          <ArrowUpRight className="w-3.5 h-3.5" />
+        <span className="w-5 h-5 rounded-full bg-white text-[#0084FF] flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-xs">
+          <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
         </span>
       )}
     </button>

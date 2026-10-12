@@ -39,21 +39,21 @@ export const MOCK_DATA = {
 
   heroShowcase: {
     mainImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
-    title: "Victoria Mansions & Apartments",
-    location: "London & Regional Portfolios",
+    title: "12 Park Lane & London Portfolios",
+    location: "London, SW1A 1AA • Multi-Unit Building",
     stat: "99.4%",
     statLabel: "On-Time Rent Collection Rate",
     featuredPills: [
       {
         id: "01",
-        title: "Victoria Mansions — 12 Flats",
+        title: "12 Park Lane — 4 Units",
         category: "Building & Unit Register",
         image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop",
       },
       {
         id: "02",
-        title: "Active Tenancy Leases & Rent",
-        category: "Verified Tenancies & Deposits",
+        title: "Sarah Jenkins • Flat 2B",
+        category: "Active Tenancy & Rent Pay",
         image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600&auto=format&fit=crop",
       }
     ]

@@ -16,14 +16,15 @@ export const DarkShowcaseSection: React.FC = () => {
       <div className="max-w-[1400px] mx-auto">
         
         {/* Dark Luxury Rounded Container (Direct Reference Alignment) */}
-        <div className="rounded-[32px] sm:rounded-[44px] bg-[#121514] text-white p-6 sm:p-12 lg:p-16 border border-white/10 shadow-2xl space-y-12">
+        <div className="rounded-[32px] sm:rounded-[44px] bg-[#0A192F] text-white p-6 sm:p-12 lg:p-16 border border-sky-400/20 shadow-2xl space-y-12 relative overflow-hidden">
+          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#0084FF]/15 rounded-full blur-3xl pointer-events-none" />
           
           {/* Header */}
           <div className="space-y-4 max-w-3xl">
             <Badge variant="dark">Our Ecosystem</Badge>
 
             <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-[family-name:var(--font-heading)]">
-              Experience property control where intelligence meets simplicity{' '}
+              Experience complete property control where clarity meets simplicity{' '}
               <span className="font-light text-zinc-400">in perfect harmony</span>
             </h2>
 
@@ -37,7 +38,7 @@ export const DarkShowcaseSection: React.FC = () => {
             {MOCK_DATA.showcaseModules.map((item, idx) => (
               <div
                 key={item.id}
-                className="group relative rounded-3xl overflow-hidden bg-[#1A1E1D] border border-white/10 flex flex-col justify-end min-h-[460px] sm:min-h-[500px] p-6 transition-all duration-300 hover:border-[#3B82F6]/50 hover:shadow-2xl"
+                className="group relative rounded-3xl overflow-hidden bg-[#1A1E1D] border border-white/10 flex flex-col justify-end min-h-[460px] sm:min-h-[500px] p-6 transition-all duration-300 hover:border-[#60A5FA]/50 hover:shadow-2xl"
               >
                 {/* Background Image with Cinematic Dark Gradient */}
                 <div className="absolute inset-0 z-0">
@@ -79,7 +80,7 @@ export const DarkShowcaseSection: React.FC = () => {
                   <div className="pt-2">
                     <button
                       onClick={() => dispatch(openDownloadModal())}
-                      className="w-full py-2.5 px-4 rounded-full bg-white/10 hover:bg-[#2563EB] text-white hover:text-white text-xs font-semibold flex items-center justify-between border border-white/15 transition-all duration-200 cursor-pointer group/btn"
+                      className="w-full py-2.5 px-4 rounded-full bg-white/10 hover:bg-gradient-to-r hover:from-[#0084FF] hover:to-[#00A3FF] text-white hover:text-white text-xs font-semibold flex items-center justify-between border border-white/15 transition-all duration-200 cursor-pointer group/btn shadow-xs"
                     >
                       <span>{item.actionText}</span>
                       <ChevronRight className="w-4 h-4 text-zinc-400 group-hover/btn:text-white transition-colors" />

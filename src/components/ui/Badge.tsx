@@ -15,13 +15,13 @@ export const Badge: React.FC<BadgeProps> = ({
 }) => {
   const styles = {
     light:
-      'bg-white/80 text-[#4B4B4B] border border-black/10 backdrop-blur-sm',
+      'bg-white/90 text-slate-700 border border-slate-200/80 shadow-xs backdrop-blur-sm',
     dark:
-      'bg-[#1F2322] text-[#D1D5DB] border border-white/10',
+      'bg-[#0D1F38] text-sky-200 border border-sky-500/20',
     blue:
-      'bg-[#EFF6FF] text-[#1D4ED8] font-semibold border border-[#BFDBFE]',
+      'bg-sky-50 text-sky-700 font-semibold border border-sky-200 shadow-xs',
     glass:
-      'bg-white/40 text-[#121514] border border-white/60 backdrop-blur-md shadow-sm',
+      'bg-white/50 text-[#0A192F] border border-white/70 backdrop-blur-md shadow-xs',
   };
 
   return (
@@ -31,7 +31,7 @@ export const Badge: React.FC<BadgeProps> = ({
       {dot && (
         <span
           className={`w-1.5 h-1.5 rounded-full ${
-            variant === 'blue' ? 'bg-[#2563EB]' : 'bg-[#2563EB]'
+            variant === 'blue' ? 'bg-[#0084FF] animate-pulse' : 'bg-[#0084FF]'
           }`}
         />
       )}

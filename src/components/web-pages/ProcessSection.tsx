@@ -17,21 +17,21 @@ export const ProcessSection: React.FC = () => {
     MOCK_DATA.processSteps[1];
 
   return (
-    <section id="process" className="py-20 px-4 sm:px-6 lg:px-10 bg-[#F6F3EC]">
+    <section id="process" className="py-20 px-4 sm:px-6 lg:px-10 bg-[#F8FAFC]">
       <div className="max-w-[1400px] mx-auto space-y-12">
         
         {/* Section Header (Matching Reference Image) */}
         <div className="space-y-4 max-w-4xl">
           <Badge variant="blue">Our Process</Badge>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-[#0B0F0E] leading-tight font-[family-name:var(--font-heading)]">
+          <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-[#0A192F] leading-tight font-[family-name:var(--font-heading)]">
             We transform complex operations into effortless control through a{' '}
-            <span className="font-semibold text-[#2563EB]">
+            <span className="font-semibold text-[#0084FF]">
               seamless, structured workflow
             </span>
           </h2>
 
-          <p className="text-sm font-semibold tracking-wider uppercase text-[#8A8A8A]">
+          <p className="text-sm font-semibold tracking-wider uppercase text-slate-400">
             From Building Setup to Tenancy & Maintenance
           </p>
         </div>
@@ -50,14 +50,14 @@ export const ProcessSection: React.FC = () => {
                   onClick={() => dispatch(setActiveProcessStep(step.id))}
                   className={`p-5 rounded-2xl transition-all duration-300 cursor-pointer border flex items-center justify-between gap-4 group ${
                     isActive
-                      ? 'bg-[#EFF6FF] border-[#BFDBFE] shadow-sm'
-                      : 'bg-white/60 hover:bg-white border-[#E2E2D8] hover:border-black/20'
+                      ? 'bg-sky-50/90 border-sky-300 shadow-sm'
+                      : 'bg-white hover:bg-slate-50/80 border-slate-200'
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <span
                       className={`text-sm font-mono font-bold ${
-                        isActive ? 'text-[#2563EB]' : 'text-[#8A8A8A]'
+                        isActive ? 'text-[#0084FF]' : 'text-slate-400'
                       }`}
                     >
                       {step.number}
@@ -66,13 +66,13 @@ export const ProcessSection: React.FC = () => {
                       <div
                         className={`text-base font-bold font-[family-name:var(--font-heading)] transition-colors ${
                           isActive
-                            ? 'text-[#0B0F0E]'
-                            : 'text-zinc-700 group-hover:text-black'
+                            ? 'text-[#0A192F]'
+                            : 'text-slate-700 group-hover:text-black'
                         }`}
                       >
                         {step.title}
                       </div>
-                      <div className="text-xs text-[#8A8A8A]">
+                      <div className="text-xs text-slate-500">
                         {step.subtitle}
                       </div>
                     </div>
@@ -82,8 +82,8 @@ export const ProcessSection: React.FC = () => {
                   <div
                     className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
                       isActive
-                        ? 'bg-[#2563EB] text-white rotate-45 scale-105'
-                        : 'bg-black/5 text-zinc-600 group-hover:bg-black/10 group-hover:text-black'
+                        ? 'bg-gradient-to-r from-[#0084FF] to-[#00A3FF] text-white rotate-45 scale-105 shadow-md shadow-sky-500/20'
+                        : 'bg-slate-100 text-slate-500 group-hover:bg-slate-200 group-hover:text-black'
                     }`}
                   >
                     <ArrowUpRight className="w-4 h-4" />
@@ -94,7 +94,7 @@ export const ProcessSection: React.FC = () => {
           </div>
 
           {/* Right Column: Visual Preview & Dynamic Content Card (Matching Reference Layout) */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E2D8] shadow-sm space-y-6">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
             
             {/* Visual Frame */}
             <div className="relative rounded-2xl overflow-hidden aspect-[16/10] bg-[#121514] border border-black/5">
@@ -114,7 +114,7 @@ export const ProcessSection: React.FC = () => {
               {/* Floating Stat at the bottom edge */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between glass-pill-dark rounded-xl p-3 px-4 border border-white/10 text-white">
                 <div>
-                  <div className="text-lg font-bold font-mono text-[#3B82F6]">
+                  <div className="text-lg font-bold font-mono text-[#60A5FA]">
                     {activeStep.stat}
                   </div>
                   <div className="text-[10px] text-zinc-300">
@@ -125,7 +125,7 @@ export const ProcessSection: React.FC = () => {
                   <div className="text-xs font-semibold text-white">
                     Step {activeStep.number} of 04
                   </div>
-                  <div className="text-[10px] text-[#3B82F6]">Standard Protocol</div>
+                  <div className="text-[10px] text-[#60A5FA]">Standard Protocol</div>
                 </div>
               </div>
             </div>

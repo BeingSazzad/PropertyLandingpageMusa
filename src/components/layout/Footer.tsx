@@ -4,8 +4,9 @@ import React from 'react';
 import Link from 'next/link';
 import { useAppDispatch } from '@/redux/hooks';
 import { openDownloadModal } from '@/redux/features/uiSlice';
-import { Building2, ArrowUpRight, ShieldCheck, Apple, Smartphone } from 'lucide-react';
+import { Building2, ShieldCheck, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { AppleAppStoreBadge, GooglePlayBadge } from '../ui/AppStoreBadges';
 
 export const Footer: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +27,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Complete property and tenancy management operations. Connecting landlords, tenants, and certified contractors across the UK.
+              Complete property, building & tenancy management operations with a simple monthly subscription. Connecting landlords, residents, and certified contractors across the UK.
             </p>
           </div>
 
@@ -39,11 +40,11 @@ export const Footer: React.FC = () => {
             >
               Get Mobile App
             </Button>
-            <Link href="/login">
+            <a href="#pricing">
               <Button variant="dark" size="md">
-                Landlord Portal
+                View Packages
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -56,72 +57,63 @@ export const Footer: React.FC = () => {
               Platform Modules
             </h4>
             <ul className="space-y-2 text-zinc-400">
-              <li><Link href="#process" className="hover:text-white transition-colors">Tenancy Onboarding & Leases</Link></li>
-              <li><Link href="#process" className="hover:text-white transition-colors">Direct Rent Auto-Pay</Link></li>
-              <li><Link href="#ecosystem" className="hover:text-white transition-colors">Gas Safe & EPC Compliance</Link></li>
-              <li><Link href="#ecosystem" className="hover:text-white transition-colors">Contractor Dispatch Hub</Link></li>
-              <li><Link href="#overview" className="hover:text-white transition-colors">Key & Inventory Register</Link></li>
+              <li><a href="#process" className="hover:text-white transition-colors">Building & Unit Setup</a></li>
+              <li><a href="#process" className="hover:text-white transition-colors">Tenancy Leases & DPS</a></li>
+              <li><a href="#process" className="hover:text-white transition-colors">Direct Rent Auto-Pay</a></li>
+              <li><a href="#ecosystem" className="hover:text-white transition-colors">Gas Safe & EPC Tracker</a></li>
+              <li><a href="#ecosystem" className="hover:text-white transition-colors">Contractor Dispatch Hub</a></li>
             </ul>
           </div>
 
           {/* Col 2: Solutions */}
           <div className="space-y-3">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 font-[family-name:var(--font-heading)]">
-              Solutions By Role
+              Navigation
             </h4>
             <ul className="space-y-2 text-zinc-400">
-              <li><Link href="/agent-dashboard" className="hover:text-white transition-colors">For Portfolio Landlords</Link></li>
-              <li><Link href="/user-dashboard" className="hover:text-white transition-colors">For Residents & Tenants</Link></li>
-              <li><Link href="/contractor-hub" className="hover:text-white transition-colors">For Certified Contractors</Link></li>
-              <li><Link href="/agencies" className="hover:text-white transition-colors">Letting Agencies</Link></li>
-              <li><Link href="/enterprise" className="hover:text-white transition-colors">Build-to-Rent Groups</Link></li>
+              <li><a href="#overview" className="hover:text-white transition-colors">Platform Overview</a></li>
+              <li><a href="#process" className="hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="#pricing" className="hover:text-white transition-colors">Subscription Packages</a></li>
+              <li><a href="#faq" className="hover:text-white transition-colors">Frequently Asked Questions</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Contact Support</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Legal & Standards */}
+          {/* Col 3: Contact & Support */}
           <div className="space-y-3">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 font-[family-name:var(--font-heading)]">
-              Compliance & Security
+              UK Office & Contact
             </h4>
             <ul className="space-y-2 text-zinc-400">
-              <li><Link href="/privacy" className="hover:text-white transition-colors">Deposit Protection Sync</Link></li>
-              <li><Link href="/privacy" className="hover:text-white transition-colors">GDPR & Data Vault</Link></li>
-              <li><Link href="/privacy" className="hover:text-white transition-colors">Open Banking Certified</Link></li>
-              <li><Link href="/privacy" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-[#60A5FA]" />
+                <a href="mailto:support@landlordhq.co.uk" className="hover:text-white transition-colors">support@landlordhq.co.uk</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#60A5FA]" />
+                <span>+44 20 7946 0912</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#60A5FA]" />
+                <span>London, United Kingdom</span>
+              </li>
+              <li>
+                <span className="text-[11px] text-zinc-500">Mon-Fri: 8:00 AM - 6:00 PM GMT</span>
+              </li>
             </ul>
           </div>
 
           {/* Col 4: Stores & Downloads */}
           <div className="space-y-3">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 font-[family-name:var(--font-heading)]">
-              App Store Releases
+              Official Mobile Apps
             </h4>
             <p className="text-zinc-400 text-[11px]">
-              Download the official Landlord HQ mobile suite for iOS and Android:
+              Download Landlord HQ for iOS and Android:
             </p>
-            <div className="space-y-2 pt-1">
-              <button
-                onClick={() => dispatch(openDownloadModal('apple'))}
-                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all text-left group cursor-pointer"
-              >
-                <div className="flex items-center gap-2">
-                  <Apple className="w-4 h-4 text-white" />
-                  <span className="font-semibold text-xs">iOS App Store</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-[#3B82F6]" />
-              </button>
-
-              <button
-                onClick={() => dispatch(openDownloadModal('google'))}
-                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all text-left group cursor-pointer"
-              >
-                <div className="flex items-center gap-2">
-                  <Smartphone className="w-4 h-4 text-[#3B82F6]" />
-                  <span className="font-semibold text-xs">Google Play</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-[#3B82F6]" />
-              </button>
+            <div className="space-y-2.5 pt-1">
+              <AppleAppStoreBadge className="w-full justify-center" size="sm" />
+              <GooglePlayBadge className="w-full justify-center" size="sm" />
             </div>
           </div>
 
@@ -134,10 +126,10 @@ export const Footer: React.FC = () => {
           </div>
           <div className="flex items-center gap-4 text-zinc-400">
             <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#3B82F6]" /> Bank-Grade Encryption
+              <ShieldCheck className="w-4 h-4 text-[#60A5FA]" /> Bank-Grade 256-Bit SSL
             </span>
             <span>•</span>
-            <span>UK Compliance Framework</span>
+            <span>UK Property Compliance Standard</span>
           </div>
         </div>
 
