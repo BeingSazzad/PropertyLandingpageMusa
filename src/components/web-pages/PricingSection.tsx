@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useAppDispatch } from '@/redux/hooks';
 import { openDownloadModal } from '@/redux/features/uiSlice';
-import { Check, ShieldCheck, Zap, Building2, ArrowUpRight } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Building2, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
 
@@ -223,24 +223,39 @@ export const PricingSection: React.FC = () => {
           })}
         </div>
 
-        {/* Money-Back Guarantee Strip */}
-        <div className="rounded-2xl p-4 sm:p-5 bg-white border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5" />
+        {/* Elevated 30-Day Free Trial Banner (Premium Modern Visual Design) */}
+        <div className="relative rounded-3xl p-6 sm:p-7 bg-gradient-to-r from-sky-50/90 via-white to-blue-50/90 border border-sky-200/80 shadow-lg shadow-sky-500/5 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
+          {/* Ambient Background Light */}
+          <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-[#0084FF]/10 rounded-full blur-2xl pointer-events-none" />
+          
+          <div className="flex items-center gap-4 relative z-10 w-full md:w-auto">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0084FF] to-[#38BDF8] text-white flex items-center justify-center shrink-0 shadow-lg shadow-sky-500/25">
+              <ShieldCheck className="w-6 h-6 stroke-[2.2]" />
             </div>
-            <div>
-              <span className="font-bold text-[#0A192F] block">30-Day Free Trial On All Packages</span>
-              <span>No credit card required to start. Cancel anytime in 1 tap from your app.</span>
+            <div className="space-y-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h4 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+                  30-Day Free Trial On All Packages
+                </h4>
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold tracking-wide uppercase">
+                  Zero Risk
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-500 font-normal">
+                No credit card required • Instant onboarding for your flats • Cancel anytime in 1 tap
+              </p>
             </div>
           </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => dispatch(openDownloadModal())}
-          >
-            Start Free Trial
-          </Button>
+
+          <div className="flex items-center gap-3 relative z-10 w-full md:w-auto justify-end">
+            <button
+              onClick={() => dispatch(openDownloadModal())}
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0084FF] hover:bg-[#0070DE] text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-sky-500/20 hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-95 group"
+            >
+              <span>Start Free Trial</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </button>
+          </div>
         </div>
 
       </div>
