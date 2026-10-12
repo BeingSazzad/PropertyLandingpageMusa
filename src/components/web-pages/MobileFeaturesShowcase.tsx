@@ -12,6 +12,7 @@ import {
   Clock,
   Flame,
 } from 'lucide-react';
+import { SectionHeader } from '../ui/SectionHeader';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -46,7 +47,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 export const MobileFeaturesShowcase: React.FC = () => {
   return (
     <section id="features" className="py-20 px-4 sm:px-6 lg:px-10 bg-white">
-      <div className="max-w-[1400px] mx-auto space-y-16">
+      <div className="max-w-[1360px] mx-auto space-y-16">
         
         {/* The Radiant Blue Container (Direct Alignment with Reference Image) */}
         <div className="rounded-[36px] sm:rounded-[48px] bg-gradient-to-b from-[#0072F5] via-[#1E78FF] to-[#3B92FE] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl shadow-blue-500/15">
@@ -55,21 +56,20 @@ export const MobileFeaturesShowcase: React.FC = () => {
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-sky-200/15 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Section Header */}
-          <div className="text-center space-y-4 max-w-2xl mx-auto relative z-10">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold tracking-wide">
-              <span>✦</span> Features
-            </div>
-
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)] leading-tight">
-              Powerful Features for <br className="hidden sm:inline" />
-              Every Tenancy
-            </h2>
-
-            <p className="text-sm sm:text-base text-blue-100 max-w-lg mx-auto font-normal leading-relaxed">
-              Everything landlords, tenants, and certified contractors need to manage flats and building tenancies from anywhere.
-            </p>
-          </div>
+          {/* Design System Header */}
+          <SectionHeader
+            badge="Features"
+            title={
+              <>
+                Powerful Features for <br className="hidden sm:inline" />
+                Every Tenancy
+              </>
+            }
+            subtitle="Everything landlords, tenants, and certified contractors need to manage flats and building tenancies from anywhere."
+            align="center"
+            theme="dark"
+            className="relative z-10"
+          />
 
           {/* 3-Column Centerpiece: Left 2 Cards + Phone Mockup + Right 2 Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center mt-12 sm:mt-16 relative z-10">

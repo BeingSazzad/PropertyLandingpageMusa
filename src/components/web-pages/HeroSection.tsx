@@ -41,8 +41,8 @@ export const HeroSection: React.FC = () => {
           </span>
         </div>
 
-        {/* Centered Headline (Clean 2 Lines, Standard SaaS Typography) */}
-        <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-[#0A192F] leading-[1.12] font-[family-name:var(--font-heading)] max-w-3xl mx-auto">
+        {/* Centered Headline (Unified Design System Display Typography) */}
+        <h1 className="title-display max-w-3xl mx-auto">
           Manage Your Properties <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-[#0084FF] to-[#00C2FF]">
             Anytime, Anywhere.
@@ -50,7 +50,7 @@ export const HeroSection: React.FC = () => {
         </h1>
 
         {/* Centered Subtitle */}
-        <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
+        <p className="text-subtitle max-w-2xl mx-auto">
           Landlord HQ helps you collect rent via Open Banking, dispatch Gas Safe contractors, and manage tenancies — all in one simple app.
         </p>
 

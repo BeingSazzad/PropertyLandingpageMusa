@@ -22,13 +22,13 @@ export const AppDownloadCTA: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
             
             {/* Left Column: Heading, Subtitle & Download Buttons */}
-            <div className="lg:col-span-7 space-y-5 text-left">
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0A192F] tracking-tight leading-tight font-[family-name:var(--font-heading)]">
+            <div className="lg:col-span-7 space-y-4 text-left">
+              <h2 className="title-section text-[#0A192F]">
                 Take Landlord HQ <br />
                 <span className="text-[#0084FF]">Anywhere!</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-500 max-w-md leading-relaxed font-normal">
+              <p className="text-subtitle max-w-md">
                 Real-time rent tracking, digital lease agreements, and certified trade dispatch — right in your pocket.
               </p>
 

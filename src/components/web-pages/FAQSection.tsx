@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Badge } from '../ui/Badge';
+import { SectionHeader } from '../ui/SectionHeader';
 
 interface FAQItem {
   question: string;
@@ -53,19 +54,18 @@ export const FAQSection: React.FC = () => {
     <section id="faq" className="py-20 px-4 sm:px-6 lg:px-10">
       <div className="max-w-[880px] mx-auto space-y-10 sm:space-y-12">
         
-        {/* Header with Perfect Typography & No Orphan Words */}
-        <div className="text-center space-y-3.5">
-          <Badge variant="blue">Frequently Asked Questions</Badge>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-snug max-w-2xl mx-auto">
-            Everything You Need to Know <br className="hidden sm:inline" />
-            <span className="text-[#0084FF] whitespace-nowrap">About Landlord HQ</span>
-          </h2>
-
-          <p className="text-sm sm:text-base text-slate-500 max-w-lg mx-auto font-normal leading-relaxed">
-            Got questions about onboarding your flats, rent collection, or contractor dispatch? Here are the answers.
-          </p>
-        </div>
+        {/* Design System Header */}
+        <SectionHeader
+          badge="Frequently Asked Questions"
+          title={
+            <>
+              Everything You Need to Know <br className="hidden sm:inline" />
+              <span className="text-[#0084FF] whitespace-nowrap">About Landlord HQ</span>
+            </>
+          }
+          subtitle="Got questions about onboarding your flats, rent collection, or contractor dispatch? Here are the answers."
+          align="center"
+        />
 
         {/* 1-Column Full-Width Accordion List (Each FAQ Box in 1 Clean Line) */}
         <div className="space-y-3">

@@ -5,6 +5,7 @@ import { useAppDispatch } from '@/redux/hooks';
 import { openDownloadModal } from '@/redux/features/uiSlice';
 import { Check, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Badge } from '../ui/Badge';
+import { SectionHeader } from '../ui/SectionHeader';
 import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 
 interface PricingTier {
@@ -74,21 +75,23 @@ export const PricingSection: React.FC = () => {
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-10 bg-[#F8FAFC]">
       <div className="max-w-[1360px] mx-auto space-y-12">
         
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-4">
-          <Badge variant="blue">Simple Subscriptions</Badge>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
-            Simple, Transparent Pricing <br className="hidden sm:inline" />
-            <span className="text-[#0084FF]">for Every Landlord</span>
-          </h2>
-
-          <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
-            No percentages taken from your rent. Pick a plan suited to your unit count.
-          </p>
+        {/* Design System Header */}
+        <div className="space-y-4">
+          <SectionHeader
+            badge="Simple Subscriptions"
+            title={
+              <>
+                Simple, Transparent Pricing <br className="hidden sm:inline" />
+                <span className="text-[#0084FF]">for Every Landlord</span>
+              </>
+            }
+            subtitle="No percentages taken from your rent. Pick a plan suited to your unit count."
+            align="center"
+          />
 
           {/* Billing Switcher */}
-          <div className="pt-2 inline-flex items-center gap-2 bg-white p-1 rounded-full border border-slate-200 shadow-xs">
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 bg-white p-1 rounded-full border border-slate-200 shadow-xs">
             <button
               onClick={() => setBillingCycle('monthly')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
@@ -114,6 +117,7 @@ export const PricingSection: React.FC = () => {
             </button>
           </div>
         </div>
+      </div>
 
         {/* Trimmed, Clutter-Free Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">

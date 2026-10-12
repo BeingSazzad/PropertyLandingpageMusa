@@ -14,7 +14,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-4 z-40 w-full px-4 sm:px-6 lg:px-10">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1360px] mx-auto">
         <div className="glass-pill rounded-full px-5 sm:px-8 py-3 flex items-center justify-between shadow-lg shadow-sky-950/5 border border-white/90">
           
           {/* Brand Logo with 3D Glowing Sphere (Matching Reference Image) */}

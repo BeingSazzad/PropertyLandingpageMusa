@@ -8,7 +8,7 @@ import { AppleAppStoreBadge, GooglePlayBadge } from '../ui/AppStoreBadges';
 export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-[#0A192F] text-white py-12 sm:py-14 border-t border-sky-500/20">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 space-y-8">
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-10 space-y-8">
         
         {/* Main Row: Logo + Links + Standard Badges */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10 text-center lg:text-left">

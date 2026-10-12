@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { setActiveProcessStep, openDownloadModal } from '@/redux/features/uiSlice';
 import { ArrowUpRight, Check, Sparkles, Shield, Cpu, Zap } from 'lucide-react';
 import { Badge } from '../ui/Badge';
+import { SectionHeader } from '../ui/SectionHeader';
 import { Button } from '../ui/Button';
 import { MOCK_DATA } from '@/Mockdata';
 
@@ -18,21 +19,20 @@ export const ProcessSection: React.FC = () => {
 
   return (
     <section id="process" className="py-20 px-4 sm:px-6 lg:px-10 bg-[#F8FAFC]">
-      <div className="max-w-[1400px] mx-auto space-y-12">
+      <div className="max-w-[1360px] mx-auto space-y-12">
         
-        {/* Section Header (Matching Reference Image) */}
-        <div className="space-y-4 max-w-4xl">
-          <Badge variant="blue">Our Process</Badge>
-
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A192F] leading-tight font-[family-name:var(--font-heading)]">
-            Streamlined Property Operations <br className="hidden sm:inline" />
-            <span className="text-[#0084FF]">in 4 Simple Steps</span>
-          </h2>
-
-          <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-400">
-            From Building Setup to Tenancy & Maintenance
-          </p>
-        </div>
+        {/* Design System Header */}
+        <SectionHeader
+          badge="Our Process"
+          title={
+            <>
+              Streamlined Property Operations <br className="hidden sm:inline" />
+              <span className="text-[#0084FF]">in 4 Simple Steps</span>
+            </>
+          }
+          subtitle="From building setup to tenancy agreements, rent tracking, and contractor dispatch."
+          align="left"
+        />
 
         {/* Two-Column Process Grid (Reference Image Structure) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
