@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import { useAppDispatch } from '@/redux/hooks';
 import { openDownloadModal } from '@/redux/features/uiSlice';
-import { Check, ShieldCheck, Zap, Building2, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { Check, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Badge } from '../ui/Badge';
-import { Button } from '../ui/Button';
+import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 
 interface PricingTier {
   id: string;
@@ -25,15 +25,13 @@ const PRICING_TIERS: PricingTier[] = [
     name: 'Starter Landlord',
     priceMonthly: 15,
     priceAnnual: 12,
-    flatsLimit: 'Up to 3 Flats / Units',
-    description: 'Perfect for individual or accidental landlords managing 1 to 3 rental flats.',
+    flatsLimit: 'Up to 3 Flats',
+    description: 'For individual landlords managing 1 to 3 rental properties.',
     features: [
-      'Building & Flat unit profiles',
-      'Automated Rent ledger & payment tracking',
-      'Tenancy lease dates & DPS deposit log',
-      'Tenant mobile app for 1-tap rent pay',
-      'Contractor repair ticket dispatch',
-      'Digital key register for tenants',
+      '1 to 3 flat & tenancy profiles',
+      'Automated rent tracking & Open Banking',
+      'DPS deposit & lease agreement log',
+      'Certified repair ticket dispatch',
     ],
   },
   {
@@ -43,16 +41,13 @@ const PRICING_TIERS: PricingTier[] = [
     isPopular: true,
     priceMonthly: 39,
     priceAnnual: 31,
-    flatsLimit: 'Up to 15 Flats / Units',
-    description: 'Designed for active property investors with multi-unit buildings and growing portfolios.',
+    flatsLimit: 'Up to 15 Flats',
+    description: 'For active property investors with multi-unit buildings.',
     features: [
-      'Everything in Starter Landlord',
-      'Multi-building & flat architecture',
-      'Gas Safe CP12, EICR & EPC compliance expiry alerts',
-      'Full unit key register (Yale, Deadlock, Fobs)',
-      'Contractor quote approval & digital invoice payouts',
-      'Building house rules, alarm codes & communal log',
-      'Automated arrears reminders to tenants',
+      'Everything in Starter, up to 15 flats',
+      'Gas Safe CP12 & EPC expiry alerts',
+      'Full key & alarm code register',
+      'Automated rent arrears reminders',
     ],
   },
   {
@@ -60,16 +55,13 @@ const PRICING_TIERS: PricingTier[] = [
     name: 'Multi-Building / HMO',
     priceMonthly: 79,
     priceAnnual: 63,
-    flatsLimit: 'Unlimited Flats & Portfolios',
-    description: 'Complete operational command for multi-property landlords, HMOs, and letting agencies.',
+    flatsLimit: 'Unlimited Flats',
+    description: 'For large portfolios, HMO properties, and letting agents.',
     features: [
-      'Everything in Portfolio Landlord',
-      'Unlimited flats, units & buildings',
-      'HMO individual room & tenancy management',
-      'Council tax band & communal utility allocation',
-      'Priority certified contractor dispatch',
-      'Portfolio cashflow & yield accounting reports',
-      'Priority UK telephone & WhatsApp support',
+      'Unlimited buildings, flats & HMO rooms',
+      'Room tenancies & utility cost splits',
+      'Portfolio cashflow & yield reports',
+      'Priority certified trade dispatch',
     ],
   },
 ];
@@ -80,28 +72,28 @@ export const PricingSection: React.FC = () => {
 
   return (
     <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-10 bg-[#F8FAFC]">
-      <div className="max-w-[1400px] mx-auto space-y-12">
+      <div className="max-w-[1360px] mx-auto space-y-12">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <Badge variant="blue">Transparent Subscription</Badge>
+        <div className="text-center max-w-2xl mx-auto space-y-4">
+          <Badge variant="blue">Simple Subscriptions</Badge>
 
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
-            Manage your flats & buildings with a{' '}
-            <span className="text-[#0084FF]">simple monthly subscription</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
+            Manage your flats with a{' '}
+            <span className="text-[#0084FF]">simple monthly plan</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            No expensive management percentages. Pick a package suited to your units and give your tenants, contractors, and properties a seamless platform.
+          <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
+            No percentages taken from your rent. Pick a plan suited to your unit count.
           </p>
 
           {/* Billing Switcher */}
-          <div className="pt-2 inline-flex items-center gap-2 bg-white p-1.5 rounded-full border border-slate-200 shadow-sm">
+          <div className="pt-2 inline-flex items-center gap-2 bg-white p-1 rounded-full border border-slate-200 shadow-xs">
             <button
               onClick={() => setBillingCycle('monthly')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 billingCycle === 'monthly'
-                  ? 'bg-gradient-to-r from-[#0084FF] to-[#00A3FF] text-white shadow-sm'
+                  ? 'bg-[#0084FF] text-white shadow-xs'
                   : 'text-slate-600 hover:text-black'
               }`}
             >
@@ -111,19 +103,19 @@ export const PricingSection: React.FC = () => {
               onClick={() => setBillingCycle('annual')}
               className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
                 billingCycle === 'annual'
-                  ? 'bg-gradient-to-r from-[#0084FF] to-[#00A3FF] text-white shadow-sm'
+                  ? 'bg-[#0084FF] text-white shadow-xs'
                   : 'text-slate-600 hover:text-black'
               }`}
             >
               <span>Annual Billing</span>
-              <span className="text-[10px] bg-sky-100 text-sky-700 px-1.5 py-0.5 rounded-full font-bold">
+              <span className="text-[10px] bg-sky-100 text-sky-800 px-1.5 py-0.5 rounded-full font-bold">
                 Save 20%
               </span>
             </button>
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
+        {/* Trimmed, Clutter-Free Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {PRICING_TIERS.map((tier) => {
             const price = billingCycle === 'annual' ? tier.priceAnnual : tier.priceMonthly;
@@ -131,101 +123,101 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`relative rounded-3xl p-7 sm:p-8 flex flex-col justify-between transition-all duration-300 ${
+                className={`relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 ${
                   tier.isPopular
-                    ? 'bg-[#0A192F] text-white border-2 border-[#0084FF] shadow-2xl scale-[1.02]'
-                    : 'bg-white text-[#0A192F] border border-slate-200 shadow-sm hover:shadow-md'
+                    ? 'bg-[#0A192F] text-white border-2 border-[#0084FF] shadow-xl md:-translate-y-1'
+                    : 'bg-white text-[#0A192F] border border-slate-200/90 shadow-xs hover:border-slate-300'
                 }`}
               >
                 {/* Popular Badge */}
                 {tier.badge && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#2563EB] text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0084FF] text-white text-[10px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-md">
                     {tier.badge}
                   </div>
                 )}
 
                 <div className="space-y-6">
-                  {/* Title & Limits */}
-                  <div className="space-y-2">
+                  {/* Title & Limit */}
+                  <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
                       <h3 className="text-xl font-bold font-[family-name:var(--font-heading)]">
                         {tier.name}
                       </h3>
                       <span
-                        className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${
+                        className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${
                           tier.isPopular
-                            ? 'bg-white/10 text-[#60A5FA]'
-                            : 'bg-[#EFF6FF] text-[#1D4ED8]'
+                            ? 'bg-white/10 text-sky-300'
+                            : 'bg-blue-50 text-[#0084FF]'
                         }`}
                       >
                         {tier.flatsLimit}
                       </span>
                     </div>
 
-                    <p className={`text-xs leading-relaxed ${tier.isPopular ? 'text-zinc-300' : 'text-zinc-500'}`}>
+                    <p className={`text-xs sm:text-sm leading-relaxed ${tier.isPopular ? 'text-slate-300' : 'text-slate-500'}`}>
                       {tier.description}
                     </p>
                   </div>
 
-                  {/* Price */}
-                  <div className="pt-2 pb-4 border-b border-black/10 dark:border-white/10">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl sm:text-5xl font-black font-mono tracking-tight">
+                  {/* Standard Price Display */}
+                  <div className="pt-2 pb-4 border-b border-slate-200/60 dark:border-white/10">
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-3xl sm:text-4xl font-extrabold font-[family-name:var(--font-heading)] tracking-tight">
                         £{price}
                       </span>
-                      <span className={`text-xs ${tier.isPopular ? 'text-zinc-400' : 'text-zinc-500'}`}>
-                        / flat portfolio / month
+                      <span className={`text-xs sm:text-sm font-medium ${tier.isPopular ? 'text-slate-400' : 'text-slate-500'}`}>
+                        /month
                       </span>
                     </div>
                     {billingCycle === 'annual' && (
-                      <span className="text-[11px] text-emerald-600 font-medium mt-1 block">
-                        Billed annually (save £{(tier.priceMonthly - tier.priceAnnual) * 12}/yr)
+                      <span className="text-xs text-emerald-500 font-medium mt-1 block">
+                        Billed annually (Save £{(tier.priceMonthly - tier.priceAnnual) * 12}/yr)
                       </span>
                     )}
                   </div>
 
-                  {/* Feature Checklist */}
-                  <div className="space-y-3">
-                    <div className={`text-[11px] font-bold uppercase tracking-wider ${tier.isPopular ? 'text-zinc-400' : 'text-zinc-400'}`}>
-                      What&apos;s Included:
-                    </div>
-                    <ul className="space-y-2.5 text-xs">
-                      {tier.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5">
-                          <Check
-                            className={`w-4 h-4 shrink-0 mt-0.5 ${
-                              tier.isPopular ? 'text-[#60A5FA]' : 'text-[#2563EB]'
-                            }`}
-                          />
-                          <span className={tier.isPopular ? 'text-zinc-200' : 'text-zinc-700'}>
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {/* Trimmed Feature Checklist (4 clean items) */}
+                  <ul className="space-y-3 text-xs sm:text-sm">
+                    {tier.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2.5">
+                        <div
+                          className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${
+                            tier.isPopular ? 'bg-sky-400/20 text-sky-300' : 'bg-blue-50 text-[#0084FF]'
+                          }`}
+                        >
+                          <Check className="w-3 h-3 stroke-[2.5]" />
+                        </div>
+                        <span className={tier.isPopular ? 'text-slate-200' : 'text-slate-700'}>
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                {/* CTA Button */}
+                {/* Standard Clean Action Button */}
                 <div className="pt-8">
-                  <Button
-                    variant={tier.isPopular ? 'primary' : 'outline'}
-                    size="lg"
-                    withArrow
-                    onClick={() => dispatch(openDownloadModal())}
-                    className="w-full font-bold"
+                  <button
+                    type="button"
+                    onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
+                    className={`w-full py-3 px-4 rounded-full font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer active:scale-95 ${
+                      tier.isPopular
+                        ? 'bg-[#0084FF] hover:bg-[#0070DE] text-white shadow-md shadow-sky-500/25'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200'
+                    }`}
                   >
-                    Select {tier.name}
-                  </Button>
+                    <span>Choose Plan</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
+
               </div>
             );
           })}
         </div>
 
-        {/* Elevated 30-Day Free Trial Banner (Premium Modern Visual Design) */}
-        <div className="relative rounded-3xl p-6 sm:p-7 bg-gradient-to-r from-sky-50/90 via-white to-blue-50/90 border border-sky-200/80 shadow-lg shadow-sky-500/5 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
-          {/* Ambient Background Light */}
+        {/* Elevated 30-Day Free Trial Banner */}
+        <div className="relative rounded-3xl p-6 sm:p-7 bg-gradient-to-r from-sky-50/90 via-white to-blue-50/90 border border-sky-200/80 shadow-md shadow-sky-500/5 flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden">
           <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-[#0084FF]/10 rounded-full blur-2xl pointer-events-none" />
           
           <div className="flex items-center gap-4 relative z-10 w-full md:w-auto">
@@ -249,7 +241,7 @@ export const PricingSection: React.FC = () => {
 
           <div className="flex items-center gap-3 relative z-10 w-full md:w-auto justify-end">
             <button
-              onClick={() => dispatch(openDownloadModal())}
+              onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
               className="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0084FF] hover:bg-[#0070DE] text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md shadow-sky-500/20 hover:shadow-lg transition-all duration-200 cursor-pointer active:scale-95 group"
             >
               <span>Start Free Trial</span>
