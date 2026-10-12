@@ -16,7 +16,7 @@ const TESTIMONIALS: Testimonial[] = [
     id: '1',
     name: 'Marcus Sterling',
     role: 'Portfolio Landlord (14 London Flats)',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
     quote:
       'Managing 14 flats across Richmond and Mayfair used to mean endless WhatsApp messages and delayed rent. With Landlord HQ, rent arrives automatically via Open Banking, Gas Safe certs are always tracked, and emergency repairs are resolved with certified trades in hours.',
   },
@@ -42,10 +42,12 @@ export const TestimonialSection: React.FC = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const prev = () => {
+    console.log('Previous clicked');
     setCurrentIdx((prevIdx) => (prevIdx === 0 ? TESTIMONIALS.length - 1 : prevIdx - 1));
   };
 
   const next = () => {
+    console.log('Next clicked');
     setCurrentIdx((prevIdx) => (prevIdx === TESTIMONIALS.length - 1 ? 0 : prevIdx + 1));
   };
 
