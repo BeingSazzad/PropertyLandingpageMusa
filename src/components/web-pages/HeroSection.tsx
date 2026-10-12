@@ -7,6 +7,7 @@ import { ArrowUpRight, ShieldCheck, CheckCircle2, Building2, KeyRound } from 'lu
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { MOCK_DATA } from '@/Mockdata';
+import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 
 export const HeroSection: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -79,7 +80,7 @@ export const HeroSection: React.FC = () => {
                 variant="primary"
                 size="lg"
                 withArrow
-                onClick={() => dispatch(openDownloadModal())}
+                onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
                 className="font-bold text-white shadow-xl hover:shadow-2xl"
               >
                 Download Mobile App

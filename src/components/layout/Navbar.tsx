@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { openDownloadModal, toggleMobileMenu } from '@/redux/features/uiSlice';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 
 export const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -79,7 +80,7 @@ export const Navbar: React.FC = () => {
               variant="primary"
               size="sm"
               withArrow
-              onClick={() => dispatch(openDownloadModal())}
+              onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
               className="hidden sm:inline-flex"
             >
               Download App
@@ -148,7 +149,7 @@ export const Navbar: React.FC = () => {
                 withArrow
                 onClick={() => {
                   dispatch(toggleMobileMenu());
-                  dispatch(openDownloadModal());
+                  triggerSmartAppDownload(() => dispatch(openDownloadModal()));
                 }}
                 className="w-full"
               >

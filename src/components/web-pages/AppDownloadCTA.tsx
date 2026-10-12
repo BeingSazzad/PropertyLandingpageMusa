@@ -46,28 +46,10 @@ export const AppDownloadCTA: React.FC = () => {
                 Simple monthly subscription fee for complete property control. Track rent auto-payments, store tenancy agreements & key registers, and dispatch certified contractors for instant repairs.
               </p>
 
-              {/* Standard Official App Store & Google Play Badges */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                
-                {/* Official Store Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 flex-1">
-                  <AppleAppStoreBadge className="w-full sm:w-auto flex-1 justify-center" size="lg" />
-                  <GooglePlayBadge className="w-full sm:w-auto flex-1 justify-center" size="lg" />
-                </div>
-
-                {/* Instant QR Box */}
-                <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex sm:flex-col items-center justify-center text-center gap-2">
-                  <div className="w-16 h-16 bg-white p-1 rounded-xl shadow-sm border border-black/5 flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" className="w-full h-full text-[#0B0F0E]">
-                      <path
-                        fill="currentColor"
-                        d="M10 10h30v30h-30zM15 15v20h20v-20zM22 22h6v6h-6zM60 10h30v30h-30zM65 15v20h20v-20zM72 22h6v6h-6zM10 60h30v30h-30zM15 65v20h20v-20zM22 72h6v6h-6zM50 15h5v5h-5zM50 30h5v15h-5zM65 50h10v5h-10zM50 65h15v5h-15zM75 65h15v5h-15zM60 75h5v15h-5zM80 80h10v10h-10z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="text-[10px] font-bold text-zinc-700">Scan to Install</div>
-                </div>
-
+              {/* Standard Official App Store & Google Play Badges (Clean, Minimal, No QR) */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <AppleAppStoreBadge size="lg" />
+                <GooglePlayBadge size="lg" />
               </div>
 
               {/* Trust Guarantees */}

@@ -7,26 +7,28 @@ import { openDownloadModal } from '@/redux/features/uiSlice';
 import { Building2, ShieldCheck, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { AppleAppStoreBadge, GooglePlayBadge } from '../ui/AppStoreBadges';
+import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 
 export const Footer: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <footer className="w-full bg-[#121514] text-white pt-16 pb-12 mt-20 border-t border-white/10">
+    <footer className="w-full bg-[#0A192F] text-white pt-16 pb-12 mt-20 border-t border-sky-500/20">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         
         {/* Top Row: Brand & CTA */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-white/10">
           <div className="space-y-3 max-w-md">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-[#2563EB] flex items-center justify-center text-white">
-                <Building2 className="w-5 h-5 stroke-[1.8]" />
+              <div className="relative w-8 h-8 rounded-full overflow-hidden shadow-md shadow-sky-500/40 flex items-center justify-center shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
+                <div className="absolute top-1 left-1.5 w-2.5 h-2.5 rounded-full bg-white/70 blur-[0.5px]" />
               </div>
               <span className="font-bold tracking-tight text-xl text-white font-[family-name:var(--font-heading)]">
-                LANDLORD<span className="text-[#8A8A8A] font-light">HQ</span>
+                Landlord<span className="text-[#0084FF]">HQ</span>
               </span>
             </div>
-            <p className="text-xs text-zinc-400 leading-relaxed">
+            <p className="text-xs text-slate-300 leading-relaxed">
               Complete property, building & tenancy management operations with a simple monthly subscription. Connecting landlords, residents, and certified contractors across the UK.
             </p>
           </div>
@@ -36,7 +38,7 @@ export const Footer: React.FC = () => {
               variant="primary"
               size="md"
               withArrow
-              onClick={() => dispatch(openDownloadModal())}
+              onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
             >
               Get Mobile App
             </Button>
