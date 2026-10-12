@@ -1,0 +1,117 @@
+/* -------------------------------------------------------------
+   SPACIAZ DESIGN SYSTEM & GLOBAL TOKENS
+   Theme: Real Estate & Construction Luxury Group
+   Fonts: Switzer (Headings) + Plus Jakarta Sans (Body)
+   Colors: Primary Lime (#E4ED64), Warm Sand (#F6F3EC), Dark Onyx (#141716)
+   ------------------------------------------------------------- */
+
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Spaciaz Colors */
+  --spaciaz-primary: #E4ED64;
+  --spaciaz-primary-hover: #CDD55A;
+  --spaciaz-text: #4B4B4B;
+  --spaciaz-text-light: #8A8A8A;
+  --spaciaz-accent: #0B0F0E;
+  --spaciaz-border: #E2E2D8;
+  --spaciaz-background: #FFFFFF;
+  --spaciaz-bg-light: #F6F3EC;
+  --spaciaz-dark: #121514;
+  --spaciaz-dark-card: #1A1E1D;
+  --spaciaz-dark-border: #2A302E;
+
+  /* Global Base */
+  --background: var(--spaciaz-bg-light);
+  --foreground: var(--spaciaz-accent);
+
+  /* Fonts */
+  --font-heading: 'Switzer', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+    background-color: var(--spaciaz-bg-light);
+    color: var(--spaciaz-accent);
+  }
+
+  body {
+    background-color: var(--spaciaz-bg-light);
+    color: var(--spaciaz-accent);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Glassmorphism & Spaciaz Utilites */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-pill-dark {
+  background: rgba(26, 30, 29, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.spaciaz-badge {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.spaciaz-badge-dark {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #A3A3A3;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F6F3EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D1C7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B3B3A6;
+}
