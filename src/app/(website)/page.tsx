@@ -3,6 +3,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { HeroSection } from '@/components/web-pages/HeroSection';
 import { ProcessSection } from '@/components/web-pages/ProcessSection';
 import { DarkShowcaseSection } from '@/components/web-pages/DarkShowcaseSection';
+import { TestimonialSection } from '@/components/web-pages/TestimonialSection';
 import { PricingSection } from '@/components/web-pages/PricingSection';
 import { FAQSection } from '@/components/web-pages/FAQSection';
 import { ContactSection } from '@/components/web-pages/ContactSection';
@@ -17,6 +18,7 @@ export default function WebsiteHomePage() {
         <HeroSection />
         <ProcessSection />
         <DarkShowcaseSection />
+        <TestimonialSection />
         <PricingSection />
         <FAQSection />
         <ContactSection />
