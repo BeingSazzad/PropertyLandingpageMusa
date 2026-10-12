@@ -7,12 +7,11 @@ import {
   MapPin,
   CheckCircle2,
   User,
-  Clock,
   ShieldCheck,
   ArrowRight,
   MessageSquare,
   Building2,
-  Sparkles,
+  ChevronDown,
 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
@@ -109,16 +108,6 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Guarantees strip */}
-              <div className="flex items-center gap-6 pt-1 text-xs text-slate-500 font-medium">
-                <span className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-[#0084FF]" /> Average reply: &lt; 15 mins
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" /> Free Property Audit
-                </span>
-              </div>
             </div>
 
             {/* Right Column: Modern High-Converting Form Card */}
@@ -197,29 +186,21 @@ export const ContactSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Portfolio Size: Interactive Segmented Pill Switcher */}
+                  {/* Portfolio Size: Dropdown */}
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-slate-700">Portfolio Size</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {[
-                        { id: '1-3 Flats', label: '1–3 Flats', sub: 'Starter' },
-                        { id: '4-15 Flats', label: '4–15 Flats', sub: 'Portfolio' },
-                        { id: '16+ / HMO', label: '16+ / HMO', sub: 'Multi-Unit' },
-                      ].map((tier) => (
-                        <button
-                          key={tier.id}
-                          type="button"
-                          onClick={() => setPortfolioSize(tier.id)}
-                          className={`py-2 px-2 sm:px-3 rounded-xl text-left border transition-all cursor-pointer ${
-                            portfolioSize === tier.id
-                              ? 'bg-sky-50 border-[#0084FF] text-[#0084FF] shadow-xs'
-                              : 'bg-slate-50/70 hover:bg-slate-100 border-slate-200 text-slate-600'
-                          }`}
-                        >
-                          <div className="text-xs font-bold leading-tight">{tier.label}</div>
-                          <div className="text-[10px] text-slate-400 font-medium">{tier.sub}</div>
-                        </button>
-                      ))}
+                    <div className="relative">
+                      <Building2 className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5 pointer-events-none" />
+                      <select
+                        value={portfolioSize}
+                        onChange={(e) => setPortfolioSize(e.target.value)}
+                        className="w-full pl-10 pr-10 py-3 rounded-xl bg-slate-50/70 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0084FF]/20 focus:border-[#0084FF] transition-all cursor-pointer appearance-none"
+                      >
+                        <option value="1-3 Flats">1–3 Flats (Starter Landlord)</option>
+                        <option value="4-15 Flats">4–15 Flats (Growing Portfolio)</option>
+                        <option value="16+ Flats">16+ Flats / HMO (Commercial & Estate)</option>
+                      </select>
+                      <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3.5 top-3.5 pointer-events-none" />
                     </div>
                   </div>
 
