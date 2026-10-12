@@ -52,7 +52,7 @@ export const ContactSection: React.FC = () => {
                   Live Concierge • Mon–Fri 8am–7pm
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)] leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)] leading-tight">
                   Speak with our <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#60A5FA] to-[#0084FF]">
                     UK property specialists

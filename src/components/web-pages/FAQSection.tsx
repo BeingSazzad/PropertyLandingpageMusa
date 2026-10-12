@@ -57,9 +57,9 @@ export const FAQSection: React.FC = () => {
         <div className="text-center space-y-4">
           <Badge variant="blue">Frequently Asked Questions</Badge>
 
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
-            Everything you need to know about{' '}
-            <span className="text-[#0084FF]">Landlord HQ</span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
+            Frequently Asked Questions <br className="hidden sm:inline" />
+            <span className="text-[#0084FF]">About Landlord HQ</span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">

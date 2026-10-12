@@ -1,225 +1,134 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useAppDispatch } from '@/redux/hooks';
 import { openDownloadModal } from '@/redux/features/uiSlice';
-import {
-  ShieldCheck,
-  CheckCircle2,
-  Bell,
-  CreditCard,
-  KeyRound,
-  Wrench,
-  Building2,
-  Users,
-} from 'lucide-react';
-import { Badge } from '../ui/Badge';
-import { Button } from '../ui/Button';
-import { AppleAppStoreBadge, GooglePlayBadge } from '../ui/AppStoreBadges';
+import { triggerSmartAppDownload } from '@/utils/deviceDownload';
+import { Search, Building2, CreditCard, Wrench, ShieldCheck } from 'lucide-react';
 
 export const AppDownloadCTA: React.FC = () => {
   const dispatch = useAppDispatch();
-  const [activeTab, setActiveTab] = useState<'landlord' | 'tenant' | 'contractor'>('landlord');
 
   return (
-    <section id="mobile-app" className="py-20 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="rounded-[32px] sm:rounded-[44px] bg-white border border-slate-200 shadow-xl p-8 sm:p-12 lg:p-16 overflow-hidden relative">
+    <section id="download-app" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1360px] mx-auto">
+        
+        {/* Rounded Card Container (Matches User's Reference Layout) */}
+        <div className="rounded-[32px] sm:rounded-[44px] bg-gradient-to-r from-sky-50/80 via-white to-sky-50/60 border border-sky-100 shadow-xl overflow-hidden relative p-8 sm:p-12 lg:p-16">
           
-          {/* Subtle Ambient Glow */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#0084FF]/15 rounded-full blur-3xl pointer-events-none" />
+          {/* Soft Ambient Arc/Glow Behind Phone (Direct Reference Alignment) */}
+          <div className="absolute right-6 lg:right-28 top-1/2 -translate-y-1/2 w-[380px] sm:w-[480px] h-[380px] sm:h-[480px] bg-gradient-to-tr from-sky-300/35 via-blue-400/20 to-cyan-300/30 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
             
-            {/* Left Column: Copy & Official Store Download Controls */}
-            <div className="lg:col-span-7 space-y-6">
-              <Badge variant="blue" dot>
-                Landlord HQ Mobile Suite
-              </Badge>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0A192F] leading-tight font-[family-name:var(--font-heading)]">
-                Manage buildings, flats & tenancies{' '}
-                <span className="text-slate-500 font-normal">from your phone.</span>
+            {/* Left Column: Heading, Subtitle & Download Buttons */}
+            <div className="lg:col-span-7 space-y-5 text-left">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0A192F] tracking-tight leading-tight font-[family-name:var(--font-heading)]">
+                Take Landlord HQ <br />
+                <span className="text-[#0084FF]">Anywhere!</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
-                Simple monthly subscription fee for complete property control. Track rent auto-payments, store tenancy agreements & key registers, and dispatch certified contractors for instant repairs.
+              <p className="text-sm sm:text-base text-slate-500 max-w-md leading-relaxed font-normal">
+                Experience seamless property management on the go. Get real-time rent alerts, tenant updates, and emergency trade dispatch right in your pocket.
               </p>
 
-              {/* Standard Official App Store & Google Play Badges (Clean, Minimal, No QR) */}
+              {/* Two Pill Buttons: Download iOS & Download Android (Reference Style) */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
-                <AppleAppStoreBadge size="lg" />
-                <GooglePlayBadge size="lg" />
-              </div>
+                {/* Download iOS (Black Pill with Apple Logo) */}
+                <button
+                  type="button"
+                  onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal('apple')))}
+                  className="px-5 py-3 rounded-full bg-black text-white hover:bg-zinc-800 transition-all duration-200 text-xs sm:text-sm font-semibold flex items-center gap-2.5 shadow-md active:scale-95 cursor-pointer"
+                  aria-label="Download Landlord HQ for iOS"
+                >
+                  <svg viewBox="0 0 170 170" className="w-4 h-4 fill-white shrink-0">
+                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.58-7.79-11.67-14.13-5.74-8.89-10.15-18.91-13.23-30.06-3.08-11.15-4.63-21.72-4.63-31.7 0-14.9 3.8-27.18 11.41-36.84 7.61-9.66 17.15-14.59 28.62-14.79 5.34 0 11.13 1.48 17.37 4.43 6.24 2.95 10.11 4.5 11.61 4.65 1.76-.2 5.86-1.83 12.31-4.89 6.45-3.06 12.22-4.43 17.3-4.12 13.06.74 23.47 5.48 31.23 14.22-11.41 6.89-16.97 16.42-16.68 28.59.29 9.87 4.09 18.06 11.41 24.58 7.32 6.52 16.03 10.37 26.13 11.55-2.22 6.88-5.02 14.07-8.41 21.57zM119.22 33.58c0-7.39 2.65-14.24 7.95-20.55 5.3-6.31 11.83-10.31 19.59-12 1.05 7.62-1.39 14.88-7.32 21.78-5.93 6.9-12.67 10.63-20.22 10.77z" />
+                  </svg>
+                  <span>Download iOS</span>
+                </button>
 
-              {/* Trust Guarantees */}
-              <div className="pt-2 flex flex-wrap items-center gap-6 text-xs text-zinc-500">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Transparent Subscription
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" /> Bank-Grade 256-Bit SSL
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#2563EB]" /> Gas Safe & EPC Certified
-                </span>
+                {/* Download Android (Light Pill with Android Robot Logo) */}
+                <button
+                  type="button"
+                  onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal('google')))}
+                  className="px-5 py-3 rounded-full bg-sky-50/90 hover:bg-sky-100 text-sky-900 border border-sky-200 transition-all duration-200 text-xs sm:text-sm font-semibold flex items-center gap-2.5 shadow-xs active:scale-95 cursor-pointer"
+                  aria-label="Download Landlord HQ for Android"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-sky-700 shrink-0">
+                    <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-4.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 2.23 12.95 2 12 2c-.96 0-1.86.23-2.66.63L7.85.99c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.9 6 5.8 6 8h12c0-2.2-.97-4.1-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
+                  </svg>
+                  <span>Download Android</span>
+                </button>
               </div>
             </div>
 
-            {/* Right Column: Interactive Smartphone Mockup */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div className="w-full max-w-[340px] bg-[#121514] rounded-[48px] p-3 shadow-2xl border-4 border-[#2A302E] ring-1 ring-black/20">
+            {/* Right Column: Phone Mockup Inside Halo Arc */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="w-[280px] sm:w-[310px] bg-slate-950 rounded-[44px] p-2.5 shadow-2xl border-4 border-slate-900 ring-8 ring-black/5 transform transition-transform duration-300 hover:scale-105">
                 
-                {/* Phone Notch / Island */}
-                <div className="w-full bg-[#181C1B] rounded-[40px] p-4 text-white space-y-4">
-                  <div className="w-24 h-4 bg-black rounded-full mx-auto" />
-
-                  {/* App Screen Header */}
-                  <div className="flex items-center justify-between pt-1">
-                    <div>
-                      <div className="text-[10px] text-zinc-400 font-medium">Landlord HQ App</div>
-                      <div className="text-sm font-bold text-white font-[family-name:var(--font-heading)]">
-                        12 Park Lane, London
-                      </div>
-                    </div>
-                    <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#60A5FA]">
-                      <Bell className="w-3.5 h-3.5" />
+                {/* Phone Screen with Dynamic Island */}
+                <div className="bg-gradient-to-b from-sky-50 via-white to-slate-50 rounded-[36px] p-4 text-slate-800 space-y-3.5 border border-slate-200/80 text-left">
+                  
+                  {/* Status Bar & Dynamic Island */}
+                  <div className="flex items-center justify-between text-[11px] font-semibold text-slate-500 px-1">
+                    <span>9:41</span>
+                    <div className="w-16 h-4 bg-black rounded-full" />
+                    <div className="flex items-center gap-1">
+                      <div className="w-3.5 h-2 border border-slate-400 rounded-xs bg-slate-800" />
                     </div>
                   </div>
 
-                  {/* Persona Tab Switcher */}
-                  <div className="grid grid-cols-3 gap-1 bg-black/40 p-1 rounded-xl text-[10px] font-semibold text-center">
-                    <button
-                      onClick={() => setActiveTab('landlord')}
-                      className={`py-1.5 rounded-lg transition-all cursor-pointer ${
-                        activeTab === 'landlord'
-                          ? 'bg-[#2563EB] text-white font-bold'
-                          : 'text-zinc-400 hover:text-white'
-                      }`}
-                    >
-                      Landlord
-                    </button>
-                    <button
-                      onClick={() => setActiveTab('tenant')}
-                      className={`py-1.5 rounded-lg transition-all cursor-pointer ${
-                        activeTab === 'tenant'
-                          ? 'bg-[#2563EB] text-white font-bold'
-                          : 'text-zinc-400 hover:text-white'
-                      }`}
-                    >
-                      Tenant
-                    </button>
-                    <button
-                      onClick={() => setActiveTab('contractor')}
-                      className={`py-1.5 rounded-lg transition-all cursor-pointer ${
-                        activeTab === 'contractor'
-                          ? 'bg-[#2563EB] text-white font-bold'
-                          : 'text-zinc-400 hover:text-white'
-                      }`}
-                    >
-                      Contractor
-                    </button>
+                  {/* Greeting / Subheading (Reference: "Ready to Explore Tokyo!") */}
+                  <div className="pt-1 text-center space-y-0.5">
+                    <div className="text-[10px] uppercase font-semibold text-sky-600 tracking-wider">
+                      Ready to Manage
+                    </div>
+                    <div className="text-base font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+                      London Portfolios!
+                    </div>
                   </div>
 
-                  {/* Tab Dynamic Content */}
-                  {activeTab === 'landlord' && (
-                    <div className="space-y-3 animate-in fade-in">
-                      <div className="p-3.5 rounded-2xl bg-gradient-to-br from-[#1F2422] to-[#141716] border border-white/10 space-y-2">
-                        <div className="flex justify-between items-center text-[10px] text-zinc-400">
-                          <span>Monthly Rent (4 Flats)</span>
-                          <span className="text-[#60A5FA] font-bold">100% on time</span>
+                  {/* Search Bar (Reference: "Find places, food, trips...") */}
+                  <div className="bg-white rounded-full px-3.5 py-2 shadow-xs border border-slate-200 flex items-center justify-between text-xs text-slate-400">
+                    <div className="flex items-center gap-2">
+                      <Search className="w-3.5 h-3.5 text-slate-400" />
+                      <span className="text-[11px]">Find flats, certs, tenants...</span>
+                    </div>
+                  </div>
+
+                  {/* 3 Quick Cards Row (Reference: 3 icons in row at bottom of reference screen) */}
+                  <div className="space-y-1.5 pt-1">
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                      Quick Operations
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="bg-white rounded-xl p-2 text-center border border-slate-100 shadow-xs space-y-1">
+                        <div className="w-7 h-7 mx-auto rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
+                          <Building2 className="w-3.5 h-3.5" />
                         </div>
-                        <div className="text-2xl font-black text-white font-mono">
-                          £8,710<span className="text-xs text-zinc-400 font-normal">.00</span>
-                        </div>
-                        <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#2563EB] w-[100%]" />
-                        </div>
+                        <div className="text-[9px] font-bold text-slate-700 leading-tight">Flats</div>
                       </div>
 
-                      <div className="space-y-2 text-xs">
-                        <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <Building2 className="w-3.5 h-3.5 text-blue-400" />
-                            <span className="text-[11px] text-zinc-200">Flat 1 • £2,450/mo</span>
-                          </div>
-                          <span className="text-[10px] text-emerald-400 font-medium">Paid</span>
+                      <div className="bg-white rounded-xl p-2 text-center border border-slate-100 shadow-xs space-y-1">
+                        <div className="w-7 h-7 mx-auto rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                          <CreditCard className="w-3.5 h-3.5" />
                         </div>
-                        <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <Building2 className="w-3.5 h-3.5 text-blue-400" />
-                            <span className="text-[11px] text-zinc-200">Flat 2B • £1,850/mo</span>
-                          </div>
-                          <span className="text-[10px] text-emerald-400 font-medium">Paid</span>
+                        <div className="text-[9px] font-bold text-slate-700 leading-tight">Rent Pay</div>
+                      </div>
+
+                      <div className="bg-white rounded-xl p-2 text-center border border-slate-100 shadow-xs space-y-1">
+                        <div className="w-7 h-7 mx-auto rounded-lg bg-rose-50 text-rose-500 flex items-center justify-center">
+                          <Wrench className="w-3.5 h-3.5" />
                         </div>
+                        <div className="text-[9px] font-bold text-slate-700 leading-tight">Repairs</div>
                       </div>
                     </div>
-                  )}
+                  </div>
 
-                  {activeTab === 'tenant' && (
-                    <div className="space-y-3 animate-in fade-in">
-                      <div className="p-3.5 rounded-2xl bg-gradient-to-br from-[#1F2422] to-[#141716] border border-white/10 space-y-1.5">
-                        <div className="flex justify-between items-center text-[10px] text-zinc-400">
-                          <span>Resident Profile</span>
-                          <span className="text-emerald-400 font-semibold">Active Lease</span>
-                        </div>
-                        <div className="text-sm font-bold text-white">Sarah Jenkins • Flat 2B</div>
-                        <div className="text-[11px] text-zinc-300">
-                          Next rent: <span className="font-mono text-[#60A5FA]">£1,850.00</span> (Direct Debit)
-                        </div>
-                      </div>
-
-                      <div className="space-y-2 text-xs">
-                        <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <KeyRound className="w-3.5 h-3.5 text-[#60A5FA]" />
-                            <span className="text-[11px] text-zinc-200">2 Yale Keys Issued</span>
-                          </div>
-                          <span className="text-[10px] text-zinc-400 font-medium">Logged</span>
-                        </div>
-                        <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                            <span className="text-[11px] text-zinc-200">Deposit Protected (DPS)</span>
-                          </div>
-                          <span className="text-[10px] text-zinc-400 font-mono">£2,100</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {activeTab === 'contractor' && (
-                    <div className="space-y-3 animate-in fade-in">
-                      <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1.5">
-                        <div className="flex items-center justify-between text-[10px]">
-                          <span className="text-[#60A5FA] font-bold flex items-center gap-1">
-                            <Wrench className="w-3 h-3" /> Job #104 Work Order
-                          </span>
-                          <span className="text-zinc-400 font-mono">Flat 2B</span>
-                        </div>
-                        <div className="text-xs font-semibold text-white">Low Boiler Pressure Repair</div>
-                        <div className="text-[10px] text-zinc-400">
-                          Assigned: Mike Plumber (Gas Safe #582104)
-                        </div>
-                      </div>
-
-                      <div className="p-3 rounded-xl bg-[#2563EB]/15 border border-[#2563EB]/40 text-[11px] text-[#93C5FD] flex items-center justify-between">
-                        <span>Invoice Approved</span>
-                        <span className="font-bold text-white">£140.00 Payout</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* App Action Pill */}
-                  <div className="pt-2">
-                    <Button
-                      variant="primary"
-                      size="sm"
-                      onClick={() => dispatch(openDownloadModal())}
-                      className="w-full text-xs font-bold"
-                    >
-                      Download Native App
-                    </Button>
+                  {/* Trust Footer */}
+                  <div className="pt-1 flex items-center justify-center gap-1.5 text-[10px] text-slate-400">
+                    <ShieldCheck className="w-3.5 h-3.5 text-sky-600" />
+                    <span>Gas Safe & Open Banking Protected</span>
                   </div>
 
                 </div>
@@ -230,6 +139,7 @@ export const AppDownloadCTA: React.FC = () => {
           </div>
 
         </div>
+
       </div>
     </section>
   );

@@ -41,9 +41,9 @@ export const HeroSection: React.FC = () => {
           </span>
         </div>
 
-        {/* Centered Massive Headline (Reference: "Manage Your Health Anytime, Anywhere.") */}
-        <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-extrabold tracking-tight text-[#0A192F] leading-[1.08] font-[family-name:var(--font-heading)] max-w-4xl mx-auto">
-          Manage Your Properties{' '}
+        {/* Centered Headline (Clean 2 Lines, Standard SaaS Typography) */}
+        <h1 className="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-[#0A192F] leading-[1.12] font-[family-name:var(--font-heading)] max-w-3xl mx-auto">
+          Manage Your Properties <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-[#0084FF] to-[#00C2FF]">
             Anytime, Anywhere.
           </span>

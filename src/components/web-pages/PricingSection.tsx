@@ -78,9 +78,9 @@ export const PricingSection: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <Badge variant="blue">Simple Subscriptions</Badge>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
-            Manage your flats with a{' '}
-            <span className="text-[#0084FF]">simple monthly plan</span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
+            Simple, Transparent Pricing <br className="hidden sm:inline" />
+            <span className="text-[#0084FF]">for Every Landlord</span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-500 leading-relaxed">

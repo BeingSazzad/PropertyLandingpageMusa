@@ -24,14 +24,12 @@ export const ProcessSection: React.FC = () => {
         <div className="space-y-4 max-w-4xl">
           <Badge variant="blue">Our Process</Badge>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-[#0A192F] leading-tight font-[family-name:var(--font-heading)]">
-            We transform complex operations into effortless control through a{' '}
-            <span className="font-semibold text-[#0084FF]">
-              seamless, structured workflow
-            </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A192F] leading-tight font-[family-name:var(--font-heading)]">
+            Streamlined Property Operations <br className="hidden sm:inline" />
+            <span className="text-[#0084FF]">in 4 Simple Steps</span>
           </h2>
 
-          <p className="text-sm font-semibold tracking-wider uppercase text-slate-400">
+          <p className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-400">
             From Building Setup to Tenancy & Maintenance
           </p>
         </div>

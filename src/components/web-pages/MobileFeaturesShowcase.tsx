@@ -61,9 +61,9 @@ export const MobileFeaturesShowcase: React.FC = () => {
               <span>✦</span> Features
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)] leading-tight">
-              Explore The Powerful Features <br className="hidden sm:inline" />
-              of Rental Mobile App
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white font-[family-name:var(--font-heading)] leading-tight">
+              Powerful Features for <br className="hidden sm:inline" />
+              Every Tenancy
             </h2>
 
             <p className="text-sm sm:text-base text-blue-100 max-w-lg mx-auto font-normal leading-relaxed">

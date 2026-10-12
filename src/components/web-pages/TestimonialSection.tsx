@@ -60,9 +60,9 @@ export const TestimonialSection: React.FC = () => {
           
           {/* Left Column: Heading, Subtitle & Arrow Controls (Matches Reference Image) */}
           <div className="lg:col-span-4 space-y-6">
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-[1.15]">
-              What Say Our <br />
-              Valuable Clients
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0A192F] font-[family-name:var(--font-heading)] leading-tight">
+              What Our Landlords <br />
+              Say About Us
             </h2>
 
             <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-sm">
