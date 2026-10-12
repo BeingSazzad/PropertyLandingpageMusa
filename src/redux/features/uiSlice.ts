@@ -13,7 +13,7 @@ const initialState: UIState = {
   selectedStore: null,
   activeProcessStepId: 'step-2',
   isMobileMenuOpen: false,
-  activeHeroFilter: 'AI Tenant Screening',
+  activeHeroFilter: 'Rent Auto-Collection',
 };
 
 export const uiSlice = createSlice({

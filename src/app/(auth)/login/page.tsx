@@ -22,7 +22,7 @@ export default function LoginPage() {
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
-          <div className="w-7 h-7 rounded-full bg-[#0B0F0E] flex items-center justify-center text-[#E4ED64]">
+          <div className="w-7 h-7 rounded-full bg-[#0B0F0E] flex items-center justify-center text-[#2563EB]">
             <Building2 className="w-4 h-4" />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={role === 'landlord' ? 'john@landlordhq.co.uk' : 'user@domain.com'}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
                 required
               />
             </div>
@@ -87,7 +87,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
                 required
               />
             </div>

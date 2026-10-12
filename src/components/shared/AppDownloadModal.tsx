@@ -19,7 +19,7 @@ export const AppDownloadModal: React.FC = () => {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Decorative corner accent */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-[#E4ED64]/30 rounded-bl-full pointer-events-none blur-2xl" />
+        <div className="absolute top-0 right-0 w-32 h-32 bg-[#2563EB]/20 rounded-bl-full pointer-events-none blur-2xl" />
 
         {/* Close Button */}
         <button
@@ -74,7 +74,7 @@ export const AppDownloadModal: React.FC = () => {
             href="https://apps.apple.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-white/10 group"
+            className="flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-white/10 group cursor-pointer"
           >
             <div className="flex items-center gap-3">
               <Apple className="w-6 h-6 text-white" />
@@ -83,23 +83,23 @@ export const AppDownloadModal: React.FC = () => {
                 <div className="text-sm font-semibold text-white">Apple App Store</div>
               </div>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#E4ED64] transition-colors" />
+            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#3B82F6] transition-colors" />
           </a>
 
           <a
             href="https://play.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-white/10 group"
+            className="flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-white/10 group cursor-pointer"
           >
             <div className="flex items-center gap-3">
-              <Smartphone className="w-6 h-6 text-[#E4ED64]" />
+              <Smartphone className="w-6 h-6 text-[#3B82F6]" />
               <div className="text-left">
                 <div className="text-[10px] text-zinc-400 leading-none">Get it on</div>
                 <div className="text-sm font-semibold text-white">Google Play Store</div>
               </div>
             </div>
-            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#E4ED64] transition-colors" />
+            <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#3B82F6] transition-colors" />
           </a>
         </div>
 

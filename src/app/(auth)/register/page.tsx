@@ -21,7 +21,7 @@ export default function RegisterPage() {
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
-          <div className="w-7 h-7 rounded-full bg-[#0B0F0E] flex items-center justify-center text-[#E4ED64]">
+          <div className="w-7 h-7 rounded-full bg-[#0B0F0E] flex items-center justify-center text-[#2563EB]">
             <Building2 className="w-4 h-4" />
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function RegisterPage() {
             Create Your Account
           </h1>
           <p className="text-xs text-zinc-500">
-            Start managing properties, tenancies, and contractors with AI.
+            Start managing buildings, flats, tenancies, and contractors in one place.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function RegisterPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="John Doe"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
                 required
               />
             </div>
@@ -66,7 +66,7 @@ export default function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="john@example.com"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
                 required
               />
             </div>
@@ -81,7 +81,7 @@ export default function RegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="At least 8 characters"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
                 required
               />
             </div>

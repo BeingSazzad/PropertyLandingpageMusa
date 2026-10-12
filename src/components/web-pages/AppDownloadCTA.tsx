@@ -29,13 +29,13 @@ export const AppDownloadCTA: React.FC = () => {
         <div className="rounded-[32px] sm:rounded-[44px] bg-[#FFFFFF] border border-[#E2E2D8] shadow-xl p-8 sm:p-12 lg:p-16 overflow-hidden relative">
           
           {/* Subtle Ambient Glow */}
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#E4ED64]/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#2563EB]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
             
             {/* Left Column: Copy & Download Controls */}
             <div className="lg:col-span-7 space-y-6">
-              <Badge variant="lime" dot>
+              <Badge variant="blue" dot>
                 Native Mobile Suite
               </Badge>
 
@@ -45,7 +45,7 @@ export const AppDownloadCTA: React.FC = () => {
               </h2>
 
               <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-xl">
-                Experience the fastest, most reliable way to monitor tenancies, receive rent instantly, and dispatch certified contractors with real-time AI resolution.
+                Experience the fastest, most reliable way to monitor tenancies, receive rent instantly, and dispatch certified contractors with real-time status updates.
               </p>
 
               {/* Download Buttons and QR Code Box */}
@@ -55,7 +55,7 @@ export const AppDownloadCTA: React.FC = () => {
                 <div className="space-y-3 flex-1">
                   <button
                     onClick={() => dispatch(openDownloadModal('apple'))}
-                    className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-black/10 group shadow-md"
+                    className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-black/10 group shadow-md cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
                       <Apple className="w-6 h-6 text-white" />
@@ -64,21 +64,21 @@ export const AppDownloadCTA: React.FC = () => {
                         <div className="text-sm font-semibold text-white">Apple App Store</div>
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#E4ED64] transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#3B82F6] transition-colors" />
                   </button>
 
                   <button
                     onClick={() => dispatch(openDownloadModal('google'))}
-                    className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-black/10 group shadow-md"
+                    className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-[#0B0F0E] text-white hover:bg-zinc-800 transition-all border border-black/10 group shadow-md cursor-pointer"
                   >
                     <div className="flex items-center gap-3">
-                      <Smartphone className="w-6 h-6 text-[#E4ED64]" />
+                      <Smartphone className="w-6 h-6 text-[#3B82F6]" />
                       <div className="text-left">
                         <div className="text-[10px] text-zinc-400 leading-none">Get it on</div>
                         <div className="text-sm font-semibold text-white">Google Play Store</div>
                       </div>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#E4ED64] transition-colors" />
+                    <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-[#3B82F6] transition-colors" />
                   </button>
                 </div>
 
@@ -106,7 +106,7 @@ export const AppDownloadCTA: React.FC = () => {
                   <ShieldCheck className="w-4 h-4 text-emerald-600" /> Bank-Grade 256-Bit SSL
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-[#CDD55A]" /> AI Autopilot Ready
+                  <ShieldCheck className="w-4 h-4 text-[#2563EB]" /> Gas & EPC Verified
                 </span>
               </div>
             </div>
@@ -127,7 +127,7 @@ export const AppDownloadCTA: React.FC = () => {
                         Landlord HQ Mobile
                       </div>
                     </div>
-                    <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#E4ED64]">
+                    <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-[#3B82F6]">
                       <Bell className="w-3.5 h-3.5" />
                     </div>
                   </div>
@@ -136,33 +136,33 @@ export const AppDownloadCTA: React.FC = () => {
                   <div className="grid grid-cols-3 gap-1 bg-black/40 p-1 rounded-xl text-[10px] font-semibold text-center">
                     <button
                       onClick={() => setActiveTab('rent')}
-                      className={`py-1.5 rounded-lg transition-all ${
+                      className={`py-1.5 rounded-lg transition-all cursor-pointer ${
                         activeTab === 'rent'
-                          ? 'bg-[#E4ED64] text-[#0B0F0E] font-bold'
+                          ? 'bg-[#2563EB] text-white font-bold'
                           : 'text-zinc-400 hover:text-white'
                       }`}
                     >
-                      Rent Auto
+                      Rent Pay
                     </button>
                     <button
                       onClick={() => setActiveTab('repairs')}
-                      className={`py-1.5 rounded-lg transition-all ${
+                      className={`py-1.5 rounded-lg transition-all cursor-pointer ${
                         activeTab === 'repairs'
-                          ? 'bg-[#E4ED64] text-[#0B0F0E] font-bold'
+                          ? 'bg-[#2563EB] text-white font-bold'
                           : 'text-zinc-400 hover:text-white'
                       }`}
                     >
-                      AI Repairs
+                      Repairs
                     </button>
                     <button
                       onClick={() => setActiveTab('compliance')}
-                      className={`py-1.5 rounded-lg transition-all ${
+                      className={`py-1.5 rounded-lg transition-all cursor-pointer ${
                         activeTab === 'compliance'
-                          ? 'bg-[#E4ED64] text-[#0B0F0E] font-bold'
+                          ? 'bg-[#2563EB] text-white font-bold'
                           : 'text-zinc-400 hover:text-white'
                       }`}
                     >
-                      Shield
+                      Compliance
                     </button>
                   </div>
 
@@ -172,13 +172,13 @@ export const AppDownloadCTA: React.FC = () => {
                       <div className="p-3.5 rounded-2xl bg-gradient-to-br from-[#1F2422] to-[#141716] border border-white/10 space-y-2">
                         <div className="flex justify-between items-center text-[10px] text-zinc-400">
                           <span>This Month Collected</span>
-                          <span className="text-[#E4ED64] font-bold">+100% on time</span>
+                          <span className="text-[#3B82F6] font-bold">+100% on time</span>
                         </div>
                         <div className="text-2xl font-black text-white font-mono">
                           £14,850<span className="text-xs text-zinc-400 font-normal">.00</span>
                         </div>
                         <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-[#E4ED64] w-[99%]" />
+                          <div className="h-full bg-[#2563EB] w-[99%]" />
                         </div>
                       </div>
 
@@ -188,14 +188,14 @@ export const AppDownloadCTA: React.FC = () => {
                             <CreditCard className="w-3.5 h-3.5 text-emerald-400" />
                             <span className="text-[11px] text-zinc-200">Flat 3B • Auto-Cleared</span>
                           </div>
-                          <span className="text-[11px] font-mono text-[#E4ED64]">£1,650</span>
+                          <span className="text-[11px] font-mono text-[#60A5FA]">£1,650</span>
                         </div>
                         <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <CreditCard className="w-3.5 h-3.5 text-emerald-400" />
                             <span className="text-[11px] text-zinc-200">Penthouse A • Standing Order</span>
                           </div>
-                          <span className="text-[11px] font-mono text-[#E4ED64]">£2,400</span>
+                          <span className="text-[11px] font-mono text-[#60A5FA]">£2,400</span>
                         </div>
                       </div>
                     </div>
@@ -206,16 +206,16 @@ export const AppDownloadCTA: React.FC = () => {
                       <div className="p-3 rounded-2xl bg-white/5 border border-white/10 space-y-1.5">
                         <div className="flex items-center justify-between text-[10px]">
                           <span className="text-amber-400 font-bold flex items-center gap-1">
-                            <Wrench className="w-3 h-3" /> Urgent Boiler Triage
+                            <Wrench className="w-3 h-3" /> Urgent Boiler Repair
                           </span>
                           <span className="text-zinc-400 font-mono">14m ago</span>
                         </div>
                         <div className="text-xs font-semibold text-white">Flat 12 • Low Pressure Diagnostic</div>
                         <div className="text-[10px] text-zinc-400">
-                          AI auto-matched Gas Safe Engineer Mike P.
+                          Assigned Gas Safe Engineer Mike P.
                         </div>
                       </div>
-                      <div className="p-3 rounded-xl bg-[#E4ED64]/10 border border-[#E4ED64]/30 text-[11px] text-[#E4ED64] flex items-center justify-between">
+                      <div className="p-3 rounded-xl bg-[#2563EB]/15 border border-[#2563EB]/40 text-[11px] text-[#93C5FD] flex items-center justify-between">
                         <span>Invoice Pre-Authorized</span>
                         <span className="font-bold">£140.00</span>
                       </div>
@@ -234,7 +234,7 @@ export const AppDownloadCTA: React.FC = () => {
                       </div>
                       <div className="p-2.5 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
                         <span className="text-zinc-200">EPC Energy Rating</span>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#E4ED64]/20 text-[#E4ED64]">Band B</span>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#2563EB]/25 text-[#93C5FD]">Band B</span>
                       </div>
                     </div>
                   )}

@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-white/10">
           <div className="space-y-3 max-w-md">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-[#E4ED64] flex items-center justify-center text-[#0B0F0E]">
+              <div className="w-9 h-9 rounded-full bg-[#2563EB] flex items-center justify-center text-white">
                 <Building2 className="w-5 h-5 stroke-[1.8]" />
               </div>
               <span className="font-bold tracking-tight text-xl text-white font-[family-name:var(--font-heading)]">
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-zinc-400 leading-relaxed">
-              Next-generation property management and intelligent operations. Empowering property owners, residents, and certified trades across the UK and Europe.
+              Complete property and tenancy management operations. Connecting landlords, tenants, and certified contractors across the UK.
             </p>
           </div>
 
@@ -56,9 +56,9 @@ export const Footer: React.FC = () => {
               Platform Modules
             </h4>
             <ul className="space-y-2 text-zinc-400">
-              <li><Link href="#process" className="hover:text-white transition-colors">AI Tenant Screening</Link></li>
+              <li><Link href="#process" className="hover:text-white transition-colors">Tenancy Onboarding & Leases</Link></li>
               <li><Link href="#process" className="hover:text-white transition-colors">Direct Rent Auto-Pay</Link></li>
-              <li><Link href="#ecosystem" className="hover:text-white transition-colors">Gas Safe Compliance</Link></li>
+              <li><Link href="#ecosystem" className="hover:text-white transition-colors">Gas Safe & EPC Compliance</Link></li>
               <li><Link href="#ecosystem" className="hover:text-white transition-colors">Contractor Dispatch Hub</Link></li>
               <li><Link href="#overview" className="hover:text-white transition-colors">Key & Inventory Register</Link></li>
             </ul>
@@ -103,24 +103,24 @@ export const Footer: React.FC = () => {
             <div className="space-y-2 pt-1">
               <button
                 onClick={() => dispatch(openDownloadModal('apple'))}
-                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all text-left group"
+                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all text-left group cursor-pointer"
               >
                 <div className="flex items-center gap-2">
                   <Apple className="w-4 h-4 text-white" />
                   <span className="font-semibold text-xs">iOS App Store</span>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-[#E4ED64]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-[#3B82F6]" />
               </button>
 
               <button
                 onClick={() => dispatch(openDownloadModal('google'))}
-                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all text-left group"
+                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-all text-left group cursor-pointer"
               >
                 <div className="flex items-center gap-2">
-                  <Smartphone className="w-4 h-4 text-[#E4ED64]" />
+                  <Smartphone className="w-4 h-4 text-[#3B82F6]" />
                   <span className="font-semibold text-xs">Google Play</span>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-[#E4ED64]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-[#3B82F6]" />
               </button>
             </div>
           </div>
@@ -130,14 +130,14 @@ export const Footer: React.FC = () => {
         {/* Bottom Strip */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <div>
-            © {new Date().getFullYear()} Landlord HQ Technologies Ltd. All rights reserved. Built with Spaciaz Design System.
+            © {new Date().getFullYear()} Landlord HQ Technologies Ltd. All rights reserved.
           </div>
           <div className="flex items-center gap-4 text-zinc-400">
             <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#E4ED64]" /> Bank-Grade Encryption
+              <ShieldCheck className="w-4 h-4 text-[#3B82F6]" /> Bank-Grade Encryption
             </span>
             <span>•</span>
-            <span>UK & Global Deployments</span>
+            <span>UK Compliance Framework</span>
           </div>
         </div>
 

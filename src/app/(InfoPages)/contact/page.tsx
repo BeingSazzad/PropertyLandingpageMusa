@@ -45,7 +45,7 @@ export default function ContactPage() {
                   type="text"
                   required
                   placeholder="John Smith"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
                 />
               </div>
               <div className="space-y-1.5">
@@ -54,7 +54,7 @@ export default function ContactPage() {
                   type="email"
                   required
                   placeholder="john@example.com"
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
                 />
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
                 rows={4}
                 required
                 placeholder="Tell us about your property units or questions..."
-                className="w-full px-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#E4ED64] text-xs"
+                className="w-full px-4 py-2.5 rounded-xl bg-[#F6F3EC] border border-black/5 focus:outline-none focus:ring-2 focus:ring-[#2563EB] text-xs"
               />
             </div>
 

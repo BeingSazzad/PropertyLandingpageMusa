@@ -2,7 +2,7 @@ import React from 'react';
 
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'light' | 'dark' | 'lime' | 'glass';
+  variant?: 'light' | 'dark' | 'blue' | 'glass';
   className?: string;
   dot?: boolean;
 }
@@ -18,8 +18,8 @@ export const Badge: React.FC<BadgeProps> = ({
       'bg-white/80 text-[#4B4B4B] border border-black/10 backdrop-blur-sm',
     dark:
       'bg-[#1F2322] text-[#D1D5DB] border border-white/10',
-    lime:
-      'bg-[#E4ED64] text-[#0B0F0E] font-semibold border border-[#CDD55A]',
+    blue:
+      'bg-[#EFF6FF] text-[#1D4ED8] font-semibold border border-[#BFDBFE]',
     glass:
       'bg-white/40 text-[#121514] border border-white/60 backdrop-blur-md shadow-sm',
   };
@@ -31,7 +31,7 @@ export const Badge: React.FC<BadgeProps> = ({
       {dot && (
         <span
           className={`w-1.5 h-1.5 rounded-full ${
-            variant === 'lime' ? 'bg-black' : 'bg-[#E4ED64]'
+            variant === 'blue' ? 'bg-[#2563EB]' : 'bg-[#2563EB]'
           }`}
         />
       )}

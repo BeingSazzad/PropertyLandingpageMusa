@@ -22,17 +22,17 @@ export const ProcessSection: React.FC = () => {
         
         {/* Section Header (Matching Reference Image) */}
         <div className="space-y-4 max-w-4xl">
-          <Badge variant="light">Our Process</Badge>
+          <Badge variant="blue">Our Process</Badge>
 
           <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-[#0B0F0E] leading-tight font-[family-name:var(--font-heading)]">
             We transform complex operations into effortless control through a{' '}
-            <span className="font-semibold text-zinc-600">
-              seamless, AI-driven process
+            <span className="font-semibold text-[#2563EB]">
+              seamless, structured workflow
             </span>
           </h2>
 
           <p className="text-sm font-semibold tracking-wider uppercase text-[#8A8A8A]">
-            From Onboarding to Full Portfolio Automation
+            From Building Setup to Tenancy & Maintenance
           </p>
         </div>
 
@@ -50,14 +50,14 @@ export const ProcessSection: React.FC = () => {
                   onClick={() => dispatch(setActiveProcessStep(step.id))}
                   className={`p-5 rounded-2xl transition-all duration-300 cursor-pointer border flex items-center justify-between gap-4 group ${
                     isActive
-                      ? 'bg-[#EAE5D9] border-[#D4CDBE] shadow-sm'
+                      ? 'bg-[#EFF6FF] border-[#BFDBFE] shadow-sm'
                       : 'bg-white/60 hover:bg-white border-[#E2E2D8] hover:border-black/20'
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     <span
                       className={`text-sm font-mono font-bold ${
-                        isActive ? 'text-[#0B0F0E]' : 'text-[#8A8A8A]'
+                        isActive ? 'text-[#2563EB]' : 'text-[#8A8A8A]'
                       }`}
                     >
                       {step.number}
@@ -82,7 +82,7 @@ export const ProcessSection: React.FC = () => {
                   <div
                     className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
                       isActive
-                        ? 'bg-[#0B0F0E] text-[#E4ED64] rotate-45 scale-105'
+                        ? 'bg-[#2563EB] text-white rotate-45 scale-105'
                         : 'bg-black/5 text-zinc-600 group-hover:bg-black/10 group-hover:text-black'
                     }`}
                   >
@@ -114,7 +114,7 @@ export const ProcessSection: React.FC = () => {
               {/* Floating Stat at the bottom edge */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between glass-pill-dark rounded-xl p-3 px-4 border border-white/10 text-white">
                 <div>
-                  <div className="text-lg font-bold font-mono text-[#E4ED64]">
+                  <div className="text-lg font-bold font-mono text-[#3B82F6]">
                     {activeStep.stat}
                   </div>
                   <div className="text-[10px] text-zinc-300">
@@ -125,7 +125,7 @@ export const ProcessSection: React.FC = () => {
                   <div className="text-xs font-semibold text-white">
                     Step {activeStep.number} of 04
                   </div>
-                  <div className="text-[10px] text-[#E4ED64]">Autonomous Flow</div>
+                  <div className="text-[10px] text-[#3B82F6]">Standard Protocol</div>
                 </div>
               </div>
             </div>

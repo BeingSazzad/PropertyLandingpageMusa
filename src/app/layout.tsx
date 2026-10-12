@@ -4,16 +4,17 @@ import { ReduxProvider } from '@/redux/ReduxProvider';
 import { AppDownloadModal } from '@/components/shared/AppDownloadModal';
 
 export const metadata: Metadata = {
-  title: 'Landlord HQ | AI Real Estate & Intelligent Property Operations',
+  title: 'Landlord HQ | UK Property Management & Tenancy Platform',
   description:
-    'Experience next-generation property management powered by AI. Autonomous tenant screening, zero-delay rent collection, and instant contractor dispatch in one luxury mobile suite.',
+    'All-in-one UK property management platform for landlords, tenants, and contractors. Track buildings, flats, rent payments, key registers, and maintenance work orders.',
   keywords: [
-    'Property Management AI',
+    'Property Management',
     'Landlord App',
-    'Tenant Screening',
+    'Tenant Leases',
     'Rent Collection',
     'Contractor Dispatch',
-    'Real Estate Automation',
+    'Key Register',
+    'UK Property Management',
   ],
 };
 
@@ -24,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-[#F6F3EC] text-[#0B0F0E] antialiased selection:bg-[#E4ED64] selection:text-black">
+      <body className="min-h-screen flex flex-col bg-[#F6F3EC] text-[#0B0F0E] antialiased selection:bg-[#2563EB] selection:text-white">
         <ReduxProvider>
           {children}
           <AppDownloadModal />

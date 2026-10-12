@@ -37,7 +37,7 @@ export const DarkShowcaseSection: React.FC = () => {
             {MOCK_DATA.showcaseModules.map((item, idx) => (
               <div
                 key={item.id}
-                className="group relative rounded-3xl overflow-hidden bg-[#1A1E1D] border border-white/10 flex flex-col justify-end min-h-[460px] sm:min-h-[500px] p-6 transition-all duration-300 hover:border-[#E4ED64]/40 hover:shadow-2xl"
+                className="group relative rounded-3xl overflow-hidden bg-[#1A1E1D] border border-white/10 flex flex-col justify-end min-h-[460px] sm:min-h-[500px] p-6 transition-all duration-300 hover:border-[#3B82F6]/50 hover:shadow-2xl"
               >
                 {/* Background Image with Cinematic Dark Gradient */}
                 <div className="absolute inset-0 z-0">
@@ -56,14 +56,14 @@ export const DarkShowcaseSection: React.FC = () => {
                   <span className="glass-pill-dark px-3 py-1 rounded-full text-[10px] font-semibold text-white/90 border border-white/15">
                     {item.badge}
                   </span>
-                  <span className="glass-pill-dark px-3 py-1 rounded-full text-[10px] font-medium text-[#E4ED64] border border-white/15">
+                  <span className="glass-pill-dark px-3 py-1 rounded-full text-[10px] font-medium text-[#60A5FA] border border-white/15">
                     {item.metrics}
                   </span>
                 </div>
 
                 {/* Bottom Content Area */}
                 <div className="relative z-10 space-y-3 pt-6">
-                  <div className="text-[11px] font-bold text-[#E4ED64] uppercase tracking-wider">
+                  <div className="text-[11px] font-bold text-[#60A5FA] uppercase tracking-wider">
                     {item.tag}
                   </div>
 
@@ -79,10 +79,10 @@ export const DarkShowcaseSection: React.FC = () => {
                   <div className="pt-2">
                     <button
                       onClick={() => dispatch(openDownloadModal())}
-                      className="w-full py-2.5 px-4 rounded-full bg-white/10 hover:bg-[#E4ED64] text-white hover:text-[#0B0F0E] text-xs font-semibold flex items-center justify-between border border-white/15 transition-all duration-200 cursor-pointer group/btn"
+                      className="w-full py-2.5 px-4 rounded-full bg-white/10 hover:bg-[#2563EB] text-white hover:text-white text-xs font-semibold flex items-center justify-between border border-white/15 transition-all duration-200 cursor-pointer group/btn"
                     >
                       <span>{item.actionText}</span>
-                      <ChevronRight className="w-4 h-4 text-zinc-400 group-hover/btn:text-[#0B0F0E] transition-colors" />
+                      <ChevronRight className="w-4 h-4 text-zinc-400 group-hover/btn:text-white transition-colors" />
                     </button>
                   </div>
                 </div>

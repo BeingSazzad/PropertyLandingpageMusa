@@ -35,7 +35,7 @@ export default function AgentDashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
           <div className="p-5 rounded-2xl bg-[#121514] text-white border border-white/10 space-y-2">
             <span className="text-[11px] text-zinc-400">Total Monthly Rent</span>
-            <div className="text-2xl font-bold font-mono text-[#E4ED64]">£32,450</div>
+            <div className="text-2xl font-bold font-mono text-[#60A5FA]">£32,450</div>
             <div className="text-[10px] text-zinc-400">99.4% collected</div>
           </div>
 

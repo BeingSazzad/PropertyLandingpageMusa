@@ -16,12 +16,12 @@ export default function AboutPage() {
 
         <div className="space-y-2 border-b border-black/5 pb-6">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 bg-zinc-100 px-2.5 py-1 rounded-full">
-            <Sparkles className="w-4 h-4 text-[#CDD55A]" /> About Landlord HQ AI
+            <Sparkles className="w-4 h-4 text-[#2563EB]" /> About Landlord HQ
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-[#0B0F0E] font-[family-name:var(--font-heading)]">
             Architecting the Future of Living
           </h1>
-          <p className="text-xs text-zinc-400">Our Mission & Engineering Standards</p>
+          <p className="text-xs text-zinc-400">Our Mission & Platform Standards</p>
         </div>
 
         <div className="space-y-4 text-xs text-zinc-600 leading-relaxed">
@@ -29,7 +29,7 @@ export default function AboutPage() {
             Landlord HQ was founded with a singular conviction: managing properties shouldn&apos;t require juggling 12 different disconnected apps, spreadsheets, and midnight emergency phone calls.
           </p>
           <p>
-            By combining autonomous document intelligence, seamless direct debits, and a pre-certified contractor dispatch network, we create harmony between property owners and residents.
+            By combining streamlined building & flat registers, seamless rent collection, and a pre-certified contractor dispatch network, we create harmony between property owners, residents, and trades.
           </p>
         </div>
 

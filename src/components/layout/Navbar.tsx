@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
           
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-full bg-[#0B0F0E] flex items-center justify-center text-[#E4ED64] transition-transform duration-300 group-hover:scale-105">
+            <div className="w-9 h-9 rounded-full bg-[#0B0F0E] flex items-center justify-center text-[#2563EB] transition-transform duration-300 group-hover:scale-105">
               <Building2 className="w-5 h-5 stroke-[1.8]" />
             </div>
             <div className="flex flex-col">
@@ -26,7 +26,7 @@ export const Navbar: React.FC = () => {
                 LANDLORD<span className="text-[#8A8A8A] font-light">HQ</span>
               </span>
               <span className="text-[9px] font-semibold tracking-widest text-[#8A8A8A] uppercase">
-                AI Living Group
+                Property & Tenancy HQ
               </span>
             </div>
           </Link>

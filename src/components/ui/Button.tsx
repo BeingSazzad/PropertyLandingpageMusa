@@ -27,9 +27,9 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    // Spaciaz signature lime
+    // Landlord HQ Blue
     primary:
-      'bg-[#E4ED64] text-[#0B0F0E] font-semibold hover:bg-[#CDD55A] shadow-sm hover:shadow-md transform active:scale-95',
+      'bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] shadow-sm hover:shadow-md transform active:scale-95',
     // Luxury dark button
     dark:
       'bg-[#121514] text-white hover:bg-[#202523] border border-white/10 shadow-sm transform active:scale-95',
