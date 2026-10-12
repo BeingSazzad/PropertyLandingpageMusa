@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '@fontsource-variable/mona-sans';
 import './globals.css';
 import { ReduxProvider } from '@/redux/ReduxProvider';
 import { AppDownloadModal } from '@/components/shared/AppDownloadModal';
