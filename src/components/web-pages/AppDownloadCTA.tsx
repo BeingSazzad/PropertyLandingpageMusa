@@ -29,7 +29,7 @@ export const AppDownloadCTA: React.FC = () => {
               </h2>
 
               <p className="text-sm sm:text-base text-slate-500 max-w-md leading-relaxed font-normal">
-                Experience seamless property management on the go. Get real-time rent alerts, tenant updates, and emergency trade dispatch right in your pocket.
+                Real-time rent tracking, digital lease agreements, and certified trade dispatch — right in your pocket.
               </p>
 
               {/* Two Pill Buttons: Download iOS & Download Android (Reference Style) */}

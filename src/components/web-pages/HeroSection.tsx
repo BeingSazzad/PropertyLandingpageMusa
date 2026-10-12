@@ -166,17 +166,17 @@ export const HeroSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* "Ask HQ Assistant" Card (Direct Reference to Curely "Ask Ai Doctor") */}
+                {/* Live Portfolio Health Card */}
                 <div className="rounded-2xl bg-gradient-to-br from-[#0084FF] via-[#0066FF] to-[#0052CC] p-4 text-white shadow-lg space-y-1.5 relative overflow-hidden">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-bold uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded-full">
-                      Smart Assistant
+                      Portfolio Health
                     </span>
-                    <Sparkles className="w-4 h-4 text-sky-200 animate-spin [animation-duration:8s]" />
+                    <ShieldCheck className="w-4 h-4 text-sky-200" />
                   </div>
-                  <h4 className="text-sm font-bold tracking-tight">Ask HQ Assistant</h4>
+                  <h4 className="text-sm font-bold tracking-tight">100% Audit-Ready</h4>
                   <p className="text-[11px] text-blue-100 font-normal leading-snug">
-                    All your tenancies, CP12 certs, and rent ledger answered in seconds.
+                    All CP12 certs active • Rent collected on-time via Open Banking.
                   </p>
                 </div>
 

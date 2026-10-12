@@ -130,8 +130,8 @@ export const ProcessSection: React.FC = () => {
 
             {/* Description Microcopy (Matching typography in reference) */}
             <div className="space-y-4">
-              <div className="text-xs font-bold uppercase tracking-wider text-zinc-400">
-                Detailed Workflow Execution
+              <div className="text-xs font-bold uppercase tracking-wider text-sky-600">
+                Step Overview
               </div>
 
               <p className="text-sm sm:text-base text-zinc-600 leading-relaxed font-normal">
@@ -141,7 +141,7 @@ export const ProcessSection: React.FC = () => {
               <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t border-black/5 text-xs text-zinc-500">
                 <span className="flex items-center gap-1.5 font-medium text-zinc-700">
                   <Check className="w-4 h-4 text-emerald-600 stroke-[2.5]" />
-                  Zero manual data entry required
+                  Instant sync with landlord & tenant apps
                 </span>
                 <Button
                   variant="outline"

@@ -80,16 +80,16 @@ export const MobileFeaturesShowcase: React.FC = () => {
                 icon={<CreditCard className="w-5 h-5" />}
                 iconBg="bg-blue-50"
                 iconColor="text-[#0072F5]"
-                title="Effortless Renting"
-                description="Collect rent via Open Banking directly into your landlord account with automated rent reconciliation."
+                title="Rent Auto-Collection"
+                description="Collect rent via Open Banking directly into your account with automatic ledger reconciliation."
               />
 
               <FeatureCard
                 icon={<Wrench className="w-5 h-5" />}
                 iconBg="bg-rose-50"
                 iconColor="text-rose-500"
-                title="24/7 Support"
-                description="Tenants report issues with diagnostic photos; certified Gas Safe trades quote and repair fast."
+                title="Emergency Trade Dispatch"
+                description="Tenants report issues with photos; certified Gas Safe trades quote and repair fast."
               />
             </div>
 
@@ -173,16 +173,16 @@ export const MobileFeaturesShowcase: React.FC = () => {
                 icon={<ShieldCheck className="w-5 h-5" />}
                 iconBg="bg-amber-50"
                 iconColor="text-amber-500"
-                title="Trip Automation"
-                description="Automated tenancy renewals, key registers, and inspection scheduling without paperwork."
+                title="Tenancy & Key Register"
+                description="Track active AST leases, DPS deposit IDs, and physical key loggers in one place."
               />
 
               <FeatureCard
                 icon={<Lock className="w-5 h-5" />}
                 iconBg="bg-purple-50"
                 iconColor="text-purple-500"
-                title="Secure Payments"
-                description="Bank-grade 256-bit encryption for tenant deposits, rent collection, and contractor invoice payouts."
+                title="Compliance Tracker"
+                description="Automated advance alerts for Gas Safe CP12, EICR, and EPC certificate expiries."
               />
             </div>
 
@@ -203,28 +203,28 @@ export const MobileFeaturesShowcase: React.FC = () => {
 
           <div className="space-y-1">
             <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-heading)]">
-              99%
+              99.4%
             </div>
             <div className="text-xs sm:text-sm text-slate-500 font-medium">
-              On-Time Rent Rate
+              On-Time Rent Collection
             </div>
           </div>
 
           <div className="space-y-1">
             <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-heading)]">
-              50%
+              14 Mins
             </div>
             <div className="text-xs sm:text-sm text-slate-500 font-medium">
-              Faster Repairs
+              Avg Trade Dispatch
             </div>
           </div>
 
           <div className="space-y-1">
             <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-heading)]">
-              24/7
+              4.9 / 5
             </div>
             <div className="text-xs sm:text-sm text-slate-500 font-medium">
-              Certified Trade Support
+              UK Landlord Rating
             </div>
           </div>
         </div>
