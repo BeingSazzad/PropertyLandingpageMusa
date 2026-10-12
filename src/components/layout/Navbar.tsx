@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
               How It Works
             </Link>
             <Link
-              href="#ecosystem"
+              href="#features"
               className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0A192F] hover:bg-white transition-all"
             >
               Features
@@ -115,7 +115,7 @@ export const Navbar: React.FC = () => {
               How It Works
             </Link>
             <Link
-              href="#ecosystem"
+              href="#features"
               onClick={() => dispatch(toggleMobileMenu())}
               className="p-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-sky-50"
             >
