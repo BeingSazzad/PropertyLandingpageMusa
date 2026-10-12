@@ -67,37 +67,37 @@ export const FAQSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Accordion List */}
-        <div className="space-y-3">
+        {/* 2-Column Accordion Grid (Direct Reference Alignment) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           {FAQS.map((faq, idx) => {
             const isOpen = openIdx === idx;
 
             return (
               <div
                 key={idx}
-                className="rounded-2xl border border-slate-200 bg-white overflow-hidden transition-all duration-200 shadow-sm"
+                className="rounded-2xl border border-slate-200/90 bg-white overflow-hidden transition-all duration-200 shadow-xs hover:border-slate-300"
               >
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/50 transition-colors"
+                  className="w-full p-5 text-left flex items-center justify-between gap-3 cursor-pointer hover:bg-slate-50/50 transition-colors"
                 >
-                  <span className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+                  <span className="text-sm sm:text-base font-bold text-[#0A192F] font-[family-name:var(--font-heading)] leading-snug">
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
                       isOpen
-                        ? 'bg-gradient-to-r from-[#0084FF] to-[#00A3FF] text-white rotate-180 shadow-md shadow-sky-500/25'
-                        : 'bg-slate-100 text-slate-500'
+                        ? 'bg-[#0084FF] text-white rotate-180 shadow-xs'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                     }`}
                   >
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-3.5 h-3.5" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-sm text-zinc-600 leading-relaxed border-t border-black/5 animate-in fade-in duration-200">
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in duration-200">
                     {faq.answer}
                   </div>
                 )}
