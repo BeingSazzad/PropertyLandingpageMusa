@@ -17,14 +17,14 @@ export const ProcessSection: React.FC = () => {
     MOCK_DATA.processSteps[1];
 
   return (
-    <section id="process" className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F6F3EC]">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <section id="process" className="py-20 px-4 sm:px-6 lg:px-10 bg-[#F6F3EC]">
+      <div className="max-w-[1400px] mx-auto space-y-12">
         
         {/* Section Header (Matching Reference Image) */}
-        <div className="space-y-4 max-w-3xl">
+        <div className="space-y-4 max-w-4xl">
           <Badge variant="light">Our Process</Badge>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0B0F0E] leading-tight font-[family-name:var(--font-heading)]">
+          <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-[#0B0F0E] leading-tight font-[family-name:var(--font-heading)]">
             We transform complex operations into effortless control through a{' '}
             <span className="font-semibold text-zinc-600">
               seamless, AI-driven process
@@ -37,7 +37,7 @@ export const ProcessSection: React.FC = () => {
         </div>
 
         {/* Two-Column Process Grid (Reference Image Structure) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Interactive Numbered Accordion (01, 02, 03, 04) */}
           <div className="lg:col-span-5 space-y-3">

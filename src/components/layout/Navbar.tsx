@@ -12,9 +12,9 @@ export const Navbar: React.FC = () => {
   const { isMobileMenuOpen } = useAppSelector((state) => state.ui);
 
   return (
-    <header className="sticky top-4 z-40 w-full px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="glass-pill rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-lg shadow-black/[0.03] border border-white/80">
+    <header className="sticky top-4 z-40 w-full px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="glass-pill rounded-full px-5 sm:px-8 py-3 flex items-center justify-between shadow-lg shadow-black/[0.03] border border-white/80">
           
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">

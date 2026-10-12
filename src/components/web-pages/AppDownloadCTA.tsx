@@ -24,9 +24,9 @@ export const AppDownloadCTA: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'rent' | 'repairs' | 'compliance'>('rent');
 
   return (
-    <section id="mobile-app" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="rounded-[32px] sm:rounded-[40px] bg-[#FFFFFF] border border-[#E2E2D8] shadow-xl p-8 sm:p-12 lg:p-16 overflow-hidden relative">
+    <section id="mobile-app" className="py-20 px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="rounded-[32px] sm:rounded-[44px] bg-[#FFFFFF] border border-[#E2E2D8] shadow-xl p-8 sm:p-12 lg:p-16 overflow-hidden relative">
           
           {/* Subtle Ambient Glow */}
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#E4ED64]/30 rounded-full blur-3xl pointer-events-none" />

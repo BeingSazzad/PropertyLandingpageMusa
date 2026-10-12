@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="w-full bg-[#121514] text-white pt-16 pb-12 mt-20 border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
         
         {/* Top Row: Brand & CTA */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-white/10">

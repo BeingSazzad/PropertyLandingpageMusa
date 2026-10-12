@@ -12,17 +12,17 @@ export const DarkShowcaseSection: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <section id="ecosystem" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="ecosystem" className="py-16 px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto">
         
         {/* Dark Luxury Rounded Container (Direct Reference Alignment) */}
-        <div className="rounded-[32px] sm:rounded-[40px] bg-[#121514] text-white p-6 sm:p-12 lg:p-16 border border-white/10 shadow-2xl space-y-12">
+        <div className="rounded-[32px] sm:rounded-[44px] bg-[#121514] text-white p-6 sm:p-12 lg:p-16 border border-white/10 shadow-2xl space-y-12">
           
           {/* Header */}
-          <div className="space-y-4 max-w-2xl">
+          <div className="space-y-4 max-w-3xl">
             <Badge variant="dark">Our Ecosystem</Badge>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-[family-name:var(--font-heading)]">
+            <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-[family-name:var(--font-heading)]">
               Experience property control where intelligence meets simplicity{' '}
               <span className="font-light text-zinc-400">in perfect harmony</span>
             </h2>

@@ -14,11 +14,11 @@ export const HeroSection: React.FC = () => {
   const { activeHeroFilter } = useAppSelector((state) => state.ui);
 
   return (
-    <section id="overview" className="relative pt-6 sm:pt-10 pb-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="overview" className="relative pt-6 sm:pt-8 pb-16 px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[1400px] mx-auto">
         
         {/* Main Hero Card Container (Mimicking Reference Image) */}
-        <div className="relative rounded-[32px] sm:rounded-[40px] overflow-hidden bg-[#181C1B] text-white shadow-2xl border border-black/10 min-h-[580px] sm:min-h-[660px] flex flex-col justify-between p-6 sm:p-10 lg:p-12">
+        <div className="relative rounded-[32px] sm:rounded-[44px] overflow-hidden bg-[#181C1B] text-white shadow-2xl border border-black/10 min-h-[620px] sm:min-h-[700px] lg:min-h-[740px] flex flex-col justify-between p-6 sm:p-10 lg:p-14">
           
           {/* Background Image with Architectural Luxury Aesthetic */}
           <div className="absolute inset-0 z-0">
@@ -29,19 +29,19 @@ export const HeroSection: React.FC = () => {
               className="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000 ease-out"
             />
             {/* Subtle multi-layer gradient to ensure pristine typography legibility */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-black/35" />
           </div>
 
           {/* Top Row: Mini Navigation / Pills inside the Hero Card */}
           <div className="relative z-10 flex flex-wrap items-center justify-between gap-4">
             
             <div className="flex items-center gap-2">
-              <span className="glass-pill-dark px-3.5 py-1.5 rounded-full text-xs font-semibold text-white/90 flex items-center gap-2 border border-white/10">
+              <span className="glass-pill-dark px-4 py-2 rounded-full text-xs font-semibold text-white/90 flex items-center gap-2 border border-white/10">
                 <span className="w-2 h-2 rounded-full bg-[#E4ED64] animate-pulse" />
                 AI Real Estate Intelligence
               </span>
-              <span className="hidden sm:inline-flex glass-pill-dark px-3 py-1.5 rounded-full text-[11px] font-medium text-zinc-300 border border-white/10">
+              <span className="hidden sm:inline-flex glass-pill-dark px-3.5 py-2 rounded-full text-[11px] font-medium text-zinc-300 border border-white/10">
                 UK & Mediterranean
               </span>
             </div>
@@ -60,9 +60,9 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* Middle Row: Massive Headline & Primary Action (Direct Reference Image Alignment) */}
-          <div className="relative z-10 max-w-2xl my-auto py-10 space-y-6">
+          <div className="relative z-10 max-w-3xl lg:max-w-4xl my-auto py-8 sm:py-12 space-y-6">
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08] font-[family-name:var(--font-heading)]">
+            <h1 className="text-4xl sm:text-6xl lg:text-[66px] font-bold tracking-tight text-white leading-[1.05] font-[family-name:var(--font-heading)]">
               Your trusted partner{' '}
               <span className="font-light text-zinc-300">in real estate &</span>{' '}
               <span className="text-[#E4ED64] underline decoration-[#E4ED64]/40 decoration-wavy decoration-2">
@@ -70,7 +70,7 @@ export const HeroSection: React.FC = () => {
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base text-zinc-300/90 max-w-xl font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-zinc-300/90 max-w-2xl font-normal leading-relaxed">
               Empowering landlords and property managers with autonomous tenant screening, zero-delay rent collection, and instant certified contractor dispatch.
             </p>
 
