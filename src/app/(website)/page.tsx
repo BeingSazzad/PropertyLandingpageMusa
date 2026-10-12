@@ -7,7 +7,6 @@ import { TestimonialSection } from '@/components/web-pages/TestimonialSection';
 import { PricingSection } from '@/components/web-pages/PricingSection';
 import { FAQSection } from '@/components/web-pages/FAQSection';
 import { ContactSection } from '@/components/web-pages/ContactSection';
-import { AppDownloadCTA } from '@/components/web-pages/AppDownloadCTA';
 import { Footer } from '@/components/layout/Footer';
 
 export default function WebsiteHomePage() {
@@ -22,7 +21,6 @@ export default function WebsiteHomePage() {
         <PricingSection />
         <FAQSection />
         <ContactSection />
-        <AppDownloadCTA />
       </div>
       <Footer />
     </main>
