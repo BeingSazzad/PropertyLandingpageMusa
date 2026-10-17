@@ -16,7 +16,7 @@ export const AboutPageView: React.FC = () => {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
+          <div className="overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={PROPERTY_IMAGES.twilight}
@@ -88,7 +88,7 @@ export const AboutPageView: React.FC = () => {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
+          <div className="overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={PROPERTY_IMAGES.modern}

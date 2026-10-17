@@ -18,7 +18,7 @@ export const AppDownloadModal: React.FC = () => {
       onClick={() => dispatch(closeDownloadModal())}
     >
       <div
-        className="relative w-full max-w-sm bg-white rounded-3xl p-6 sm:p-7 shadow-2xl border border-slate-200 overflow-hidden text-center space-y-5"
+        className="relative w-full max-w-sm overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-white p-6 text-center shadow-2xl sm:p-7 space-y-5"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}

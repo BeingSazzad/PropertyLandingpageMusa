@@ -73,8 +73,11 @@
      3. LAYOUT & ELEVATION
      ------------------------------------------------------------- */
   --max-width-content: 1360px;
-  --radius-card-outer: 28px;
-  --radius-card-inner: 28px;
+  --radius-pill: 9999px;
+  --radius-field: 16px;
+  --radius-card: 24px;
+  --radius-card-outer: 24px;
+  --radius-card-inner: 24px;
 }
 
 @layer base {

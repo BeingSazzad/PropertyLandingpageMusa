@@ -80,7 +80,7 @@ export const AppDownloadCTA: React.FC = () => {
           <button
             type="button"
             onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
-            className="mt-7 cursor-pointer rounded-[28px] border border-white bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-transform duration-200 hover:-translate-y-0.5"
+            className="mt-7 cursor-pointer rounded-[24px] border border-white bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-transform duration-200 hover:-translate-y-0.5"
             aria-label="Scan or tap to download Landlord HQ"
           >
             <DownloadQr />

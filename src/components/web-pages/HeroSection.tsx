@@ -204,7 +204,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Floating Top Badge 2: 24/7 Trade Dispatch (Reference: "24/7 Service Available") */}
-            <div className="absolute top-8 -right-4 z-30 bg-white/95 backdrop-blur-md rounded-2xl px-3 py-2 shadow-lg border border-slate-100 flex items-center gap-2">
+            <div className="absolute top-8 -right-4 z-30 flex items-center gap-2 rounded-[16px] border border-[#E6EAEF] bg-white px-3 py-2 shadow-[0_8px_24px_rgba(10,25,47,0.06)]">
               <Clock className="w-3.5 h-3.5 text-[#0084FF]" />
               <span className="text-[10px] font-bold text-[#0A192F]">24/7 Trade Dispatch</span>
             </div>

@@ -26,7 +26,7 @@ export const AppShowcaseSection: React.FC = () => {
   return (
     <section id="app-showcase" className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-10">
       <div className="mx-auto max-w-[1360px]">
-        <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-r from-[#F7FBFF] via-[#EEF5FF] to-[#E8F3FF] sm:rounded-[40px]">
+        <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-r from-[#F7FBFF] via-[#EEF5FF] to-[#E8F3FF]">
           <svg
             className="pointer-events-none absolute inset-0 h-full w-full text-white/70"
             viewBox="0 0 1200 520"

@@ -8,7 +8,10 @@ import { PROPERTY_IMAGES } from '@/lib/brand';
 const CONTACT_PHOTO = PROPERTY_IMAGES.estate;
 
 const fieldClass =
-  'mt-2 w-full rounded-full border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#131515] placeholder:text-[#94A3B8] outline-none transition-shadow focus:border-[#0084FF]/40 focus:bg-white';
+  'mt-2 w-full rounded-[16px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#131515] placeholder:text-[#94A3B8] outline-none transition-shadow focus:border-[#0084FF]/40 focus:bg-white';
+
+const messageClass =
+  'mt-2 min-h-[160px] w-full resize-none rounded-[16px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-4 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#131515] placeholder:text-[#94A3B8] outline-none focus:border-[#0084FF]/40 focus:bg-white';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -34,12 +37,12 @@ export const ContactSection: React.FC = () => {
       <div className="mx-auto max-w-[1120px] space-y-12 sm:space-y-16">
         <header className="mx-auto max-w-2xl space-y-4 text-center">
           <h1 className="title-section mx-auto">
-            Connect with Landlord HQ
+            Talk to Landlord HQ
             <br />
-            <span className="text-[#0084FF]">for support and inquiries</span>
+            <span className="text-[#0084FF]">about your portfolio</span>
           </h1>
-          <p className="text-subtitle mx-auto max-w-xl">
-            Reach our London team for product questions, tenancy setup, or general inquiries. We help with Open Banking rent, certificates, and contractor dispatch.
+          <p className="text-subtitle mx-auto max-w-lg">
+            Ask about Open Banking rent, tenancies, certificates, or contractor dispatch. We reply within two business hours.
           </p>
         </header>
 
@@ -49,11 +52,11 @@ export const ContactSection: React.FC = () => {
               Send us a message
             </h2>
             <p className="mt-3 max-w-md font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#494d4d]">
-              Fill out the form below and our team will get back to you as soon as possible.
+              Share a few details and we will get back to you the same day.
             </p>
 
             {submitted ? (
-              <div className="mt-10 space-y-4 rounded-[28px] bg-[#F8FAFC] px-6 py-10 text-center">
+              <div className="mt-10 space-y-4 rounded-[24px] bg-[#F8FAFC] px-6 py-10 text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E8F3FF] text-[#0084FF]">
                   <CheckCircle2 className="h-7 w-7" />
                 </div>
@@ -84,7 +87,7 @@ export const ContactSection: React.FC = () => {
                     autoComplete="name"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    placeholder="Full name"
+                    placeholder="Marcus Sterling"
                     className={fieldClass}
                   />
                 </div>
@@ -100,7 +103,7 @@ export const ContactSection: React.FC = () => {
                     autoComplete="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="Enter your email"
+                    placeholder="you@company.co.uk"
                     className={fieldClass}
                   />
                 </div>
@@ -115,7 +118,7 @@ export const ContactSection: React.FC = () => {
                     autoComplete="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="Enter your number"
+                    placeholder="+44 20 0000 0000"
                     className={fieldClass}
                   />
                 </div>
@@ -130,8 +133,8 @@ export const ContactSection: React.FC = () => {
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Type your message here"
-                    className={`${fieldClass} min-h-[140px] resize-none rounded-[22px] py-4`}
+                    placeholder="How many flats do you manage, and what do you need help with?"
+                    className={messageClass}
                   />
                 </div>
 
@@ -146,7 +149,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           <div className="space-y-4">
-            <div className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
+            <div className="overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={CONTACT_PHOTO}
@@ -157,7 +160,7 @@ export const ContactSection: React.FC = () => {
 
             <a
               href="mailto:support@landlordhq.co.uk"
-              className="flex items-center gap-4 rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5 transition-colors hover:bg-[#E8F3FF]"
+              className="flex items-center gap-4 rounded-[16px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5 transition-colors hover:bg-[#E8F3FF]"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#0084FF]">
                 <Mail className="h-5 w-5" />
@@ -174,7 +177,7 @@ export const ContactSection: React.FC = () => {
 
             <a
               href="tel:+442079460912"
-              className="flex items-center gap-4 rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5 transition-colors hover:bg-[#E8F3FF]"
+              className="flex items-center gap-4 rounded-[16px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5 transition-colors hover:bg-[#E8F3FF]"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#0084FF]">
                 <Phone className="h-5 w-5" />
@@ -189,7 +192,7 @@ export const ContactSection: React.FC = () => {
               </span>
             </a>
 
-            <div className="flex items-center gap-4 rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5">
+            <div className="flex items-center gap-4 rounded-[16px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#0084FF]">
                 <MapPin className="h-5 w-5" />
               </span>

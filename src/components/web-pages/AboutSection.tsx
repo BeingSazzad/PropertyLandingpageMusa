@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { MOCK_DATA } from '@/Mockdata';
-import { PROPERTY_IMAGES } from '@/lib/brand';
+import { LIFESTYLE_IMAGES } from '@/lib/brand';
 
 const STAT = MOCK_DATA.stats[1];
 
@@ -38,11 +38,11 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-[480px] overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF] sm:max-w-[520px] lg:ml-auto lg:max-w-[540px]">
+          <div className="mx-auto w-full max-w-[480px] overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF] sm:max-w-[520px] lg:ml-auto lg:max-w-[540px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={PROPERTY_IMAGES.villa}
-              alt="A high-end residential property in a Landlord HQ portfolio"
+              src={LIFESTYLE_IMAGES.phoneUse}
+              alt="A landlord managing their portfolio on the Landlord HQ app"
               className="h-[300px] w-full object-cover object-center sm:h-[400px] lg:h-[460px]"
             />
           </div>

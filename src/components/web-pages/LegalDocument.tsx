@@ -27,7 +27,7 @@ export const LegalDocument: React.FC<LegalDocumentProps> = ({
         </header>
 
         <div>
-          <article className="mx-auto max-w-[800px] space-y-10 rounded-[28px] border border-white bg-white px-6 py-8 shadow-[0_12px_40px_rgba(10,25,47,0.06)] sm:rounded-[32px] sm:px-10 sm:py-12">
+          <article className="mx-auto max-w-[800px] space-y-10 rounded-[24px] border border-white bg-white px-6 py-8 shadow-[0_12px_40px_rgba(10,25,47,0.06)] sm:px-10 sm:py-12">
             {sections.map((section, index) => (
               <section key={section.id} id={section.id} className="scroll-mt-28 space-y-3">
                 <h2 className="font-[family-name:var(--font-display)] text-[22px] font-medium leading-7 text-[#131515] sm:text-[24px] sm:leading-8">

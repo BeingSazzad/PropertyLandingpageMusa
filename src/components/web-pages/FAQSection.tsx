@@ -98,7 +98,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
             Frequently asked questions
           </h2>
 
-          <div className="mt-8 max-w-[320px] rounded-[28px] border border-white bg-white px-6 py-7 shadow-[0_12px_40px_rgba(10,25,47,0.06)]">
+          <div className="mt-8 max-w-[320px] rounded-[24px] border border-white bg-white px-6 py-7 shadow-[0_12px_40px_rgba(10,25,47,0.06)]">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0084FF] text-white shadow-[0_8px_18px_rgba(0,132,255,0.35)]">
               <Headset className="h-6 w-6" strokeWidth={2.25} />
             </div>
@@ -146,7 +146,7 @@ function FAQList({
         return (
           <div
             key={faq.question}
-            className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-white"
+            className="overflow-hidden rounded-[16px] border border-[#E6EAEF] bg-white"
           >
             <button
               type="button"

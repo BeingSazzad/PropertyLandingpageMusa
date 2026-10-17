@@ -91,7 +91,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {isMobileMenuOpen ? (
-          <div className="mt-2 flex flex-col gap-1 rounded-[28px] border border-[#E6EAEF] bg-white p-3 shadow-[0_16px_40px_rgba(10,25,47,0.08)] md:hidden">
+          <div className="mt-2 flex flex-col gap-1 rounded-[24px] border border-[#E6EAEF] bg-white p-3 shadow-[0_16px_40px_rgba(10,25,47,0.08)] md:hidden">
             {LINKS.map((link) => {
               const active = isActive(link.href);
 
@@ -100,7 +100,7 @@ export const Navbar: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => dispatch(toggleMobileMenu())}
-                  className={`rounded-2xl px-4 py-3 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 ${
+                  className={`rounded-[16px] px-4 py-3 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 ${
                     active ? 'bg-[#E8F3FF] text-[#131515]' : 'text-[#494d4d] hover:bg-[#F8FAFC]'
                   }`}
                 >

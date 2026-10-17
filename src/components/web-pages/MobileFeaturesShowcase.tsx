@@ -29,8 +29,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="space-y-3 rounded-[28px] border border-[#E6EAEF] bg-white p-6 text-left">
-      <div className={`flex h-11 w-11 items-center justify-center rounded-[12px] ${iconBg} ${iconColor}`}>
+    <div className="space-y-3 rounded-[24px] border border-[#E6EAEF] bg-white p-6 text-left">
+      <div className={`flex h-11 w-11 items-center justify-center rounded-[16px] ${iconBg} ${iconColor}`}>
         {icon}
       </div>
       <h3 className="font-[family-name:var(--font-display)] text-[22px] font-semibold leading-7 text-[#131515]">

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { PROPERTY_IMAGES } from '@/lib/brand';
+import { PEOPLE_IMAGES } from '@/lib/brand';
 
 interface Testimonial {
   id: string;
@@ -17,7 +17,7 @@ const TESTIMONIALS: Testimonial[] = [
     id: '1',
     name: 'Marcus Sterling',
     role: 'Portfolio landlord, 14 London flats',
-    image: PROPERTY_IMAGES.twilight,
+    image: PEOPLE_IMAGES.marcus,
     quote:
       'Managing 14 flats across Richmond and Mayfair used to mean endless WhatsApp messages and delayed rent. With Landlord HQ, rent arrives via Open Banking, Gas Safe certs stay tracked, and certified trades resolve repairs in hours.',
   },
@@ -25,7 +25,7 @@ const TESTIMONIALS: Testimonial[] = [
     id: '2',
     name: 'Sarah Jenkins',
     role: 'Resident tenant, 12 Park Lane',
-    image: PROPERTY_IMAGES.estate,
+    image: PEOPLE_IMAGES.sarah,
     quote:
       'Rent, deposit, and repairs sit in one place. I pay in one tap, the DPS holds our deposit, and when the boiler failed a Gas Safe engineer was dispatched the next morning.',
   },
@@ -33,7 +33,7 @@ const TESTIMONIALS: Testimonial[] = [
     id: '3',
     name: 'David Chen',
     role: 'HMO property investor',
-    image: PROPERTY_IMAGES.mansion,
+    image: PEOPLE_IMAGES.david,
     quote:
       'Compliance dates, tenancy agreements, and repair tickets in one register have saved hours each week. The subscription pays for itself in time saved and no missed inspections.',
   },
@@ -93,20 +93,20 @@ export const TestimonialSection: React.FC = () => {
 
           {/* Center: Rounded Portrait Photo (Matches Reference Image) */}
           <div className="lg:col-span-4 flex justify-center">
-            <div className="aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
+            <div className="aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 key={active.image}
                 src={active.image}
-                alt={`${active.name}'s property`}
-                className="h-full w-full object-cover"
+                alt={active.name}
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </div>
 
           {/* Right: Clean Quote Card (Matches Reference Image) */}
           <div className="lg:col-span-4">
-            <div className="flex min-h-[380px] flex-col justify-between rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] p-8 sm:p-10">
+            <div className="flex min-h-[380px] flex-col justify-between rounded-[24px] border border-[#E6EAEF] bg-[#F8FAFC] p-8 sm:p-10">
               <div>
                 <div className="mb-5 text-[#0084FF]">
                   <svg

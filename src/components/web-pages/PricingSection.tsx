@@ -113,7 +113,7 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`flex flex-col rounded-[28px] border border-[#E6EAEF] bg-white p-7 sm:p-8 ${
+                className={`flex flex-col rounded-[24px] border border-[#E6EAEF] bg-white p-7 sm:p-8 ${
                   tier.isPopular ? 'shadow-[0_20px_50px_rgba(10,25,47,0.08)]' : ''
                 }`}
               >
