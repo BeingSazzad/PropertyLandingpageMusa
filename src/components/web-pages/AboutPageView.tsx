@@ -29,7 +29,7 @@ export const AboutPageView: React.FC = () => {
         {/* Statement + rating */}
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <h2 className="max-w-lg font-[family-name:var(--font-display)] text-[28px] font-medium leading-9 text-[#131515] sm:text-[32px] sm:leading-10">
-            We help landlords feel confident about their portfolios and keep every tenancy running with ease.
+            One workflow for rent, tenancies, keys, and certificates — so every building stays audit-ready.
           </h2>
 
           <div className="flex flex-col items-start gap-3 lg:items-end">

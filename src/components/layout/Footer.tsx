@@ -61,11 +61,11 @@ export const Footer: React.FC = () => {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="space-y-8 lg:col-span-5">
               <div className="space-y-5">
-                <h2 className="title-section title-section-inverse footer-headline max-w-[13ch]">
-                  Your properties totally under control.
+                <h2 className="title-section title-section-inverse footer-headline max-w-[14ch]">
+                  Keep every tenancy under control.
                 </h2>
                 <p className="text-body text-body-inverse max-w-sm">
-                  Landlord HQ gives you everything you need to stay in control. Get started today and make your properties work for you.
+                  Open Banking rent, Gas Safe dispatch, and tenancy records — in one app.
                 </p>
                 <AppStoreBadges onDark />
               </div>

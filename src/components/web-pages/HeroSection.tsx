@@ -54,7 +54,7 @@ export const HeroSection: React.FC = () => {
           <div className="absolute inset-0 max-w-2xl mx-auto bg-gradient-to-r from-sky-400/20 via-[#0084FF]/25 to-cyan-400/20 rounded-full blur-3xl -z-10 pointer-events-none transform -translate-y-8" />
 
           {/* LEFT DEVICE (Recessed / Dark Mode Maintenance & Trade Ticket) */}
-          <div className="hidden md:block absolute left-4 lg:left-12 -translate-y-2 z-10 w-[260px] lg:w-[280px] transform -rotate-3 transition-transform duration-500 hover:rotate-0 hover:scale-105">
+          <div className="absolute left-4 z-10 hidden w-[260px] -translate-y-2 -rotate-3 transform transition-transform duration-500 hover:rotate-0 hover:scale-105 lg:left-12 lg:block lg:w-[280px]">
             
             {/* Floating Top Badge: 600+ UK Landlords (Reference: "6k+ Happy Clients With Top Reviews") */}
             <div className="absolute -top-7 -left-4 z-30 flex items-center rounded-[16px] border border-[#E6EAEF] bg-white px-3 py-2 shadow-[0_8px_24px_rgba(10,25,47,0.06)]">
@@ -195,7 +195,7 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* RIGHT DEVICE (Recessed / Portfolio Yield & Rent Wave Chart) */}
-          <div className="hidden md:block absolute right-4 lg:right-12 -translate-y-2 z-10 w-[260px] lg:w-[280px] transform rotate-3 transition-transform duration-500 hover:rotate-0 hover:scale-105">
+          <div className="absolute right-4 z-10 hidden w-[260px] -translate-y-2 rotate-3 transform transition-transform duration-500 hover:rotate-0 hover:scale-105 lg:right-12 lg:block lg:w-[280px]">
             
             {/* Floating Top Badge 1: Direct Open Banking (Reference: "Online and Face to Face") */}
             <div className="absolute -top-7 -right-2 z-30 flex items-center gap-2 rounded-[16px] bg-[#0084FF] px-3.5 py-2 text-white">

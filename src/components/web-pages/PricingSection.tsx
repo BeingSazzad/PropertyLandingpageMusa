@@ -75,7 +75,7 @@ export const PricingSection: React.FC = () => {
             <span className="text-[#0084FF]">for every landlord</span>
           </h2>
           <p className="text-subtitle mx-auto max-w-lg">
-            No percentages taken from your rent. Pick a plan suited to your unit count.
+            No cut of your rent. Choose a plan by how many flats you manage.
           </p>
 
           <div className="flex justify-center pt-2">

@@ -45,13 +45,12 @@ export const AppShowcaseSection: React.FC = () => {
             <div className="flex min-h-[320px] flex-col justify-between gap-12 lg:min-h-[440px]">
               <div className="space-y-5">
                 <h2 className="title-section">
-                  App that powers
+                  One app for
                   <br />
                   every tenancy
                 </h2>
-                <p className="text-subtitle max-w-[340px]">
-                  Landlord HQ helps you collect rent via Open Banking, manage
-                  tenancies, and stay Gas Safe compliant.
+                <p className="text-subtitle max-w-[360px]">
+                  Collect rent via Open Banking, manage tenancies, and stay Gas Safe compliant.
                 </p>
                 <AppStoreBadges className="pt-1" />
               </div>

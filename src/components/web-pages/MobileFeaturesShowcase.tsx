@@ -55,11 +55,11 @@ export const MobileFeaturesShowcase: React.FC = () => {
                 <span className="text-[#0084FF]">every tenancy</span>
               </>
             }
-            subtitle="Everything landlords, tenants, and certified contractors need to manage flats and building tenancies from anywhere."
+            subtitle="Rent, repairs, keys, and certificates — for landlords, tenants, and certified trades."
             align="center"
           />
 
-          <div className="mt-12 grid grid-cols-1 items-center gap-8 lg:mt-0 lg:grid-cols-12 lg:gap-6">
+          <div className="mt-12 grid grid-cols-1 items-center gap-8 lg:mt-4 lg:grid-cols-12 lg:gap-10">
             
             {/* Left 2 Feature Cards */}
             <div className="lg:col-span-3 space-y-6">

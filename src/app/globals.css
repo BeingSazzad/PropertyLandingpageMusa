@@ -130,6 +130,12 @@
 }
 
 @media (max-width: 639px) {
+  .title-display,
+  .title-section {
+    font-size: 34px;
+    line-height: 42px;
+  }
+
   .footer-headline.title-section {
     font-size: 32px;
     line-height: 40px;

@@ -25,7 +25,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 
   return (
     <div
-      className={`space-y-3.5 max-w-2xl ${
+      className={`max-w-2xl space-y-5 ${
         isCenter ? 'mx-auto text-center' : 'text-left'
       } ${className}`}
     >

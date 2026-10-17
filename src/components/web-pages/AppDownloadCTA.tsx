@@ -47,12 +47,11 @@ export const AppDownloadCTA: React.FC = () => {
           <h2 className="title-section">
             <span className="sm:whitespace-nowrap">Take Landlord HQ</span>
             <br />
-            <span className="text-[#0084FF]">Anywhere!</span>
+            <span className="text-[#0084FF]">on the go</span>
           </h2>
 
           <p className="text-subtitle max-w-sm">
-            Real-time rent tracking, digital lease agreements, and certified trade
-            dispatch — right in your pocket.
+            Rent tracking, digital leases, and certified trade dispatch — in your pocket.
           </p>
 
           <AppStoreBadges className="pt-1" />

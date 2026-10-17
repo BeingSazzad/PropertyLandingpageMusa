@@ -60,12 +60,13 @@ export const TestimonialSection: React.FC = () => {
           {/* Left Column: Heading, Subtitle & Arrow Controls (Matches Reference Image) */}
           <div className="lg:col-span-4 space-y-6">
             <h2 className="title-section">
-              What Our Landlords <br />
-              Say About Us
+              What landlords
+              <br />
+              say about us
             </h2>
 
             <p className="text-subtitle max-w-sm">
-              We wanted to streamline property management and end payment friction, and Landlord HQ was the perfect way.
+              Rent arrives on time, certificates stay current, and repairs are no longer chased on WhatsApp.
             </p>
 
             {/* Circular Slider Controls (Matches Left Outline / Right Black Circle in reference) */}
