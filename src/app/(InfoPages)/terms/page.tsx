@@ -118,17 +118,9 @@ export default function TermsPage() {
       <Navbar />
       <div className="flex-1">
         <LegalDocument
-          eyebrow="Legal"
           title="Terms & Conditions"
           intro="These terms set out how landlords, agents, residents, and contractors may use Landlord HQ — including subscriptions, Open Banking rent tracking, portfolio data, and platform liability."
-          lastUpdated="October 2026"
-          controller="Landlord HQ Technologies Ltd"
           sections={SECTIONS}
-          related={[
-            { label: 'Privacy Policy', href: '/privacy' },
-            { label: 'FAQ', href: '/faq' },
-            { label: 'Contact', href: '/contact' },
-          ]}
         />
       </div>
       <Footer />

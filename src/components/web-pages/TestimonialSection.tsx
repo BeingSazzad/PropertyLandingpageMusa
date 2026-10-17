@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { PROPERTY_IMAGES } from '@/lib/brand';
 
 interface Testimonial {
   id: string;
@@ -15,26 +16,26 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
     name: 'Marcus Sterling',
-    role: 'Portfolio Landlord (14 London Flats)',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+    role: 'Portfolio landlord, 14 London flats',
+    image: PROPERTY_IMAGES.twilight,
     quote:
-      'Managing 14 flats across Richmond and Mayfair used to mean endless WhatsApp messages and delayed rent. With Landlord HQ, rent arrives automatically via Open Banking, Gas Safe certs are always tracked, and emergency repairs are resolved with certified trades in hours.',
+      'Managing 14 flats across Richmond and Mayfair used to mean endless WhatsApp messages and delayed rent. With Landlord HQ, rent arrives via Open Banking, Gas Safe certs stay tracked, and certified trades resolve repairs in hours.',
   },
   {
     id: '2',
     name: 'Sarah Jenkins',
-    role: 'Resident Tenant (12 Park Lane)',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+    role: 'Resident tenant, 12 Park Lane',
+    image: PROPERTY_IMAGES.estate,
     quote:
-      'Having everything in one clean app has made renting completely stress-free. I pay rent in one tap, our deposit is safely held in the DPS, and when our boiler stopped working, a Gas Safe engineer was dispatched and fixed it the very next morning.',
+      'Rent, deposit, and repairs sit in one place. I pay in one tap, the DPS holds our deposit, and when the boiler failed a Gas Safe engineer was dispatched the next morning.',
   },
   {
     id: '3',
     name: 'David Chen',
-    role: 'HMO Property Investor',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
+    role: 'HMO property investor',
+    image: PROPERTY_IMAGES.mansion,
     quote:
-      'Having all compliance deadlines, tenancy agreements, and repair tickets centralized in one place has saved us hours each week. The subscription fee pays for itself tenfold in time saved and zero missed safety inspections.',
+      'Compliance dates, tenancy agreements, and repair tickets in one register have saved hours each week. The subscription pays for itself in time saved and no missed inspections.',
   },
 ];
 
@@ -42,12 +43,10 @@ export const TestimonialSection: React.FC = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const prev = () => {
-    console.log('Previous clicked');
     setCurrentIdx((prevIdx) => (prevIdx === 0 ? TESTIMONIALS.length - 1 : prevIdx - 1));
   };
 
   const next = () => {
-    console.log('Next clicked');
     setCurrentIdx((prevIdx) => (prevIdx === TESTIMONIALS.length - 1 ? 0 : prevIdx + 1));
   };
 
@@ -75,7 +74,7 @@ export const TestimonialSection: React.FC = () => {
                 id="prev-testimonial-btn"
                 type="button"
                 onClick={prev}
-                className="w-12 h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-700 hover:bg-slate-50 hover:border-slate-400 transition-all cursor-pointer shadow-xs active:scale-95"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#131515] hover:border-[#0084FF]/40 hover:text-[#0084FF]"
                 aria-label="Previous testimonial"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -84,7 +83,7 @@ export const TestimonialSection: React.FC = () => {
                 id="next-testimonial-btn"
                 type="button"
                 onClick={next}
-                className="w-12 h-12 rounded-full bg-[#0A192F] text-white flex items-center justify-center hover:bg-black transition-all cursor-pointer shadow-md active:scale-95"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A192F] text-white hover:bg-[#132A4C]"
                 aria-label="Next testimonial"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -94,24 +93,22 @@ export const TestimonialSection: React.FC = () => {
 
           {/* Center: Rounded Portrait Photo (Matches Reference Image) */}
           <div className="lg:col-span-4 flex justify-center">
-            <div className="w-full max-w-[360px] aspect-[4/5] rounded-[32px] overflow-hidden bg-slate-100 shadow-lg border border-slate-200/80">
+            <div className="aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 key={active.image}
                 src={active.image}
-                alt={active.name}
-                className="w-full h-full object-cover transition-opacity duration-300 animate-in fade-in"
+                alt={`${active.name}'s property`}
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
 
           {/* Right: Clean Quote Card (Matches Reference Image) */}
           <div className="lg:col-span-4">
-            <div className="rounded-[32px] bg-[#F8FAFC] border border-slate-200/70 p-8 sm:p-10 flex flex-col justify-between min-h-[380px] shadow-sm">
-              
+            <div className="flex min-h-[380px] flex-col justify-between rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] p-8 sm:p-10">
               <div>
-                {/* Soft Coral Double Quotation Mark (Matches Reference Image) */}
-                <div className="text-[#F39182] mb-5">
+                <div className="mb-5 text-[#0084FF]">
                   <svg
                     className="w-10 h-10 fill-current"
                     viewBox="0 0 24 24"
@@ -122,17 +119,16 @@ export const TestimonialSection: React.FC = () => {
                 </div>
 
                 {/* Quote Text */}
-                <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal animate-in fade-in">
+                <p className="font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#494d4d]">
                   {active.quote}
                 </p>
               </div>
 
-              {/* Author Info */}
               <div className="pt-6">
-                <h4 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
+                <h4 className="font-[family-name:var(--font-display)] text-[22px] font-semibold leading-7 text-[#131515]">
                   {active.name}
                 </h4>
-                <div className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">
+                <div className="mt-1 font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
                   {active.role}
                 </div>
               </div>

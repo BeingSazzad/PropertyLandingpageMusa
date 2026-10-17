@@ -6,19 +6,18 @@ import { ArrowUp } from 'lucide-react';
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
 
 const MAIN_PAGES = [
-  { label: 'Overview', href: '/#overview' },
-  { label: 'How It Works', href: '/#process' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
   { label: 'Features', href: '/#features' },
 ] as const;
 
 const RESOURCES = [
-  { label: 'Packages', href: '/#pricing' },
+  { label: 'Pricing', href: '/#pricing' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ] as const;
 
 const COMPANY = [
-  { label: 'About', href: '/about' },
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' },
 ] as const;

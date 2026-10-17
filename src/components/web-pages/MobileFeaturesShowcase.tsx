@@ -6,7 +6,6 @@ import {
   Wrench,
   ShieldCheck,
   Lock,
-  Building2,
   Bell,
   CheckCircle2,
   Clock,
@@ -30,14 +29,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="rounded-2xl sm:rounded-3xl bg-white p-6 shadow-xl border border-white/60 space-y-3 text-left transition-transform duration-200 hover:-translate-y-1">
-      <div className={`w-11 h-11 rounded-xl ${iconBg} ${iconColor} flex items-center justify-center shadow-xs`}>
+    <div className="space-y-3 rounded-[28px] border border-[#E6EAEF] bg-white p-6 text-left">
+      <div className={`flex h-11 w-11 items-center justify-center rounded-[12px] ${iconBg} ${iconColor}`}>
         {icon}
       </div>
-      <h3 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-display)] leading-snug">
+      <h3 className="font-[family-name:var(--font-display)] text-[22px] font-semibold leading-7 text-[#131515]">
         {title}
       </h3>
-      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
+      <p className="text-body">
         {description}
       </p>
     </div>
@@ -46,48 +45,36 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 export const MobileFeaturesShowcase: React.FC = () => {
   return (
-    <section id="features" className="py-20 px-4 sm:px-6 lg:px-10 bg-white">
-      <div className="max-w-[1360px] mx-auto space-y-16">
-        
-        {/* The Radiant Blue Container (Direct Alignment with Reference Image) */}
-        <div className="rounded-[36px] sm:rounded-[48px] bg-gradient-to-b from-[#0072F5] via-[#1E78FF] to-[#3B92FE] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl shadow-blue-500/15">
-          
-          {/* Subtle Ambient Background Glows */}
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-sky-200/15 rounded-full blur-3xl pointer-events-none" />
-
-          {/* Design System Header */}
+    <section id="features" className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-[1360px] space-y-16">
           <SectionHeader
-            badge="Features"
             title={
               <>
-                Powerful Features for <br className="hidden sm:inline" />
-                Every Tenancy
+                Powerful features for
+                <br />
+                <span className="text-[#0084FF]">every tenancy</span>
               </>
             }
             subtitle="Everything landlords, tenants, and certified contractors need to manage flats and building tenancies from anywhere."
             align="center"
-            theme="dark"
-            className="relative z-10"
           />
 
-          {/* 3-Column Centerpiece: Left 2 Cards + Phone Mockup + Right 2 Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center mt-12 sm:mt-16 relative z-10">
+          <div className="mt-12 grid grid-cols-1 items-center gap-8 lg:mt-0 lg:grid-cols-12 lg:gap-6">
             
             {/* Left 2 Feature Cards */}
             <div className="lg:col-span-3 space-y-6">
               <FeatureCard
                 icon={<CreditCard className="w-5 h-5" />}
-                iconBg="bg-blue-50"
-                iconColor="text-[#0072F5]"
+                iconBg="bg-[#E8F3FF]"
+                iconColor="text-[#0084FF]"
                 title="Rent Auto-Collection"
                 description="Collect rent via Open Banking directly into your account with automatic ledger reconciliation."
               />
 
               <FeatureCard
                 icon={<Wrench className="w-5 h-5" />}
-                iconBg="bg-rose-50"
-                iconColor="text-rose-500"
+                iconBg="bg-[#E8F3FF]"
+                iconColor="text-[#0084FF]"
                 title="Emergency Trade Dispatch"
                 description="Tenants report issues with photos; certified Gas Safe trades quote and repair fast."
               />
@@ -171,16 +158,16 @@ export const MobileFeaturesShowcase: React.FC = () => {
             <div className="lg:col-span-3 space-y-6">
               <FeatureCard
                 icon={<ShieldCheck className="w-5 h-5" />}
-                iconBg="bg-amber-50"
-                iconColor="text-amber-500"
+                iconBg="bg-[#E8F3FF]"
+                iconColor="text-[#0084FF]"
                 title="Tenancy & Key Register"
                 description="Track active AST leases, DPS deposit IDs, and physical key loggers in one place."
               />
 
               <FeatureCard
                 icon={<Lock className="w-5 h-5" />}
-                iconBg="bg-purple-50"
-                iconColor="text-purple-500"
+                iconBg="bg-[#E8F3FF]"
+                iconColor="text-[#0084FF]"
                 title="Compliance Tracker"
                 description="Automated advance alerts for Gas Safe CP12, EICR, and EPC certificate expiries."
               />
@@ -188,42 +175,40 @@ export const MobileFeaturesShowcase: React.FC = () => {
 
           </div>
 
-        </div>
-
         {/* 4 Clean Stats (Direct Reference Matching) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center pt-2">
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
+            <div className="font-[family-name:var(--font-display)] text-[36px] font-semibold leading-none text-[#131515] sm:text-[40px]">
               10K+
             </div>
-            <div className="text-xs sm:text-sm text-slate-500 font-medium">
+            <div className="font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
               Active Tenancies
             </div>
           </div>
 
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
+            <div className="font-[family-name:var(--font-display)] text-[36px] font-semibold leading-none text-[#131515] sm:text-[40px]">
               99.4%
             </div>
-            <div className="text-xs sm:text-sm text-slate-500 font-medium">
+            <div className="font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
               On-Time Rent Collection
             </div>
           </div>
 
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
+            <div className="font-[family-name:var(--font-display)] text-[36px] font-semibold leading-none text-[#131515] sm:text-[40px]">
               14 Mins
             </div>
-            <div className="text-xs sm:text-sm text-slate-500 font-medium">
+            <div className="font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
               Avg Trade Dispatch
             </div>
           </div>
 
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
+            <div className="font-[family-name:var(--font-display)] text-[36px] font-semibold leading-none text-[#131515] sm:text-[40px]">
               4.9 / 5
             </div>
-            <div className="text-xs sm:text-sm text-slate-500 font-medium">
+            <div className="font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
               UK Landlord Rating
             </div>
           </div>

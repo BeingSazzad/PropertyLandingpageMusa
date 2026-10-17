@@ -5,14 +5,12 @@ import { AppStoreBadges } from '../ui/AppStoreBadges';
 import {
   Bell,
   MapPin,
-  Sparkles,
   ArrowUpRight,
   ShieldCheck,
   Zap,
   Clock,
   CheckCircle2,
   TrendingUp,
-  Building2,
   Wrench,
 } from 'lucide-react';
 
@@ -29,20 +27,17 @@ export const HeroSection: React.FC = () => {
 
       <div className="max-w-[1360px] mx-auto text-center space-y-6 sm:space-y-8 relative z-10">
         
-        {/* Top Centered Pill Badge (Reference: "Best Medical Service") */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sky-200/90 bg-white/90 shadow-xs backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-[#0084FF] animate-pulse" />
-          <span className="text-xs font-semibold text-sky-800 tracking-wide">
-            UK Property & Tenancy Operations
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#E6EAEF] bg-white px-4 py-1.5">
+          <span className="h-2 w-2 rounded-full bg-[#0084FF]" />
+          <span className="font-[family-name:var(--font-nav)] text-[14px] font-medium leading-5 text-[#494d4d]">
+            Built for UK landlords
           </span>
         </div>
 
-        {/* Centered Headline (Unified Design System Display Typography) */}
-        <h1 className="title-display max-w-3xl mx-auto">
-          Manage Your Properties <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-[#0084FF] to-[#00C2FF]">
-            Anytime, Anywhere.
-          </span>
+        <h1 className="title-display mx-auto max-w-3xl">
+          Manage your properties
+          <br className="hidden sm:inline" />{' '}
+          <span className="text-[#0084FF]">anytime, anywhere.</span>
         </h1>
 
         {/* Centered Subtitle */}
@@ -62,32 +57,10 @@ export const HeroSection: React.FC = () => {
           <div className="hidden md:block absolute left-4 lg:left-12 -translate-y-2 z-10 w-[260px] lg:w-[280px] transform -rotate-3 transition-transform duration-500 hover:rotate-0 hover:scale-105">
             
             {/* Floating Top Badge: 600+ UK Landlords (Reference: "6k+ Happy Clients With Top Reviews") */}
-            <div className="absolute -top-7 -left-4 z-30 bg-white/95 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce [animation-duration:4s]">
-              <div className="flex -space-x-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80"
-                  alt="Landlord"
-                  className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-xs"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
-                  alt="Landlord"
-                  className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-xs"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80"
-                  alt="Landlord"
-                  className="w-7 h-7 rounded-full border-2 border-white object-cover shadow-xs"
-                />
-              </div>
+            <div className="absolute -top-7 -left-4 z-30 flex items-center rounded-[16px] border border-[#E6EAEF] bg-white px-3 py-2 shadow-[0_8px_24px_rgba(10,25,47,0.06)]">
               <div className="text-left leading-tight">
-                <div className="text-[11px] font-bold text-[#0A192F]">500+ UK Landlords</div>
-                <div className="text-[10px] text-amber-500 font-semibold flex items-center gap-0.5">
-                  ★ ★ ★ ★ ★ <span className="text-slate-500 text-[9px] ml-1">4.9/5</span>
-                </div>
+                <div className="font-[family-name:var(--font-nav)] text-[14px] font-medium text-[#131515]">500+ UK landlords</div>
+                <div className="font-[family-name:var(--font-nav)] text-[13px] text-[#494d4d]">4.9 / 5 rating</div>
               </div>
             </div>
 
@@ -225,9 +198,9 @@ export const HeroSection: React.FC = () => {
           <div className="hidden md:block absolute right-4 lg:right-12 -translate-y-2 z-10 w-[260px] lg:w-[280px] transform rotate-3 transition-transform duration-500 hover:rotate-0 hover:scale-105">
             
             {/* Floating Top Badge 1: Direct Open Banking (Reference: "Online and Face to Face") */}
-            <div className="absolute -top-7 -right-2 z-30 bg-[#0084FF] text-white rounded-2xl px-3.5 py-2 shadow-xl shadow-blue-500/25 flex items-center gap-2 animate-bounce [animation-duration:5s]">
-              <Zap className="w-3.5 h-3.5 text-white" />
-              <span className="text-[11px] font-bold tracking-tight">Direct Open Banking</span>
+            <div className="absolute -top-7 -right-2 z-30 flex items-center gap-2 rounded-[16px] bg-[#0084FF] px-3.5 py-2 text-white">
+              <Zap className="h-3.5 w-3.5" />
+              <span className="font-[family-name:var(--font-nav)] text-[14px] font-medium">Open Banking</span>
             </div>
 
             {/* Floating Top Badge 2: 24/7 Trade Dispatch (Reference: "24/7 Service Available") */}

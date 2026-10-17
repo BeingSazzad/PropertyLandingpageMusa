@@ -7,7 +7,7 @@ import { ContactSection } from '@/components/web-pages/ContactSection';
 export const metadata: Metadata = {
   title: 'Contact Us | Landlord HQ',
   description:
-    'Speak with Landlord HQ UK property specialists about Open Banking rent, tenancies, contractor dispatch, and portfolio setup.',
+    'Connect with Landlord HQ for support and inquiries. Send a message about Open Banking rent, tenancies, or contractor dispatch.',
 };
 
 export default function ContactPage() {

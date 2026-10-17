@@ -1,10 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { MOCK_DATA } from '@/Mockdata';
-
-const ABOUT_PHOTO =
-  'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1400&auto=format&fit=crop';
+import { PROPERTY_IMAGES } from '@/lib/brand';
 
 const STAT = MOCK_DATA.stats[1];
 
@@ -23,12 +21,10 @@ export const AboutSection: React.FC = () => {
               </p>
               <Link
                 href="/about"
-                className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#0084FF] to-[#00A3FF] px-5 py-2.5 text-sm font-bold tracking-tight text-white shadow-md shadow-sky-500/30 transition-all duration-200 hover:from-[#0070E0] hover:to-[#0092F0] active:scale-95"
+                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#0084FF] px-6 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-white hover:bg-[#0070DE]"
               >
-                <span>About Us</span>
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#0084FF] shadow-xs transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <ArrowUpRight className="h-3.5 w-3.5 stroke-[2.5]" />
-                </span>
+                About us
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
@@ -42,15 +38,13 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-[480px] rounded-[32px] bg-[#E8F3FF] p-2.5 sm:max-w-[520px] sm:rounded-[40px] sm:p-3 lg:ml-auto lg:max-w-[540px]">
-            <div className="overflow-hidden rounded-[24px] sm:rounded-[32px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={ABOUT_PHOTO}
-                alt="Apartment building exterior from a Landlord HQ portfolio"
-                className="h-[300px] w-full object-cover object-center sm:h-[400px] lg:h-[460px]"
-              />
-            </div>
+          <div className="mx-auto w-full max-w-[480px] overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF] sm:max-w-[520px] lg:ml-auto lg:max-w-[540px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={PROPERTY_IMAGES.villa}
+              alt="A high-end residential property in a Landlord HQ portfolio"
+              className="h-[300px] w-full object-cover object-center sm:h-[400px] lg:h-[460px]"
+            />
           </div>
         </div>
       </div>

@@ -1,25 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
-import {
-  Mail,
-  Phone,
-  MapPin,
-  CheckCircle2,
-  User,
-  ShieldCheck,
-  ArrowRight,
-  MessageSquare,
-  Building2,
-  ChevronDown,
-} from 'lucide-react';
+import { CheckCircle2, Mail, MapPin, Phone } from 'lucide-react';
+
+import { PROPERTY_IMAGES } from '@/lib/brand';
+
+const CONTACT_PHOTO = PROPERTY_IMAGES.estate;
+
+const fieldClass =
+  'mt-2 w-full rounded-full border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#131515] placeholder:text-[#94A3B8] outline-none transition-shadow focus:border-[#0084FF]/40 focus:bg-white';
 
 export const ContactSection: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [portfolioSize, setPortfolioSize] = useState('1-3 Flats');
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
+    phone: '',
     message: '',
   });
 
@@ -28,224 +24,186 @@ export const ContactSection: React.FC = () => {
     setSubmitted(true);
   };
 
+  const resetForm = () => {
+    setSubmitted(false);
+    setFormData({ fullName: '', email: '', phone: '', message: '' });
+  };
+
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-10 bg-[#F8FAFC]">
-      <div className="max-w-[1360px] mx-auto">
-        
-        {/* Modern Luminous Split Container (Harmonized with Hero & App Showcase) */}
-        <div className="rounded-[36px] sm:rounded-[48px] bg-gradient-to-br from-white via-sky-50/30 to-slate-50/80 border border-slate-200/90 shadow-xl overflow-hidden relative p-8 sm:p-12 lg:p-16">
-          
-          {/* Subtle Ambient Radiant Glows */}
-          <div className="absolute top-0 right-1/4 w-[460px] h-[460px] bg-gradient-to-br from-sky-200/35 to-[#0084FF]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none" />
+    <section id="contact" className="bg-white px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 lg:px-10">
+      <div className="mx-auto max-w-[1120px] space-y-12 sm:space-y-16">
+        <header className="mx-auto max-w-2xl space-y-4 text-center">
+          <h1 className="title-section mx-auto">
+            Connect with Landlord HQ
+            <br />
+            <span className="text-[#0084FF]">for support and inquiries</span>
+          </h1>
+          <p className="text-subtitle mx-auto max-w-xl">
+            Reach our London team for product questions, tenancy setup, or general inquiries. We help with Open Banking rent, certificates, and contractor dispatch.
+          </p>
+        </header>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
-            
-            {/* Left Column: Concierge & Direct Contacts */}
-            <div className="lg:col-span-5 space-y-7 text-left">
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200/80 shadow-xs text-xs font-semibold text-sky-800">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Live Concierge • Mon–Fri 8am–7pm
+        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <h2 className="font-[family-name:var(--font-display)] text-[32px] font-semibold leading-10 text-[#131515]">
+              Send us a message
+            </h2>
+            <p className="mt-3 max-w-md font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#494d4d]">
+              Fill out the form below and our team will get back to you as soon as possible.
+            </p>
+
+            {submitted ? (
+              <div className="mt-10 space-y-4 rounded-[28px] bg-[#F8FAFC] px-6 py-10 text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E8F3FF] text-[#0084FF]">
+                  <CheckCircle2 className="h-7 w-7" />
                 </div>
-
-                <h2 className="title-section">
-                  Speak with our <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] via-[#0084FF] to-[#00C2FF]">
-                    UK property specialists
-                  </span>
-                </h2>
-
-                <p className="text-subtitle">
-                  Whether you manage 2 buy-to-let flats or a multi-unit residential building, our London team helps you set up tenancies, Open Banking rent, and certified contractor dispatch.
+                <h3 className="font-[family-name:var(--font-display)] text-[22px] font-semibold text-[#131515]">
+                  Message received
+                </h3>
+                <p className="mx-auto max-w-sm font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
+                  Thank you. A Landlord HQ specialist will email or call you within 2 business hours.
                 </p>
-              </div>
-
-              {/* Clean Contact Cards with Subtle Elevation */}
-              <div className="space-y-3 pt-1">
-                <a
-                  href="mailto:support@landlordhq.co.uk"
-                  className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-sky-300 hover:shadow-md transition-all duration-200 group shadow-xs"
+                <button
+                  type="button"
+                  onClick={resetForm}
+                  className="mt-2 rounded-full border border-[#E6EAEF] px-5 py-2.5 font-[family-name:var(--font-nav)] text-[16px] font-medium text-[#131515] hover:border-[#0084FF]/40 hover:text-[#0084FF]"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0084FF] flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:bg-[#0084FF] group-hover:text-white transition-all">
-                    <Mail className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                      Email Concierge
-                    </div>
-                    <div className="text-xs sm:text-sm font-semibold text-[#0A192F] group-hover:text-[#0084FF] transition-colors">
-                      support@landlordhq.co.uk
-                    </div>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0084FF] flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                      Direct Telephone
-                    </div>
-                    <div className="text-xs sm:text-sm font-semibold text-[#0A192F]">
-                      +44 20 7946 0912
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200/80 shadow-xs">
-                  <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0084FF] flex items-center justify-center shrink-0">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                      UK Operations
-                    </div>
-                    <div className="text-xs sm:text-sm font-semibold text-[#0A192F]">
-                      12 Park Lane, Mayfair, London, UK
-                    </div>
-                  </div>
-                </div>
+                  Send another message
+                </button>
               </div>
-            </div>
-
-            {/* Right Column: Modern High-Converting Form Card */}
-            <div className="lg:col-span-7 bg-white rounded-3xl sm:rounded-[36px] p-7 sm:p-10 shadow-xl border border-slate-200/80 text-left">
-              
-              <div className="mb-6 space-y-1">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
-                    Get Started or Request a Demo
-                  </h3>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-sky-50 text-sky-700 px-2.5 py-1 rounded-full border border-sky-100 hidden sm:inline-block">
-                    Free Consultation
-                  </span>
+            ) : (
+              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <div>
+                  <label htmlFor="fullName" className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                    Full name
+                  </label>
+                  <input
+                    id="fullName"
+                    type="text"
+                    required
+                    autoComplete="name"
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                    placeholder="Full name"
+                    className={fieldClass}
+                  />
                 </div>
-                <p className="text-xs sm:text-sm text-slate-500 font-normal">
-                  Tell us about your portfolio and a UK specialist will reach out with customized setup guidance.
-                </p>
-              </div>
 
-              {submitted ? (
-                <div className="text-center py-12 space-y-4 animate-in fade-in">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
-                    <CheckCircle2 className="w-9 h-9 stroke-[2.2]" />
-                  </div>
-                  <h4 className="text-2xl font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
-                    Inquiry Received!
-                  </h4>
-                  <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
-                    Thank you. One of our London property managers will call or email you within 2 business hours.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: '', email: '', message: '' });
-                      setPortfolioSize('1-3 Flats');
-                    }}
-                    className="mt-4 px-6 py-2.5 rounded-full border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
-                  >
-                    Send Another Note
-                  </button>
+                <div>
+                  <label htmlFor="email" className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="Enter your email"
+                    className={fieldClass}
+                  />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  
-                  {/* Row: Name and Email */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-700">Full Name</label>
-                      <div className="relative">
-                        <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5 pointer-events-none" />
-                        <input
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="Marcus Sterling"
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0084FF]/20 focus:border-[#0084FF] transition-all"
-                        />
-                      </div>
-                    </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-slate-700">Email Address</label>
-                      <div className="relative">
-                        <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5 pointer-events-none" />
-                        <input
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="marcus@example.co.uk"
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0084FF]/20 focus:border-[#0084FF] transition-all"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                <div>
+                  <label htmlFor="phone" className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                    Phone number
+                  </label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="Enter your number"
+                    className={fieldClass}
+                  />
+                </div>
 
-                  {/* Portfolio Size: Dropdown */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700">Portfolio Size</label>
-                    <div className="relative">
-                      <Building2 className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5 pointer-events-none" />
-                      <select
-                        value={portfolioSize}
-                        onChange={(e) => setPortfolioSize(e.target.value)}
-                        className="w-full pl-10 pr-10 py-3 rounded-xl bg-slate-50/70 border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#0084FF]/20 focus:border-[#0084FF] transition-all cursor-pointer appearance-none"
-                      >
-                        <option value="1-3 Flats">1–3 Flats (Starter Landlord)</option>
-                        <option value="4-15 Flats">4–15 Flats (Growing Portfolio)</option>
-                        <option value="16+ Flats">16+ Flats / HMO (Commercial & Estate)</option>
-                      </select>
-                      <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3.5 top-3.5 pointer-events-none" />
-                    </div>
-                  </div>
+                <div>
+                  <label htmlFor="message" className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    required
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Type your message here"
+                    className={`${fieldClass} min-h-[140px] resize-none rounded-[22px] py-4`}
+                  />
+                </div>
 
-                  {/* Message */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-slate-700">Questions or Requirements</label>
-                    <div className="relative">
-                      <MessageSquare className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5 pointer-events-none" />
-                      <textarea
-                        rows={3}
-                        required
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Tell us about your units, rent collection preferences, or contractor dispatch questions..."
-                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50/70 border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0084FF]/20 focus:border-[#0084FF] transition-all resize-none"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="pt-2">
-                    <button
-                      type="submit"
-                      className="w-full py-3.5 px-6 rounded-full bg-[#0084FF] hover:bg-[#0070DE] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-sky-500/25 hover:shadow-xl transition-all duration-200 cursor-pointer active:scale-95 group"
-                    >
-                      <span>Send Message & Book Call</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
-
-                  {/* Privacy reassurance */}
-                  <div className="pt-1 flex items-center justify-center gap-2 text-[11px] text-slate-400 text-center">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
-                    <span>Bank-grade 256-bit SSL encrypted. 100% confidential. No spam.</span>
-                  </div>
-
-                </form>
-              )}
-
-            </div>
-
+                <button
+                  type="submit"
+                  className="w-full rounded-full bg-[#0A192F] py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-white transition-colors hover:bg-[#132A4C]"
+                >
+                  Send Message
+                </button>
+              </form>
+            )}
           </div>
 
-        </div>
+          <div className="space-y-4">
+            <div className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={CONTACT_PHOTO}
+                alt="A high-end property from a Landlord HQ portfolio"
+                className="h-[280px] w-full object-cover object-center sm:h-[320px]"
+              />
+            </div>
 
+            <a
+              href="mailto:support@landlordhq.co.uk"
+              className="flex items-center gap-4 rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5 transition-colors hover:bg-[#E8F3FF]"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#0084FF]">
+                <Mail className="h-5 w-5" />
+              </span>
+              <span>
+                <span className="block font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                  Email
+                </span>
+                <span className="mt-1 block font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
+                  support@landlordhq.co.uk
+                </span>
+              </span>
+            </a>
+
+            <a
+              href="tel:+442079460912"
+              className="flex items-center gap-4 rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5 transition-colors hover:bg-[#E8F3FF]"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#0084FF]">
+                <Phone className="h-5 w-5" />
+              </span>
+              <span>
+                <span className="block font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                  Phone
+                </span>
+                <span className="mt-1 block font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
+                  +44 20 7946 0912
+                </span>
+              </span>
+            </a>
+
+            <div className="flex items-center gap-4 rounded-[28px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-5">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#0084FF]">
+                <MapPin className="h-5 w-5" />
+              </span>
+              <span>
+                <span className="block font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                  Address
+                </span>
+                <span className="mt-1 block font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
+                  12 Park Lane, Mayfair, London, UK
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

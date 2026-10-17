@@ -1,26 +1,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import { MOCK_DATA } from '@/Mockdata';
-
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=1600&auto=format&fit=crop';
-const JOURNEY_IMAGE =
-  'https://images.unsplash.com/photo-1464146072230-91cabc968266?q=80&w=1200&auto=format&fit=crop';
-
-const LANDLORD_AVATARS = [
-  {
-    src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80',
-    alt: 'Landlord',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80',
-    alt: 'Landlord',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80',
-    alt: 'Landlord',
-  },
-];
+import { PROPERTY_IMAGES } from '@/lib/brand';
 
 export const AboutPageView: React.FC = () => {
   return (
@@ -35,11 +16,11 @@ export const AboutPageView: React.FC = () => {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-[28px] bg-[#EEF5FF] sm:rounded-[36px]">
+          <div className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={HERO_IMAGE}
-              alt="A well-kept UK rental property managed with Landlord HQ"
+              src={PROPERTY_IMAGES.twilight}
+              alt="A high-end residential property managed with Landlord HQ"
               className="h-[210px] w-full object-cover sm:h-[300px] lg:h-[340px]"
             />
           </div>
@@ -61,18 +42,9 @@ export const AboutPageView: React.FC = () => {
                 />
               ))}
             </div>
-            <div className="flex items-center">
-              {LANDLORD_AVATARS.map((avatar, index) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={avatar.src}
-                  src={avatar.src}
-                  alt={avatar.alt}
-                  className="h-11 w-11 rounded-full border-[3px] border-white object-cover shadow-sm"
-                  style={{ marginLeft: index === 0 ? 0 : -10 }}
-                />
-              ))}
-            </div>
+            <p className="font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#494d4d]">
+              4.9 / 5 from UK landlords
+            </p>
           </div>
         </div>
 
@@ -116,11 +88,11 @@ export const AboutPageView: React.FC = () => {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[28px] bg-[#EEF5FF] sm:rounded-[32px]">
+          <div className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-[#E8F3FF]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={JOURNEY_IMAGE}
-              alt="Brick house exterior from a Landlord HQ portfolio"
+              src={PROPERTY_IMAGES.modern}
+              alt="A modern house exterior from a Landlord HQ portfolio"
               className="h-[250px] w-full object-cover sm:h-[320px] lg:h-[350px]"
             />
           </div>

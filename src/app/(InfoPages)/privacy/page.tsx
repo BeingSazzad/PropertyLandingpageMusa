@@ -108,17 +108,9 @@ export default function PrivacyPage() {
       <Navbar />
       <div className="flex-1">
         <LegalDocument
-          eyebrow="Privacy"
           title="Privacy Policy"
           intro="This policy explains how Landlord HQ Technologies Ltd collects, uses, stores, and shares personal data when you use landlordhq.co.uk and the Landlord HQ applications."
-          lastUpdated="October 2026"
-          controller="Landlord HQ Technologies Ltd"
           sections={SECTIONS}
-          related={[
-            { label: 'Terms & Conditions', href: '/terms' },
-            { label: 'FAQ', href: '/faq' },
-            { label: 'Contact', href: '/contact' },
-          ]}
         />
       </div>
       <Footer />

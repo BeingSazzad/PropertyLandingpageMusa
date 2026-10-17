@@ -30,7 +30,7 @@
   /* Luminous Slate & Surfaces */
   --color-surface-bg: #F8FAFC;
   --color-surface-white: #FFFFFF;
-  --color-border-subtle: #E2E8F0;
+  --color-border-subtle: #E6EAEF;
   --color-border-sky: #BAE6FD;
   
   /* Text Neutrals */
@@ -73,8 +73,8 @@
      3. LAYOUT & ELEVATION
      ------------------------------------------------------------- */
   --max-width-content: 1360px;
-  --radius-card-outer: 40px;
-  --radius-card-inner: 24px;
+  --radius-card-outer: 28px;
+  --radius-card-inner: 28px;
 }
 
 @layer base {
@@ -173,6 +173,15 @@
   color: var(--color-text-heading);
 }
 
+.nav-brand {
+  font-family: var(--font-display), "Stack Sans Headline", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+}
+
 .nav-link {
   font-family: var(--font-nav), "Google Sans Flex", sans-serif;
   font-size: var(--text-nav-size);
@@ -183,7 +192,11 @@
 }
 
 .nav-link:hover {
-  color: #0A192F;
+  color: #0084FF;
+}
+
+.nav-link-active {
+  color: #131515;
 }
 
 .text-subtitle,

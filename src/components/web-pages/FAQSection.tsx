@@ -72,7 +72,19 @@ type FAQSectionProps = {
 export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
   const faqs = variant === 'page' ? [...HOME_FAQS, ...EXTRA_FAQS] : HOME_FAQS;
-  const HeadingTag = variant === 'page' ? 'h1' : 'h2';
+
+  if (variant === 'page') {
+    return (
+      <section id="faq" className="bg-[#F8FAFC] px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 lg:px-10">
+        <div className="mx-auto max-w-[800px] space-y-12 sm:space-y-16">
+          <header className="mx-auto max-w-2xl text-center">
+            <h1 className="title-section mx-auto">Frequently asked questions</h1>
+          </header>
+          <FAQList faqs={faqs} openIdx={openIdx} setOpenIdx={setOpenIdx} />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="faq" className="bg-[#F4F7FB] py-20 px-4 sm:px-6 lg:px-10">
@@ -82,9 +94,9 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
             Common questions
           </span>
 
-          <HeadingTag className="title-section mt-5 max-w-[320px]">
+          <h2 className="title-section mt-5 max-w-[320px]">
             Frequently asked questions
-          </HeadingTag>
+          </h2>
 
           <div className="mt-8 max-w-[320px] rounded-[28px] border border-white bg-white px-6 py-7 shadow-[0_12px_40px_rgba(10,25,47,0.06)]">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0084FF] text-white shadow-[0_8px_18px_rgba(0,132,255,0.35)]">
@@ -103,66 +115,67 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
         </div>
 
         <div className="flex flex-col gap-3">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIdx === idx;
-
-            return (
-              <div
-                key={faq.question}
-                className="overflow-hidden rounded-[22px] border border-white bg-white shadow-[0_8px_28px_rgba(10,25,47,0.05)]"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-[18px]"
-                  aria-expanded={isOpen}
-                >
-                  <span className="font-[family-name:var(--font-display)] text-[18px] font-medium leading-6 text-[#0A192F] sm:text-[20px] sm:leading-6">
-                    {faq.question}
-                  </span>
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A192F] text-white">
-                    {isOpen ? <X className="h-4 w-4" strokeWidth={2.25} /> : <Plus className="h-4 w-4" strokeWidth={2.25} />}
-                  </span>
-                </button>
-
-                <div
-                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                    isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <p className="px-5 pb-5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 tracking-normal [word-spacing:normal] text-[#494d4d] sm:px-6 sm:pb-6">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-
-          {variant === 'home' ? (
-            <Link
-              href="/faq"
-              className="mt-3 inline-flex items-center gap-1.5 self-start font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-[#0084FF] transition-colors hover:text-[#0070DE]"
-            >
-              See all questions
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          ) : (
-            <p className="mt-3 text-body">
-              Looking for legal detail? Read our{' '}
-              <Link href="/terms" className="font-medium text-[#0084FF] hover:text-[#0070DE]">
-                Terms
-              </Link>{' '}
-              and{' '}
-              <Link href="/privacy" className="font-medium text-[#0084FF] hover:text-[#0070DE]">
-                Privacy Policy
-              </Link>
-              .
-            </p>
-          )}
+          <FAQList faqs={faqs} openIdx={openIdx} setOpenIdx={setOpenIdx} />
+          <Link
+            href="/faq"
+            className="mt-3 inline-flex items-center gap-1.5 self-start font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-[#0084FF] transition-colors hover:text-[#0070DE]"
+          >
+            See all questions
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
   );
 };
+
+function FAQList({
+  faqs,
+  openIdx,
+  setOpenIdx,
+}: {
+  faqs: FAQItem[];
+  openIdx: number | null;
+  setOpenIdx: (idx: number | null) => void;
+}) {
+  return (
+    <div className="flex flex-col gap-3">
+      {faqs.map((faq, idx) => {
+        const isOpen = openIdx === idx;
+
+        return (
+          <div
+            key={faq.question}
+            className="overflow-hidden rounded-[28px] border border-[#E6EAEF] bg-white"
+          >
+            <button
+              type="button"
+              onClick={() => setOpenIdx(isOpen ? null : idx)}
+              className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-[18px]"
+              aria-expanded={isOpen}
+            >
+              <span className="font-[family-name:var(--font-display)] text-[18px] font-medium leading-6 text-[#0A192F] sm:text-[20px] sm:leading-6">
+                {faq.question}
+              </span>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A192F] text-white">
+                {isOpen ? <X className="h-4 w-4" strokeWidth={2.25} /> : <Plus className="h-4 w-4" strokeWidth={2.25} />}
+              </span>
+            </button>
+
+            <div
+              className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+              }`}
+            >
+              <div className="overflow-hidden">
+                <p className="px-5 pb-5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 tracking-normal [word-spacing:normal] text-[#494d4d] sm:px-6 sm:pb-6">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
