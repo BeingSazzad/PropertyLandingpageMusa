@@ -41,18 +41,14 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         </div>
       )}
 
-      <h2
-        className={`title-section ${
-          isDark ? 'text-white' : 'text-[#0A192F]'
-        }`}
-      >
+      <h2 className={`title-section ${isDark ? 'title-section-inverse' : ''}`}>
         {title}
       </h2>
 
       {subtitle && (
         <p
           className={`text-subtitle ${
-            isDark ? 'text-blue-100' : 'text-slate-500'
+            isDark ? 'text-subtitle-inverse' : ''
           } ${isCenter ? 'mx-auto' : ''}`}
         >
           {subtitle}

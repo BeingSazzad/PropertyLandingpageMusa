@@ -62,7 +62,7 @@ export const ProcessSection: React.FC = () => {
                     </span>
                     <div className="space-y-0.5">
                       <div
-                        className={`text-base font-bold font-[family-name:var(--font-heading)] transition-colors ${
+                        className={`text-base font-bold font-[family-name:var(--font-display)] transition-colors ${
                           isActive
                             ? 'text-[#0A192F]'
                             : 'text-slate-700 group-hover:text-black'

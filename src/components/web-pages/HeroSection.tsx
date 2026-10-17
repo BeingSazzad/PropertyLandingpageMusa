@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useAppDispatch } from '@/redux/hooks';
-import { openDownloadModal } from '@/redux/features/uiSlice';
-import { AppleAppStoreBadge, GooglePlayBadge } from '../ui/AppStoreBadges';
+import { AppStoreBadges } from '../ui/AppStoreBadges';
 import {
   Bell,
   MapPin,
@@ -19,8 +17,6 @@ import {
 } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
-  const dispatch = useAppDispatch();
-
   return (
     <section
       id="overview"
@@ -54,11 +50,7 @@ export const HeroSection: React.FC = () => {
           Landlord HQ helps you collect rent via Open Banking, dispatch Gas Safe contractors, and manage tenancies — all in one simple app.
         </p>
 
-        {/* Side-by-Side App Store & Google Play Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2">
-          <AppleAppStoreBadge size="md" />
-          <GooglePlayBadge size="md" />
-        </div>
+        <AppStoreBadges className="justify-center pt-1 sm:pt-2" />
 
         {/* Visual Trio Smartphone Showcase (Reference: Curely 3-Device Overlapping Array) */}
         <div className="relative pt-10 sm:pt-16 pb-4 sm:pb-8 flex justify-center items-center max-w-5xl mx-auto select-none">

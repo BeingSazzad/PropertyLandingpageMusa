@@ -1,65 +1,232 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { ShieldCheck } from 'lucide-react';
-import { AppleAppStoreBadge, GooglePlayBadge } from '../ui/AppStoreBadges';
+import { ArrowUp } from 'lucide-react';
+import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
+
+const MAIN_PAGES = [
+  { label: 'Overview', href: '/#overview' },
+  { label: 'How It Works', href: '/#process' },
+  { label: 'Features', href: '/#features' },
+] as const;
+
+const RESOURCES = [
+  { label: 'Packages', href: '/#pricing' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+] as const;
+
+const COMPANY = [
+  { label: 'About', href: '/about' },
+  { label: 'Terms', href: '/terms' },
+  { label: 'Privacy', href: '/privacy' },
+] as const;
+
+const SOCIALS = [
+  { label: 'X', href: 'https://x.com', icon: IconX },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com', icon: IconLinkedIn },
+  { label: 'Instagram', href: 'https://www.instagram.com', icon: IconInstagram },
+  { label: 'Facebook', href: 'https://www.facebook.com', icon: IconFacebook },
+] as const;
+
+const linkClass =
+  'font-[family-name:var(--font-nav)] text-[15px] font-normal leading-6 text-slate-400 transition-colors hover:text-white';
+
+const columnTitleClass =
+  'font-[family-name:var(--font-nav)] text-[15px] font-medium leading-6 text-white';
 
 export const Footer: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!email.trim()) return;
+    setSubscribed(true);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="w-full bg-[#0A192F] text-white py-12 sm:py-14 border-t border-sky-500/20">
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-10 space-y-8">
-        
-        {/* Main Row: Logo + Links + Standard Badges */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pb-8 border-b border-white/10 text-center lg:text-left">
-          
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="relative w-8 h-8 rounded-full overflow-hidden shadow-md shadow-sky-500/40 flex items-center justify-center shrink-0">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
-              <div className="absolute top-1 left-1.5 w-2.5 h-2.5 rounded-full bg-white/70 blur-[0.5px]" />
-              <div className="absolute bottom-1 right-1.5 w-2 h-2 rounded-full bg-[#0040B8]/40 blur-[0.5px]" />
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="font-bold tracking-tight text-lg text-white font-[family-name:var(--font-heading)] leading-none">
-                Landlord<span className="text-[#0084FF]">HQ</span>
-              </span>
-              <span className="text-[9px] font-semibold tracking-wider text-slate-400 uppercase mt-0.5">
-                Property & Tenancy Operations
-              </span>
-            </div>
-          </Link>
-
-          {/* Simple Navigation Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-slate-300">
-            <a href="#overview" className="hover:text-white transition-colors">Overview</a>
-            <a href="#process" className="hover:text-white transition-colors">How It Works</a>
-            <a href="#features" className="hover:text-white transition-colors">Features</a>
-            <a href="#pricing" className="hover:text-white transition-colors">Packages</a>
-            <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          </nav>
-
-          {/* Official App Badges with Standard Dimensions */}
-          <div className="flex items-center gap-3">
-            <AppleAppStoreBadge size="md" />
-            <GooglePlayBadge size="md" />
-          </div>
-
+    <footer id="footer" className="w-full bg-[#F8FAFC]">
+      <div className="relative overflow-visible rounded-t-[40px] bg-[#071324] px-5 pt-16 pb-8 sm:rounded-t-[64px] sm:px-10 sm:pt-20 sm:pb-10 lg:rounded-t-[80px] lg:px-16 lg:pt-24 lg:pb-12">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-t-[40px] sm:rounded-t-[64px] lg:rounded-t-[80px]">
+          <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#0084FF]/16 blur-3xl" />
+          <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-[#00C2FF]/10 blur-3xl" />
         </div>
 
-        {/* Bottom Line: Copyright and Trust Reassurance */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 text-center sm:text-left">
-          <div>
-            © {new Date().getFullYear()} Landlord HQ Technologies Ltd. All rights reserved.
+        <div className="relative z-10 mx-auto max-w-[1360px] space-y-16 sm:space-y-20 lg:space-y-24">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="space-y-8 lg:col-span-5">
+              <div className="space-y-5">
+                <h2 className="title-section title-section-inverse footer-headline max-w-[13ch]">
+                  Your properties totally under control.
+                </h2>
+                <p className="text-body text-body-inverse max-w-sm">
+                  Landlord HQ gives you everything you need to stay in control. Get started today and make your properties work for you.
+                </p>
+                <AppStoreBadges onDark />
+              </div>
+
+              <div className="space-y-3">
+                <p className="font-[family-name:var(--font-nav)] text-[14px] font-medium text-slate-400">
+                  Social
+                </p>
+                <div className="flex items-center gap-4">
+                  {SOCIALS.map(({ label, href, icon: Icon }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={label}
+                      className="text-white transition-colors hover:text-[#0084FF]"
+                    >
+                      <Icon className="h-[18px] w-[18px]" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-10 lg:col-span-7">
+              <div className="space-y-4">
+                <p className="font-[family-name:var(--font-nav)] text-[15px] font-medium text-white">
+                  Subscribe to our Newsletter
+                </p>
+                {subscribed ? (
+                  <p className="font-[family-name:var(--font-nav)] text-[15px] text-slate-300">
+                    You&apos;re on the list. We&apos;ll be in touch.
+                  </p>
+                ) : (
+                  <form
+                    onSubmit={handleSubscribe}
+                    className="flex w-full max-w-md flex-col gap-3 sm:h-12 sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:bg-white sm:p-1.5 sm:pl-5 sm:focus-within:ring-2 sm:focus-within:ring-[#0084FF]/35"
+                  >
+                    <label htmlFor="footer-newsletter" className="sr-only">
+                      Email address
+                    </label>
+                    <input
+                      id="footer-newsletter"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                      placeholder="you@company.com"
+                      className="h-12 w-full rounded-full bg-white px-5 font-[family-name:var(--font-nav)] text-[15px] text-[#0A192F] outline-none placeholder:text-slate-400 sm:h-auto sm:min-w-0 sm:flex-1 sm:bg-transparent sm:px-0"
+                    />
+                    <button
+                      type="submit"
+                      className="h-12 w-full rounded-full bg-[#0084FF] px-5 font-[family-name:var(--font-nav)] text-[15px] font-medium text-white transition-colors hover:bg-[#0070DE] sm:h-9 sm:w-auto sm:text-[14px]"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                )}
+              </div>
+
+              <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+                <FooterColumn title="Main Pages" links={MAIN_PAGES} />
+                <FooterColumn title="Resources" links={RESOURCES} />
+                <FooterColumn title="Company" links={COMPANY} />
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-slate-400 text-xs">
-            <ShieldCheck className="w-4 h-4 text-[#0084FF]" />
-            <span>Bank-Grade 256-Bit SSL • UK Property Compliance Standard</span>
+
+          <div className="relative flex w-full flex-col items-center justify-center overflow-hidden text-center">
+            <WordmarkLockup />
+            <div className="footer-wordmark-reflection flex w-full justify-center" aria-hidden>
+              <WordmarkLockup />
+            </div>
+
+            <button
+              type="button"
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              className="absolute right-0 bottom-[38%] hidden h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-[#0084FF] sm:flex"
+            >
+              <ArrowUp className="h-4 w-4" />
+            </button>
           </div>
         </div>
-
       </div>
     </footer>
   );
 };
+
+function WordmarkLockup() {
+  return (
+    <div className="mx-auto flex w-max shrink-0 items-end justify-center gap-3 sm:gap-5 lg:gap-7">
+      <div className="relative mb-1 h-10 w-10 shrink-0 overflow-hidden rounded-full shadow-lg shadow-sky-500/40 sm:mb-1.5 sm:h-16 sm:w-16 lg:h-[5.5rem] lg:w-[5.5rem]">
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
+        <div className="absolute top-1.5 left-2 h-3.5 w-3.5 rounded-full bg-white/70 blur-[0.5px] sm:top-2.5 sm:left-3 sm:h-5 sm:w-5" />
+        <div className="absolute right-2 bottom-1.5 h-2.5 w-2.5 rounded-full bg-[#0040B8]/40 blur-[0.5px] sm:right-3 sm:bottom-2.5 sm:h-4 sm:w-4" />
+      </div>
+      <p className="footer-wordmark overflow-visible whitespace-nowrap">Landlord HQ</p>
+    </div>
+  );
+}
+
+function FooterColumn({
+  title,
+  links,
+}: {
+  title: string;
+  links: readonly { label: string; href: string }[];
+}) {
+  return (
+    <div className="space-y-4">
+      <p className={columnTitleClass}>{title}</p>
+      <ul className="space-y-3">
+        {links.map((link) => (
+          <li key={link.label}>
+            {link.href.startsWith('/') ? (
+              <Link href={link.href} className={linkClass}>
+                {link.label}
+              </Link>
+            ) : (
+              <a href={link.href} className={linkClass}>
+                {link.label}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function IconX({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+    </svg>
+  );
+}
+
+function IconLinkedIn({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
+function IconInstagram({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+    </svg>
+  );
+}
+
+function IconFacebook({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}

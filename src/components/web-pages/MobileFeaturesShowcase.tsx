@@ -34,7 +34,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       <div className={`w-11 h-11 rounded-xl ${iconBg} ${iconColor} flex items-center justify-center shadow-xs`}>
         {icon}
       </div>
-      <h3 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-heading)] leading-snug">
+      <h3 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-display)] leading-snug">
         {title}
       </h3>
       <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-normal">
@@ -107,7 +107,7 @@ export const MobileFeaturesShowcase: React.FC = () => {
                       <div className="text-[10px] text-blue-300 font-semibold uppercase tracking-wider">
                         Landlord HQ App
                       </div>
-                      <div className="text-sm font-bold text-white font-[family-name:var(--font-heading)]">
+                      <div className="text-sm font-bold text-white font-[family-name:var(--font-display)]">
                         12 Park Lane, London
                       </div>
                     </div>
@@ -193,7 +193,7 @@ export const MobileFeaturesShowcase: React.FC = () => {
         {/* 4 Clean Stats (Direct Reference Matching) */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center pt-2">
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-heading)]">
+            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
               10K+
             </div>
             <div className="text-xs sm:text-sm text-slate-500 font-medium">
@@ -202,7 +202,7 @@ export const MobileFeaturesShowcase: React.FC = () => {
           </div>
 
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-heading)]">
+            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
               99.4%
             </div>
             <div className="text-xs sm:text-sm text-slate-500 font-medium">
@@ -211,7 +211,7 @@ export const MobileFeaturesShowcase: React.FC = () => {
           </div>
 
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-heading)]">
+            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
               14 Mins
             </div>
             <div className="text-xs sm:text-sm text-slate-500 font-medium">
@@ -220,7 +220,7 @@ export const MobileFeaturesShowcase: React.FC = () => {
           </div>
 
           <div className="space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-heading)]">
+            <div className="text-3xl sm:text-4xl font-extrabold text-[#0A192F] font-[family-name:var(--font-display)]">
               4.9 / 5
             </div>
             <div className="text-xs sm:text-sm text-slate-500 font-medium">

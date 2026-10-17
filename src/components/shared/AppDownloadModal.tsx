@@ -4,7 +4,7 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { closeDownloadModal } from '@/redux/features/uiSlice';
 import { X } from 'lucide-react';
-import { AppleAppStoreBadge, GooglePlayBadge } from '../ui/AppStoreBadges';
+import { AppStoreBadges } from '../ui/AppStoreBadges';
 
 export const AppDownloadModal: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -36,7 +36,7 @@ export const AppDownloadModal: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
             <div className="absolute top-1.5 left-2 w-3 h-3 rounded-full bg-white/70 blur-[0.5px]" />
           </div>
-          <h3 className="text-xl font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+          <h3 className="text-xl font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
             Get Landlord HQ
           </h3>
           <p className="text-xs text-slate-500">
@@ -45,9 +45,8 @@ export const AppDownloadModal: React.FC = () => {
         </div>
 
         {/* Clean Direct Buttons (No QR clutter) */}
-        <div className="flex flex-col gap-2.5 pt-1">
-          <AppleAppStoreBadge className="w-full justify-center" size="lg" />
-          <GooglePlayBadge className="w-full justify-center" size="lg" />
+        <div className="flex justify-center pt-1">
+          <AppStoreBadges className="flex-col items-center" />
         </div>
 
         <div className="text-[11px] text-slate-400 pt-1">

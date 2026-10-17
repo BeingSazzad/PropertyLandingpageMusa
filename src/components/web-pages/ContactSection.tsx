@@ -115,7 +115,7 @@ export const ContactSection: React.FC = () => {
               
               <div className="mb-6 space-y-1">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
                     Get Started or Request a Demo
                   </h3>
                   <span className="text-[10px] font-bold uppercase tracking-wider bg-sky-50 text-sky-700 px-2.5 py-1 rounded-full border border-sky-100 hidden sm:inline-block">
@@ -132,7 +132,7 @@ export const ContactSection: React.FC = () => {
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
                     <CheckCircle2 className="w-9 h-9 stroke-[2.2]" />
                   </div>
-                  <h4 className="text-2xl font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+                  <h4 className="text-2xl font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
                     Inquiry Received!
                   </h4>
                   <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">

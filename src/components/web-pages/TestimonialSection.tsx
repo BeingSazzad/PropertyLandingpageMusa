@@ -129,7 +129,7 @@ export const TestimonialSection: React.FC = () => {
 
               {/* Author Info */}
               <div className="pt-6">
-                <h4 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+                <h4 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
                   {active.name}
                 </h4>
                 <div className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">

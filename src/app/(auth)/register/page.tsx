@@ -27,7 +27,7 @@ export default function RegisterPage() {
         </div>
 
         <div className="space-y-1">
-          <h1 className="text-2xl font-bold tracking-tight text-[#0B0F0E] font-[family-name:var(--font-heading)]">
+          <h1 className="text-2xl font-bold tracking-tight text-[#0B0F0E] font-[family-name:var(--font-display)]">
             Create Your Account
           </h1>
           <p className="text-xs text-zinc-500">

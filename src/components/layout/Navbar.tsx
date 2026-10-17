@@ -8,6 +8,8 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 
+const navLinkClass = "nav-link transition-colors";
+
 export const Navbar: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isMobileMenuOpen } = useAppSelector((state) => state.ui);
@@ -25,7 +27,7 @@ export const Navbar: React.FC = () => {
               <div className="absolute bottom-1 right-1.5 w-2 h-2 rounded-full bg-[#0040B8]/40 blur-[0.5px]" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold tracking-tight text-base text-[#0A192F] leading-none font-[family-name:var(--font-heading)]">
+              <span className="font-bold tracking-tight text-base text-[#0A192F] leading-none font-[family-name:var(--font-display)]">
                 Landlord<span className="text-[#0084FF]">HQ</span>
               </span>
               <span className="text-[9px] font-semibold tracking-wider text-slate-400 uppercase">
@@ -36,40 +38,16 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-1 bg-slate-100/70 p-1 rounded-full border border-slate-200/60">
-            <Link
-              href="#overview"
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0A192F] hover:bg-white transition-all"
-            >
-              Overview
+            <Link href="/" className={`${navLinkClass} px-3.5 py-1.5 rounded-full hover:bg-white`}>
+              Home
             </Link>
-            <Link
-              href="#process"
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0A192F] hover:bg-white transition-all"
-            >
-              How It Works
+            <Link href="/about" className={`${navLinkClass} px-3.5 py-1.5 rounded-full hover:bg-white`}>
+              About
             </Link>
-            <Link
-              href="#features"
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0A192F] hover:bg-white transition-all"
-            >
+            <Link href="/#features" className={`${navLinkClass} px-3.5 py-1.5 rounded-full hover:bg-white`}>
               Features
             </Link>
-            <Link
-              href="#pricing"
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0A192F] hover:bg-white transition-all"
-            >
-              Packages
-            </Link>
-            <Link
-              href="#faq"
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0A192F] hover:bg-white transition-all"
-            >
-              FAQ
-            </Link>
-            <Link
-              href="#contact"
-              className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-600 hover:text-[#0A192F] hover:bg-white transition-all"
-            >
+            <Link href="/contact" className={`${navLinkClass} px-3.5 py-1.5 rounded-full hover:bg-white`}>
               Contact
             </Link>
           </nav>
@@ -101,46 +79,32 @@ export const Navbar: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-2 p-5 rounded-3xl bg-white shadow-xl border border-slate-200/80 flex flex-col gap-2.5 animate-in fade-in slide-in-from-top-2">
             <Link
-              href="#overview"
+              href="/"
               onClick={() => dispatch(toggleMobileMenu())}
-              className="p-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-sky-50"
+              className={`${navLinkClass} p-2.5 rounded-xl hover:bg-sky-50`}
             >
-              Overview
+              Home
             </Link>
             <Link
-              href="#process"
+              href="/about"
               onClick={() => dispatch(toggleMobileMenu())}
-              className="p-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-sky-50"
+              className={`${navLinkClass} p-2.5 rounded-xl hover:bg-sky-50`}
             >
-              How It Works
+              About
             </Link>
             <Link
-              href="#features"
+              href="/#features"
               onClick={() => dispatch(toggleMobileMenu())}
-              className="p-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-sky-50"
+              className={`${navLinkClass} p-2.5 rounded-xl hover:bg-sky-50`}
             >
               Features
             </Link>
             <Link
-              href="#pricing"
+              href="/contact"
               onClick={() => dispatch(toggleMobileMenu())}
-              className="p-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-sky-50"
+              className={`${navLinkClass} p-2.5 rounded-xl hover:bg-sky-50`}
             >
-              Packages & Pricing
-            </Link>
-            <Link
-              href="#faq"
-              onClick={() => dispatch(toggleMobileMenu())}
-              className="p-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-sky-50"
-            >
-              FAQ
-            </Link>
-            <Link
-              href="#contact"
-              onClick={() => dispatch(toggleMobileMenu())}
-              className="p-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-sky-50"
-            >
-              Contact Support
+              Contact
             </Link>
             <div className="pt-2 border-t border-slate-100">
               <Button

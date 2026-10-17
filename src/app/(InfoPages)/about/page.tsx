@@ -1,44 +1,23 @@
 import React from 'react';
-import Link from 'next/link';
-import { ArrowLeft, Building2, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import type { Metadata } from 'next';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+import { AboutPageView } from '@/components/web-pages/AboutPageView';
+
+export const metadata: Metadata = {
+  title: 'About Us | Landlord HQ',
+  description:
+    'Landlord HQ is the UK property platform for Open Banking rent, tenancies, Gas Safe contractors, key registers, and certificates — in one place.',
+};
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#F6F3EC] py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-[#E2E2D8] shadow-sm space-y-6">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-500 hover:text-black transition-colors"
-        >
-          <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
-        </Link>
-
-        <div className="space-y-2 border-b border-black/5 pb-6">
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 bg-zinc-100 px-2.5 py-1 rounded-full">
-            <Sparkles className="w-4 h-4 text-[#2563EB]" /> About Landlord HQ
-          </div>
-          <h1 className="text-3xl font-bold tracking-tight text-[#0B0F0E] font-[family-name:var(--font-heading)]">
-            Architecting the Future of Living
-          </h1>
-          <p className="text-xs text-zinc-400">Our Mission & Platform Standards</p>
-        </div>
-
-        <div className="space-y-4 text-xs text-zinc-600 leading-relaxed">
-          <p>
-            Landlord HQ was founded with a singular conviction: managing properties shouldn&apos;t require juggling 12 different disconnected apps, spreadsheets, and midnight emergency phone calls.
-          </p>
-          <p>
-            By combining streamlined building & flat registers, seamless rent collection, and a pre-certified contractor dispatch network, we create harmony between property owners, residents, and trades.
-          </p>
-        </div>
-
-        <div className="pt-4 border-t border-black/5">
-          <Link href="/">
-            <Button variant="primary" size="sm">Explore Platform</Button>
-          </Link>
-        </div>
+    <main className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#0A192F]">
+      <Navbar />
+      <div className="flex-1">
+        <AboutPageView />
       </div>
-    </div>
+      <Footer />
+    </main>
   );
 }

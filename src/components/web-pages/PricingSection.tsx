@@ -144,7 +144,7 @@ export const PricingSection: React.FC = () => {
                   {/* Title & Limit */}
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-bold font-[family-name:var(--font-heading)]">
+                      <h3 className="text-xl font-bold font-[family-name:var(--font-display)]">
                         {tier.name}
                       </h3>
                       <span
@@ -166,7 +166,7 @@ export const PricingSection: React.FC = () => {
                   {/* Standard Price Display */}
                   <div className="pt-2 pb-4 border-b border-slate-200/60 dark:border-white/10">
                     <div className="flex items-baseline gap-1.5">
-                      <span className="text-3xl sm:text-4xl font-extrabold font-[family-name:var(--font-heading)] tracking-tight">
+                      <span className="text-3xl sm:text-4xl font-extrabold font-[family-name:var(--font-display)] tracking-tight">
                         £{price}
                       </span>
                       <span className={`text-xs sm:text-sm font-medium ${tier.isPopular ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -230,7 +230,7 @@ export const PricingSection: React.FC = () => {
             </div>
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-2">
-                <h4 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
+                <h4 className="text-base sm:text-lg font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
                   30-Day Free Trial On All Packages
                 </h4>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold tracking-wide uppercase">

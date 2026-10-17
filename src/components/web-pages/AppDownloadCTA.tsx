@@ -1,146 +1,187 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useAppDispatch } from '@/redux/hooks';
 import { openDownloadModal } from '@/redux/features/uiSlice';
 import { triggerSmartAppDownload } from '@/utils/deviceDownload';
-import { Search, Building2, CreditCard, Wrench, ShieldCheck } from 'lucide-react';
+import { AppStoreBadges } from '../ui/AppStoreBadges';
+import { PhoneMock } from '../ui/PhoneMock';
+
+/** Drop a UI screenshot in /public/phones and set this path, e.g. '/phones/download.png' */
+const DOWNLOAD_PHONE_SRC: string | undefined = undefined;
+
+/** Hand-holding-phone PNG with a transparent screen cutout, e.g. '/phones/hand-overlay.png' */
+const HAND_PHONE_OVERLAY_SRC: string | null = null;
 
 export const AppDownloadCTA: React.FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <section id="download-app" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-[1360px] mx-auto">
-        
-        {/* Rounded Card Container (Matches User's Reference Layout) */}
-        <div className="rounded-[32px] sm:rounded-[44px] bg-gradient-to-r from-sky-50/80 via-white to-sky-50/60 border border-sky-100 shadow-xl overflow-hidden relative p-8 sm:p-12 lg:p-16">
-          
-          {/* Soft Ambient Arc/Glow Behind Phone (Direct Reference Alignment) */}
-          <div className="absolute right-6 lg:right-28 top-1/2 -translate-y-1/2 w-[380px] sm:w-[480px] h-[380px] sm:h-[480px] bg-gradient-to-tr from-sky-300/35 via-blue-400/20 to-cyan-300/30 rounded-full blur-3xl pointer-events-none" />
+    <section
+      id="download-app"
+      className="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-10"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 45% at 8% 78%, rgba(186, 214, 235, 0.45) 0%, transparent 58%), radial-gradient(ellipse 55% 40% at 92% 18%, rgba(226, 236, 246, 0.8) 0%, transparent 50%), radial-gradient(ellipse 50% 32% at 72% 92%, rgba(210, 228, 242, 0.5) 0%, transparent 46%), linear-gradient(180deg, #ffffff 0%, #F8FAFC 46%, #ffffff 100%)',
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-20 bottom-0 h-52 w-[480px] rounded-full bg-[#D7E8F5]/70 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-16 top-6 h-48 w-[420px] rounded-full bg-[#E7F1F8] blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-10 right-[18%] h-36 w-[320px] rounded-full bg-white/90 blur-2xl"
+      />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
-            
-            {/* Left Column: Heading, Subtitle & Download Buttons */}
-            <div className="lg:col-span-7 space-y-4 text-left">
-              <h2 className="title-section text-[#0A192F]">
-                Take Landlord HQ <br />
-                <span className="text-[#0084FF]">Anywhere!</span>
-              </h2>
+      <div className="relative z-10 mx-auto grid max-w-[1360px] items-center gap-12 lg:grid-cols-[minmax(300px,1.15fr)_auto_minmax(280px,1fr)] lg:gap-8 xl:gap-12">
+        <div className="max-w-[480px] space-y-5 text-left lg:justify-self-start">
+          <h2 className="title-section">
+            <span className="sm:whitespace-nowrap">Take Landlord HQ</span>
+            <br />
+            <span className="text-[#0084FF]">Anywhere!</span>
+          </h2>
 
-              <p className="text-subtitle max-w-md">
-                Real-time rent tracking, digital lease agreements, and certified trade dispatch — right in your pocket.
-              </p>
+          <p className="text-subtitle max-w-sm">
+            Real-time rent tracking, digital lease agreements, and certified trade
+            dispatch — right in your pocket.
+          </p>
 
-              {/* Two Pill Buttons: Download iOS & Download Android (Reference Style) */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                {/* Download iOS (Black Pill with Apple Logo) */}
-                <button
-                  type="button"
-                  onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal('apple')))}
-                  className="px-5 py-3 rounded-full bg-black text-white hover:bg-zinc-800 transition-all duration-200 text-xs sm:text-sm font-semibold flex items-center gap-2.5 shadow-md active:scale-95 cursor-pointer"
-                  aria-label="Download Landlord HQ for iOS"
-                >
-                  <svg viewBox="0 0 170 170" className="w-4 h-4 fill-white shrink-0">
-                    <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.08-7.58-7.79-11.67-14.13-5.74-8.89-10.15-18.91-13.23-30.06-3.08-11.15-4.63-21.72-4.63-31.7 0-14.9 3.8-27.18 11.41-36.84 7.61-9.66 17.15-14.59 28.62-14.79 5.34 0 11.13 1.48 17.37 4.43 6.24 2.95 10.11 4.5 11.61 4.65 1.76-.2 5.86-1.83 12.31-4.89 6.45-3.06 12.22-4.43 17.3-4.12 13.06.74 23.47 5.48 31.23 14.22-11.41 6.89-16.97 16.42-16.68 28.59.29 9.87 4.09 18.06 11.41 24.58 7.32 6.52 16.03 10.37 26.13 11.55-2.22 6.88-5.02 14.07-8.41 21.57zM119.22 33.58c0-7.39 2.65-14.24 7.95-20.55 5.3-6.31 11.83-10.31 19.59-12 1.05 7.62-1.39 14.88-7.32 21.78-5.93 6.9-12.67 10.63-20.22 10.77z" />
-                  </svg>
-                  <span>Download iOS</span>
-                </button>
-
-                {/* Download Android (Light Pill with Android Robot Logo) */}
-                <button
-                  type="button"
-                  onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal('google')))}
-                  className="px-5 py-3 rounded-full bg-sky-50/90 hover:bg-sky-100 text-sky-900 border border-sky-200 transition-all duration-200 text-xs sm:text-sm font-semibold flex items-center gap-2.5 shadow-xs active:scale-95 cursor-pointer"
-                  aria-label="Download Landlord HQ for Android"
-                >
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-sky-700 shrink-0">
-                    <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-4.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 2.23 12.95 2 12 2c-.96 0-1.86.23-2.66.63L7.85.99c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.9 6 5.8 6 8h12c0-2.2-.97-4.1-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
-                  </svg>
-                  <span>Download Android</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column: Phone Mockup Inside Halo Arc */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="w-[280px] sm:w-[310px] bg-slate-950 rounded-[44px] p-2.5 shadow-2xl border-4 border-slate-900 ring-8 ring-black/5 transform transition-transform duration-300 hover:scale-105">
-                
-                {/* Phone Screen with Dynamic Island */}
-                <div className="bg-gradient-to-b from-sky-50 via-white to-slate-50 rounded-[36px] p-4 text-slate-800 space-y-3.5 border border-slate-200/80 text-left">
-                  
-                  {/* Status Bar & Dynamic Island */}
-                  <div className="flex items-center justify-between text-[11px] font-semibold text-slate-500 px-1">
-                    <span>9:41</span>
-                    <div className="w-16 h-4 bg-black rounded-full" />
-                    <div className="flex items-center gap-1">
-                      <div className="w-3.5 h-2 border border-slate-400 rounded-xs bg-slate-800" />
-                    </div>
-                  </div>
-
-                  {/* Greeting / Subheading (Reference: "Ready to Explore Tokyo!") */}
-                  <div className="pt-1 text-center space-y-0.5">
-                    <div className="text-[10px] uppercase font-semibold text-sky-600 tracking-wider">
-                      Ready to Manage
-                    </div>
-                    <div className="text-base font-bold text-[#0A192F] font-[family-name:var(--font-heading)]">
-                      London Portfolios!
-                    </div>
-                  </div>
-
-                  {/* Search Bar (Reference: "Find places, food, trips...") */}
-                  <div className="bg-white rounded-full px-3.5 py-2 shadow-xs border border-slate-200 flex items-center justify-between text-xs text-slate-400">
-                    <div className="flex items-center gap-2">
-                      <Search className="w-3.5 h-3.5 text-slate-400" />
-                      <span className="text-[11px]">Find flats, certs, tenants...</span>
-                    </div>
-                  </div>
-
-                  {/* 3 Quick Cards Row (Reference: 3 icons in row at bottom of reference screen) */}
-                  <div className="space-y-1.5 pt-1">
-                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                      Quick Operations
-                    </div>
-                    <div className="grid grid-cols-3 gap-2">
-                      <div className="bg-white rounded-xl p-2 text-center border border-slate-100 shadow-xs space-y-1">
-                        <div className="w-7 h-7 mx-auto rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center">
-                          <Building2 className="w-3.5 h-3.5" />
-                        </div>
-                        <div className="text-[9px] font-bold text-slate-700 leading-tight">Flats</div>
-                      </div>
-
-                      <div className="bg-white rounded-xl p-2 text-center border border-slate-100 shadow-xs space-y-1">
-                        <div className="w-7 h-7 mx-auto rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                          <CreditCard className="w-3.5 h-3.5" />
-                        </div>
-                        <div className="text-[9px] font-bold text-slate-700 leading-tight">Rent Pay</div>
-                      </div>
-
-                      <div className="bg-white rounded-xl p-2 text-center border border-slate-100 shadow-xs space-y-1">
-                        <div className="w-7 h-7 mx-auto rounded-lg bg-rose-50 text-rose-500 flex items-center justify-center">
-                          <Wrench className="w-3.5 h-3.5" />
-                        </div>
-                        <div className="text-[9px] font-bold text-slate-700 leading-tight">Repairs</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Trust Footer */}
-                  <div className="pt-1 flex items-center justify-center gap-1.5 text-[10px] text-slate-400">
-                    <ShieldCheck className="w-3.5 h-3.5 text-sky-600" />
-                    <span>Gas Safe & Open Banking Protected</span>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
+          <AppStoreBadges className="pt-1" />
         </div>
 
+        <div
+          data-download-phone-visual
+          className="relative mx-auto flex min-h-[540px] w-[min(100%,400px)] items-center justify-center"
+        >
+          <PhoneMock
+            src={DOWNLOAD_PHONE_SRC}
+            overlaySrc={HAND_PHONE_OVERLAY_SRC}
+            alt="Landlord HQ app preview"
+            className="w-[258px] sm:w-[276px]"
+          />
+        </div>
+
+        <div className="mx-auto flex max-w-[380px] flex-col items-center text-center lg:justify-self-end">
+          <h3 className="font-[family-name:var(--font-display)] text-[32px] font-semibold leading-10 text-[#131515] sm:text-[36px] sm:leading-[44px]">
+            <span className="sm:whitespace-nowrap">Scan the QR code</span>
+            <br />
+            <span className="sm:whitespace-nowrap">to download the app</span>
+          </h3>
+
+          <button
+            type="button"
+            onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
+            className="mt-7 cursor-pointer rounded-[28px] border border-white bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.08)] transition-transform duration-200 hover:-translate-y-0.5"
+            aria-label="Scan or tap to download Landlord HQ"
+          >
+            <DownloadQr />
+          </button>
+        </div>
       </div>
     </section>
   );
 };
+
+function DownloadQr() {
+  const modules = useMemo(() => createVisualQrModules(25), []);
+  const cell = 6.4;
+  const inset = 4;
+  const size = modules.length * cell + inset * 2;
+
+  return (
+    <div className="relative">
+      <svg
+        width={size}
+        height={size}
+        viewBox={`0 0 ${size} ${size}`}
+        className="block"
+        role="img"
+        aria-label="QR code to download Landlord HQ"
+      >
+        <rect width={size} height={size} fill="white" />
+        {modules.map((row, y) =>
+          row.map((on, x) =>
+            on ? (
+              <rect
+                key={`${x}-${y}`}
+                x={inset + x * cell}
+                y={inset + y * cell}
+                width={cell}
+                height={cell}
+                fill="#131515"
+              />
+            ) : null,
+          ),
+        )}
+      </svg>
+      <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-sm">
+        <div className="relative h-7 w-7 overflow-hidden rounded-full">
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
+          <div className="absolute left-1.5 top-1 h-2 w-2 rounded-full bg-white/70 blur-[0.5px]" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function createVisualQrModules(n: number): boolean[][] {
+  const grid = Array.from({ length: n }, () => Array<boolean>(n).fill(false));
+
+  const paintFinder = (ox: number, oy: number) => {
+    for (let y = 0; y < 7; y += 1) {
+      for (let x = 0; x < 7; x += 1) {
+        const edge = x === 0 || x === 6 || y === 0 || y === 6;
+        const core = x >= 2 && x <= 4 && y >= 2 && y <= 4;
+        grid[oy + y][ox + x] = edge || core;
+      }
+    }
+  };
+
+  paintFinder(0, 0);
+  paintFinder(n - 7, 0);
+  paintFinder(0, n - 7);
+
+  for (let i = 8; i < n - 8; i += 1) {
+    grid[6][i] = i % 2 === 0;
+    grid[i][6] = i % 2 === 0;
+  }
+
+  const ax = n - 9;
+  const ay = n - 9;
+  for (let y = 0; y < 5; y += 1) {
+    for (let x = 0; x < 5; x += 1) {
+      grid[ay + y][ax + x] =
+        y === 0 || y === 4 || x === 0 || x === 4 || (x === 2 && y === 2);
+    }
+  }
+
+  const isReserved = (x: number, y: number) => {
+    const inFinder = (ox: number, oy: number) =>
+      x >= ox - 1 && x <= ox + 7 && y >= oy - 1 && y <= oy + 7;
+    if (inFinder(0, 0) || inFinder(n - 7, 0) || inFinder(0, n - 7)) return true;
+    if (x === 6 || y === 6) return true;
+    if (x >= ax && x < ax + 5 && y >= ay && y < ay + 5) return true;
+    if (x >= 9 && x <= 15 && y >= 9 && y <= 15) return true;
+    return false;
+  };
+
+  const seed = 'LANDLORD-HQ-12-PARK-LANE';
+  for (let y = 0; y < n; y += 1) {
+    for (let x = 0; x < n; x += 1) {
+      if (isReserved(x, y)) continue;
+      const ch = seed.charCodeAt((x * 3 + y * 5) % seed.length);
+      grid[y][x] = (x * 17 + y * 29 + ch) % 5 !== 0;
+    }
+  }
+
+  return grid;
+}

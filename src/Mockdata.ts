@@ -54,7 +54,7 @@ export const MOCK_DATA = {
         id: "02",
         title: "Sarah Jenkins • Flat 2B",
         category: "Active Tenancy & Rent Pay",
-        image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=600&auto=format&fit=crop",
       }
     ]
   },
@@ -90,7 +90,7 @@ export const MOCK_DATA = {
       description: "Real-time rent tracking across all flats. Auto-reconcile payments, track upcoming dues, send automated tenant nudges, and eliminate payment arrears.",
       stat: "99.4%",
       statLabel: "On-time collection rate",
-      image: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=900&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=900&auto=format&fit=crop",
       badge: "Rent Tracking"
     },
     {
@@ -101,7 +101,7 @@ export const MOCK_DATA = {
       description: "Tenants report repairs with photos. Landlords review and dispatch certified Gas Safe engineers, plumbers, or electricians with digital quotes, proof of work, and instant payouts.",
       stat: "14 Mins",
       statLabel: "Average contractor response",
-      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=900&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=900&auto=format&fit=crop",
       badge: "Trade Dispatch"
     }
   ] as ProcessStep[],
@@ -112,7 +112,7 @@ export const MOCK_DATA = {
       tag: "Tenant & Resident Mobile App",
       title: "Tenant Self-Service In Your Pocket",
       description: "Tenants pay rent in 1 tap, log repair tickets with photos, access lease contracts, and review issued keys and building emergency codes.",
-      image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop",
       actionText: "Download Tenant App",
       badge: "iOS & Android",
       metrics: "4.9 ★ (3,400+ reviews)"

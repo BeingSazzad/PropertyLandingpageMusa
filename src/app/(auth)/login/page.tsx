@@ -29,7 +29,7 @@ export default function LoginPage() {
 
         {/* Title */}
         <div className="space-y-1">
-          <h1 className="text-2xl font-bold tracking-tight text-[#0B0F0E] font-[family-name:var(--font-heading)]">
+          <h1 className="text-2xl font-bold tracking-tight text-[#0B0F0E] font-[family-name:var(--font-display)]">
             Welcome to Landlord HQ
           </h1>
           <p className="text-xs text-zinc-500">

@@ -23,7 +23,7 @@ export const DarkShowcaseSection: React.FC = () => {
           <div className="space-y-4 max-w-3xl">
             <Badge variant="dark">Our Ecosystem</Badge>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-white leading-tight font-[family-name:var(--font-heading)]">
+            <h2 className="title-section title-section-inverse">
               Experience complete property control where clarity meets simplicity{' '}
               <span className="font-light text-zinc-400">in perfect harmony</span>
             </h2>
@@ -68,7 +68,7 @@ export const DarkShowcaseSection: React.FC = () => {
                     {item.tag}
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-heading)] leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-[family-name:var(--font-display)] leading-snug">
                     {item.title}
                   </h3>
 
