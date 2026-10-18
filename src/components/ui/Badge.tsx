@@ -31,7 +31,7 @@ export const Badge: React.FC<BadgeProps> = ({
       {dot && (
         <span
           className={`w-1.5 h-1.5 rounded-full ${
-            variant === 'blue' ? 'bg-[#0084FF] animate-pulse' : 'bg-[#0084FF]'
+            variant === 'blue' ? 'bg-[#0084FF]' : 'bg-[#0084FF]'
           }`}
         />
       )}

@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { ArrowUp } from 'lucide-react';
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
 import { BrandMark } from '@/components/ui/BrandMark';
+import { SiteLink } from '@/components/layout/SiteLink';
 
 const MAIN_PAGES = [
   { label: 'Home', href: '/' },
@@ -30,12 +30,8 @@ const columnTitleClass =
   'font-[family-name:var(--font-nav)] text-[15px] font-medium leading-6 text-white';
 
 export const Footer: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer id="footer" className="w-full bg-[#F8FAFC]">
+    <footer className="w-full bg-[#F8FAFC]">
       <div className="relative overflow-x-hidden overflow-y-visible rounded-t-[40px] bg-[#071324] px-5 pt-12 pb-20 sm:rounded-t-[64px] sm:px-10 sm:pt-16 sm:pb-24 lg:rounded-t-[80px] lg:px-16 lg:pt-16 lg:pb-28">
         <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-t-[40px] sm:rounded-t-[64px] lg:rounded-t-[80px]">
           <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#0084FF]/16 blur-3xl" />
@@ -73,7 +69,7 @@ export const Footer: React.FC = () => {
 
             <button
               type="button"
-              onClick={scrollToTop}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               aria-label="Back to top"
               className="absolute right-0 top-[18%] hidden h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-[#0084FF] sm:flex"
             >
@@ -110,18 +106,13 @@ function FooterColumn({
       <ul className="space-y-2.5">
         {links.map((link) => (
           <li key={link.label}>
-            {link.href.startsWith('/') ? (
-              <Link href={link.href} className={linkClass}>
-                {link.label}
-              </Link>
-            ) : (
-              <a href={link.href} className={linkClass}>
-                {link.label}
-              </a>
-            )}
+            <SiteLink href={link.href} className={linkClass}>
+              {link.label}
+            </SiteLink>
           </li>
         ))}
       </ul>
     </div>
   );
 }
+

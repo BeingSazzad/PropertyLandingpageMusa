@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { ArrowRight, Headset, Plus, X } from 'lucide-react';
 import { BrandCtaLink } from '@/components/ui/Button';
 
@@ -121,13 +120,13 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
 
         <div className="flex flex-col gap-3">
           <FAQList faqs={faqs} openIdx={openIdx} setOpenIdx={setOpenIdx} />
-          <Link
+          <a
             href="/faq"
             className="group mt-3 inline-flex items-center gap-1.5 self-start font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-[#0084FF] transition-colors hover:text-[#0070DE]"
           >
             See all questions
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>
@@ -155,8 +154,10 @@ function FAQList({
           >
             <button
               type="button"
+              id={`faq-button-${idx}`}
+              aria-controls={`faq-panel-${idx}`}
               onClick={() => setOpenIdx(isOpen ? null : idx)}
-              className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-[18px]"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0084FF] sm:px-6 sm:py-[18px]"
               aria-expanded={isOpen}
             >
               <span className="min-w-0 font-[family-name:var(--font-display)] text-[16px] font-medium leading-6 text-[#0A192F] sm:text-[18px] sm:leading-6">
@@ -168,6 +169,9 @@ function FAQList({
             </button>
 
             <div
+              id={`faq-panel-${idx}`}
+              role="region"
+              aria-labelledby={`faq-button-${idx}`}
               className={`grid transition-[grid-template-rows] duration-300 ease-out ${
                 isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
               }`}

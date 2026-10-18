@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
+import { SiteChrome } from '@/components/layout/SiteChrome';
 import { LegalDocument, type LegalSection } from '@/components/web-pages/LegalDocument';
 
 export const metadata: Metadata = {
@@ -104,16 +103,12 @@ const SECTIONS: LegalSection[] = [
 
 export default function PrivacyPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#0A192F]">
-      <Navbar />
-      <div className="flex-1">
-        <LegalDocument
-          title="Privacy Policy"
-          intro="This policy explains how Landlord HQ Technologies Ltd collects, uses, stores, and shares personal data when you use landlordhq.co.uk and the Landlord HQ applications."
-          sections={SECTIONS}
-        />
-      </div>
-      <Footer />
-    </main>
+    <SiteChrome>
+      <LegalDocument
+        title="Privacy Policy"
+        intro="This policy explains how Landlord HQ Technologies Ltd collects, uses, stores, and shares personal data when you use landlordhq.co.uk and the Landlord HQ applications."
+        sections={SECTIONS}
+      />
+    </SiteChrome>
   );
 }

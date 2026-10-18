@@ -3,6 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { Wrench } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
+import { useAppDispatch } from '@/redux/hooks';
+import { openDownloadModal } from '@/redux/features/uiSlice';
+import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 
 const AVATARS = [
   { src: '/hero/avatar-1.png', alt: 'Landlord HQ user', position: 'center 18%' },
@@ -11,8 +15,10 @@ const AVATARS = [
 ] as const;
 
 export const HeroSection: React.FC = () => {
+  const dispatch = useAppDispatch();
+
   return (
-    <section id="overview" className="relative overflow-hidden bg-[#F8FAFC] pb-10 sm:pb-12 lg:pb-16">
+    <section className="relative overflow-hidden bg-[#F8FAFC] pb-[100px] sm:pb-[112px] lg:pb-[120px]">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <Image
           src="/hero/clouds.png"
@@ -28,7 +34,7 @@ export const HeroSection: React.FC = () => {
 
       <div className="relative z-10 mx-auto flex max-w-[1360px] flex-col items-center px-5 pt-12 sm:px-8 sm:pt-16 lg:px-10 lg:pt-[72px]">
         <div className="mx-auto max-w-[700px] text-center">
-          <div className="lhq-rise mb-5 flex items-center justify-center gap-3">
+          <div className="mb-5 flex items-center justify-center gap-3">
             <div className="flex w-[94px] shrink-0">
               {AVATARS.map((avatar, index) => (
                 <div
@@ -62,7 +68,7 @@ export const HeroSection: React.FC = () => {
               </p>
             </div>
           </div>
-          <h1 className="title-display lhq-rise-2 mx-auto max-w-3xl">
+          <h1 className="title-display mx-auto max-w-3xl">
             <span className="sm:hidden">
               Manage your
               <br />
@@ -76,20 +82,28 @@ export const HeroSection: React.FC = () => {
               anytime, anywhere.
             </span>
           </h1>
-          <p className="text-subtitle lhq-rise-3 mx-auto mt-5 max-w-[560px]">
+          <p className="text-subtitle mx-auto mt-5 max-w-[560px]">
             Landlord HQ helps you collect rent via Open Banking, dispatch Gas Safe
             contractors, and manage tenancies — all in one simple app.
           </p>
+          <div className="mt-7 flex justify-center">
+            <Button
+              type="button"
+              onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
+            >
+              Download App
+            </Button>
+          </div>
         </div>
 
-        <div className="relative mx-auto mt-10 h-[320px] w-full max-w-[1140px] sm:mt-12 sm:h-[380px] lg:h-[450px]">
+        <div className="relative mx-auto mt-10 h-[340px] w-full max-w-[1140px] sm:mt-14 sm:h-[400px] lg:h-[480px]">
           <div
             className="absolute left-1/2 top-0 z-10 h-full w-[280px] -translate-x-1/2 overflow-hidden sm:w-[340px] lg:w-[424px]"
             style={{
               maskImage:
-                'linear-gradient(to bottom, #000 58%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.12) 93%, transparent 100%)',
+                'linear-gradient(to bottom, #000 52%, rgba(0,0,0,0.55) 78%, transparent 100%)',
               WebkitMaskImage:
-                'linear-gradient(to bottom, #000 58%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0.12) 93%, transparent 100%)',
+                'linear-gradient(to bottom, #000 52%, rgba(0,0,0,0.55) 78%, transparent 100%)',
             }}
           >
             <div className="absolute left-1/2 top-0 w-[400px] -translate-x-1/2 drop-shadow-[0_18px_28px_rgba(15,23,42,0.18)] sm:w-[490px] lg:w-[575px]">
@@ -104,14 +118,14 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="lhq-float absolute left-[14%] top-[30%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-[#171717] px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
+          <div className="absolute left-[14%] top-[30%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-[#171717] px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
             <img src="/hero/icon-secure.svg" alt="" width={16} height={16} />
             <span className="font-[family-name:var(--font-nav)] text-[14px] font-normal leading-5 tracking-[-0.28px] text-white">
               Open Banking
             </span>
           </div>
 
-          <div className="lhq-float-delay absolute left-[10%] top-[53%] z-20 hidden w-[225px] rounded-[16px] bg-white p-5 shadow-[5px_10px_20px_rgba(0,140,255,0.03),5px_10px_20px_rgba(0,0,0,0.03)] lg:block">
+          <div className="absolute left-[10%] top-[53%] z-20 hidden w-[225px] rounded-[16px] bg-white p-5 shadow-[5px_10px_20px_rgba(0,140,255,0.03),5px_10px_20px_rgba(0,0,0,0.03)] lg:block">
             <p className="font-[family-name:var(--font-nav)] text-[16px] font-normal leading-[22px] tracking-[-0.32px] text-[#5B6775]">
               Monthly rent collected
             </p>
@@ -128,7 +142,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="lhq-float-soft absolute right-[8.5%] top-[22%] z-20 hidden w-[210px] rounded-[16px] bg-white p-5 shadow-[5px_10px_20px_rgba(0,140,255,0.03),5px_10px_20px_rgba(0,0,0,0.03)] lg:block">
+          <div className="absolute right-[8.5%] top-[22%] z-20 hidden w-[210px] rounded-[16px] bg-white p-5 shadow-[5px_10px_20px_rgba(0,140,255,0.03),5px_10px_20px_rgba(0,0,0,0.03)] lg:block">
             <div className="flex size-[46px] items-center justify-center rounded-full bg-[#F4F4F4]">
                 <Wrench className="size-[18px] text-[#0A192F]" strokeWidth={1.6} />
               </div>
@@ -145,7 +159,7 @@ export const HeroSection: React.FC = () => {
               </p>
           </div>
 
-          <div className="lhq-float-late absolute right-[15%] top-[68%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-[#171717] px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
+          <div className="absolute right-[15%] top-[68%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-[#171717] px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
             <img src="/hero/icon-track.svg" alt="" width={16} height={16} />
             <span className="font-[family-name:var(--font-nav)] text-[14px] font-normal leading-5 tracking-[-0.28px] text-white">
               Track tenancies

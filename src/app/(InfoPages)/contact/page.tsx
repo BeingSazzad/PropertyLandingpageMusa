@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
+import { SiteChrome } from '@/components/layout/SiteChrome';
 import { ContactSection } from '@/components/web-pages/ContactSection';
 
 export const metadata: Metadata = {
@@ -12,12 +11,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#0A192F]">
-      <Navbar />
-      <div className="flex-1">
-        <ContactSection />
-      </div>
-      <Footer />
-    </main>
+    <SiteChrome>
+      <ContactSection />
+    </SiteChrome>
   );
 }

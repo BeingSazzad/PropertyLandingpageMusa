@@ -85,7 +85,7 @@ export const PricingSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setBillingCycle('monthly')}
-                className={`rounded-full px-4 py-2 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 transition-colors ${
+                className={`rounded-full px-4 py-2 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0084FF] ${
                   billingCycle === 'monthly'
                     ? 'bg-[#0084FF] text-white'
                     : 'text-[#5B6775] hover:text-[#0A192F]'
@@ -96,7 +96,7 @@ export const PricingSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setBillingCycle('annual')}
-                className={`rounded-full px-4 py-2 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 transition-colors ${
+                className={`rounded-full px-4 py-2 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0084FF] ${
                   billingCycle === 'annual'
                     ? 'bg-[#0084FF] text-white'
                     : 'text-[#5B6775] hover:text-[#0A192F]'
@@ -155,7 +155,7 @@ export const PricingSection: React.FC = () => {
                         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#0084FF] text-[#0084FF]">
                           <Check className="h-3 w-3 stroke-[2.5]" />
                         </span>
-                        <span className="whitespace-nowrap font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#3F4B58]">
+                        <span className="font-[family-name:var(--font-nav)] text-[15px] font-normal leading-6 text-[#3F4B58] sm:text-[16px]">
                           {feature}
                         </span>
                       </li>

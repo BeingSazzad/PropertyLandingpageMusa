@@ -1,11 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import uiReducer from './features/uiSlice';
-import propertyReducer from './features/propertySlice';
 
 export const store = configureStore({
   reducer: {
     ui: uiReducer,
-    property: propertyReducer,
   },
 });
 

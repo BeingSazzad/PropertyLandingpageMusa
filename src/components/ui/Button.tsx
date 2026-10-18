@@ -73,8 +73,10 @@ export function BrandCtaLink({
   className = '',
   size = 'md',
 }: BrandCtaLinkProps) {
+  const classes = ctaClass(size, className);
+
   return (
-    <a href={href} className={ctaClass(size, className)}>
+    <a href={href} className={classes}>
       <span>{children}</span>
       <ArrowUpRight strokeWidth={2.25} />
     </a>

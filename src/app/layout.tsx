@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${googleSansFlex.variable} ${stackSansHeadline.variable}`}>
+    <html lang="en" className={`${googleSansFlex.variable} ${stackSansHeadline.variable}`}>
       <body className={`${googleSansFlex.className} ${googleSansFlex.variable} ${stackSansHeadline.variable} min-h-screen flex flex-col bg-[#F8FAFC] text-[#0A192F] antialiased selection:bg-[#0084FF] selection:text-white`}>
         <ReduxProvider>
           {children}

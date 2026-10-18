@@ -7,8 +7,7 @@ import { LIFESTYLE_IMAGES } from '@/lib/brand';
 export const AboutSection: React.FC = () => {
   return (
     <section
-      id="about"
-      className="scroll-mt-[88px] bg-white px-5 pb-20 pt-12 sm:px-8 sm:pb-24 sm:pt-16 lg:px-10 lg:pb-28 lg:pt-20"
+      className="bg-white px-5 pb-20 pt-8 sm:px-8 sm:pb-24 sm:pt-10 lg:px-10 lg:pb-28 lg:pt-12"
     >
       <Reveal className="mx-auto grid max-w-[1360px] grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-14">
         <div className="space-y-5 lg:col-span-5">

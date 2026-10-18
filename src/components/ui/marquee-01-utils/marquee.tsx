@@ -26,7 +26,7 @@ export function Marquee({
   return (
     <div
       className={cn(
-        "flex overflow-hidden p-2 [--duration:70s] [--gap:1rem] [gap:var(--gap)]",
+        "flex overflow-hidden p-2 [--duration:70s] [--gap:1rem] [gap:var(--gap)] [contain:paint]",
         pauseOnHover && "group",
         vertical ? "flex-col" : "flex-row",
         className,

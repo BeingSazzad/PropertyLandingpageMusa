@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
+import { SiteChrome } from '@/components/layout/SiteChrome';
 import { LegalDocument, type LegalSection } from '@/components/web-pages/LegalDocument';
 
 export const metadata: Metadata = {
@@ -114,16 +113,12 @@ const SECTIONS: LegalSection[] = [
 
 export default function TermsPage() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#F8FAFC] text-[#0A192F]">
-      <Navbar />
-      <div className="flex-1">
-        <LegalDocument
-          title="Terms & Conditions"
-          intro="These terms set out how landlords, agents, residents, and contractors may use Landlord HQ — including subscriptions, Open Banking rent tracking, portfolio data, and platform liability."
-          sections={SECTIONS}
-        />
-      </div>
-      <Footer />
-    </main>
+    <SiteChrome>
+      <LegalDocument
+        title="Terms & Conditions"
+        intro="These terms set out how landlords, agents, residents, and contractors may use Landlord HQ — including subscriptions, Open Banking rent tracking, portfolio data, and platform liability."
+        sections={SECTIONS}
+      />
+    </SiteChrome>
   );
 }

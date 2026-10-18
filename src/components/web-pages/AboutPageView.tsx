@@ -1,7 +1,13 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import { MOCK_DATA } from '@/Mockdata';
-import { PROPERTY_IMAGES } from '@/lib/brand';
+import { LIFESTYLE_IMAGES } from '@/lib/brand';
+
+const STATS = [
+  { value: '28,000+', label: 'Active Tenancies Managed' },
+  { value: '99.4%', label: 'On-Time Rent Collection' },
+  { value: '14 Mins', label: 'Avg Contractor Dispatch' },
+  { value: '4.9 / 5', label: 'Tenant & Landlord Rating' },
+] as const;
 
 export const AboutPageView: React.FC = () => {
   return (
@@ -23,7 +29,7 @@ export const AboutPageView: React.FC = () => {
           <div className="overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={PROPERTY_IMAGES.twilight}
+              src={LIFESTYLE_IMAGES.phoneUse}
               alt="A high-end residential property managed with Landlord HQ"
               className="h-[210px] w-full object-cover sm:h-[300px] lg:h-[340px]"
             />
@@ -54,7 +60,7 @@ export const AboutPageView: React.FC = () => {
 
         {/* 2. Stats row — existing Landlord HQ claims */}
         <div className="grid grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-4">
-          {MOCK_DATA.stats.map((stat) => (
+          {STATS.map((stat) => (
             <div key={stat.label} className="space-y-1.5">
               <div className="font-[family-name:var(--font-display)] text-[36px] font-medium leading-none tracking-tight text-[#0A192F] sm:text-[44px]">
                 {stat.value}
@@ -95,7 +101,7 @@ export const AboutPageView: React.FC = () => {
           <div className="overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={PROPERTY_IMAGES.modern}
+              src={LIFESTYLE_IMAGES.interior}
               alt="A modern house exterior from a Landlord HQ portfolio"
               className="h-[250px] w-full object-cover sm:h-[320px] lg:h-[350px]"
             />

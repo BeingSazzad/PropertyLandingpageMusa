@@ -1,25 +1,23 @@
+import { APP_STORE_URL, PLAY_STORE_URL } from '@/lib/brand';
+
 /**
- * Smart download helper:
- * - On iOS (iPhone/iPad) -> redirects directly to Apple App Store
- * - On Android -> redirects directly to Google Play Store
- * - On Desktop -> triggers the clean, minimal modal
+ * iOS / Android go straight to the store listing.
+ * Desktop opens the in-page download modal.
  */
 export function triggerSmartAppDownload(onDesktopFallback: () => void) {
   if (typeof window === 'undefined') return;
-  const ua = navigator.userAgent || navigator.vendor || (window as any).opera || '';
-  
-  // iOS detection
-  if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
-    window.location.href = 'https://apps.apple.com';
+
+  const ua = navigator.userAgent || navigator.vendor || '';
+
+  if (/iPad|iPhone|iPod/.test(ua)) {
+    window.location.href = APP_STORE_URL;
     return;
   }
-  
-  // Android detection
+
   if (/android/i.test(ua)) {
-    window.location.href = 'https://play.google.com';
+    window.location.href = PLAY_STORE_URL;
     return;
   }
-  
-  // Desktop fallback (minimal modal)
+
   onDesktopFallback();
 }

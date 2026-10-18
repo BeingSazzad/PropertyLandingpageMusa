@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   turbopack: {
     root: path.resolve(__dirname),
     rules: {
@@ -12,6 +13,7 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
+    qualities: [75, 90],
     remotePatterns: [
       {
         protocol: "https",

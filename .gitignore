@@ -23,6 +23,10 @@
 # misc
 .DS_Store
 *.pem
+.tmp*
+.tmp-hero-verify/
+lhq-wm-footer.png
+terms-page-screenshot.png
 
 # debug
 npm-debug.log*

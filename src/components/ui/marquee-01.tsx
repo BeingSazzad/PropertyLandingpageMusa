@@ -53,9 +53,6 @@ const reviews = [
   },
 ];
 
-const firstRow = reviews.slice(0, 4);
-const secondRow = reviews.slice(4);
-
 const ReviewCard = ({
   profile,
   name,
@@ -96,9 +93,12 @@ const ReviewCard = ({
   );
 };
 
+const firstRow = reviews.slice(0, 4);
+const secondRow = reviews.slice(4);
+
 export default function TestimonialMarqueeDemo() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative isolate flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:70s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.name} {...review} />

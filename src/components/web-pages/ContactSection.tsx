@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import { CheckCircle2, Mail, MapPin, Phone } from 'lucide-react';
 
 import { Button } from '@/components/ui/Button';
-import { PROPERTY_IMAGES } from '@/lib/brand';
+import { LIFESTYLE_IMAGES } from '@/lib/brand';
 
-const CONTACT_PHOTO = PROPERTY_IMAGES.estate;
+const CONTACT_PHOTO = LIFESTYLE_IMAGES.phoneUse;
 
 const fieldClass =
   'mt-2 w-full rounded-[16px] border border-[#E6EAEF] bg-[#F8FAFC] px-5 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#0A192F] placeholder:text-[#94A3B8] outline-none transition-shadow focus:border-[#0084FF]/40 focus:bg-white';
@@ -83,6 +83,7 @@ export const ContactSection: React.FC = () => {
                   </label>
                   <input
                     id="fullName"
+                    name="fullName"
                     type="text"
                     required
                     autoComplete="name"
@@ -99,6 +100,7 @@ export const ContactSection: React.FC = () => {
                   </label>
                   <input
                     id="email"
+                    name="email"
                     type="email"
                     required
                     autoComplete="email"
@@ -115,6 +117,7 @@ export const ContactSection: React.FC = () => {
                   </label>
                   <input
                     id="phone"
+                    name="phone"
                     type="tel"
                     autoComplete="tel"
                     value={formData.phone}
@@ -130,6 +133,7 @@ export const ContactSection: React.FC = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     required
                     rows={5}
                     value={formData.message}
