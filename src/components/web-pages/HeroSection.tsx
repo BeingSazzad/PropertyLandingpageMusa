@@ -12,7 +12,7 @@ const AVATARS = [
 
 export const HeroSection: React.FC = () => {
   return (
-    <section id="overview" className="relative overflow-hidden bg-[#F8FAFC] pb-0">
+    <section id="overview" className="relative overflow-hidden bg-[#F8FAFC] pb-10 sm:pb-12 lg:pb-16">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <Image
           src="/hero/clouds.png"
@@ -82,7 +82,7 @@ export const HeroSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-10 h-[300px] w-full max-w-[1140px] sm:mt-12 sm:h-[360px] lg:h-[430px]">
+        <div className="relative mx-auto mt-10 h-[320px] w-full max-w-[1140px] sm:mt-12 sm:h-[380px] lg:h-[450px]">
           <div
             className="absolute left-1/2 top-0 z-10 h-full w-[280px] -translate-x-1/2 overflow-hidden sm:w-[340px] lg:w-[424px]"
             style={{
