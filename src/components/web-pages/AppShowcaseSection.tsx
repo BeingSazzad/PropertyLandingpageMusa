@@ -9,16 +9,16 @@ const STATS = [
 
 export const AppShowcaseSection: React.FC = () => {
   return (
-    <section id="app-showcase" className="scroll-mt-[88px] bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
+    <section id="app-showcase" className="scroll-mt-[88px] bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto grid max-w-[1360px] items-center gap-10 lg:grid-cols-2 lg:gap-12">
         <div className="space-y-6">
           <div className="space-y-4">
-            <h2 className="font-[family-name:var(--font-display)] text-[40px] font-semibold leading-[48px] tracking-[-0.025em] text-[#0A192F] sm:text-[52px] sm:leading-[62px]">
+            <h2 className="title-section">
               One app for
               <br />
               <span className="text-[#0084FF]">every tenancy</span>
             </h2>
-            <p className="max-w-[420px] font-[family-name:var(--font-nav)] text-[18px] font-normal leading-7 text-[#3F4B58]">
+            <p className="text-subtitle max-w-[420px]">
               Rent, Gas Safe jobs, and certificates — on your phone.
             </p>
             <AppStoreBadges size="lg" className="pt-1" />
@@ -30,7 +30,7 @@ export const AppShowcaseSection: React.FC = () => {
                 <p className="font-[family-name:var(--font-display)] text-[36px] font-semibold leading-none tracking-tight text-[#0A192F] sm:text-[40px]">
                   {stat.value}
                 </p>
-                <p className="mt-2 font-[family-name:var(--font-nav)] text-[15px] leading-5 text-[#5B6775]">
+                <p className="mt-2 font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#5B6775]">
                   {stat.label}
                 </p>
               </div>

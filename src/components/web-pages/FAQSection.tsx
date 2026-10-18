@@ -22,7 +22,7 @@ const HOME_FAQS: FAQItem[] = [
   {
     question: 'How are certified contractors dispatched for repairs?',
     answer:
-      'When a tenant reports an issue with photos (e.g. boiler pressure drop or plumbing leak), you receive an alert. You can instantly dispatch certified local contractors (like Gas Safe registered plumbers or qualified electricians). The contractor submits an itemized quote, completes the work with photographic proof, and receives invoice payout directly.',
+      'When a tenant reports an issue with photos (e.g. boiler pressure drop or plumbing leak), you receive an alert. You can instantly dispatch certified local contractors (like Gas Safe registered plumbers or qualified electricians). The contractor submits an itemised quote, completes the work with photographic proof, and receives invoice payout directly.',
   },
   {
     question: 'How does automated rent tracking via Open Banking work?',

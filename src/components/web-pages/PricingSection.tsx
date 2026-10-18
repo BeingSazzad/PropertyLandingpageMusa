@@ -27,7 +27,7 @@ const PRICING_TIERS: PricingTier[] = [
     description: 'For individual landlords managing 1 to 3 rental properties.',
     features: [
       '1 to 3 flat & tenancy profiles',
-      'Automated rent tracking & Open Banking',
+      'Rent tracking & Open Banking',
       'DPS deposit & lease agreement log',
       'Certified repair ticket dispatch',
     ],
@@ -54,7 +54,7 @@ const PRICING_TIERS: PricingTier[] = [
     priceAnnual: 63,
     description: 'Complete control for large portfolios, HMO properties, and letting agents.',
     features: [
-      'Unlimited buildings, flats & HMO rooms',
+      'Unlimited flats & HMO rooms',
       'Room tenancies & utility cost splits',
       'Portfolio cashflow & yield reports',
       'Priority certified trade dispatch',
@@ -67,7 +67,7 @@ export const PricingSection: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
 
   return (
-    <section id="pricing" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
+    <section id="pricing" className="scroll-mt-[88px] bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto max-w-[1120px] space-y-12">
         <header className="mx-auto max-w-2xl space-y-4 text-center">
           <h2 className="title-section mx-auto">
@@ -150,11 +150,11 @@ export const PricingSection: React.FC = () => {
                   </p>
                   <ul className="mt-4 space-y-3">
                     {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2.5">
-                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#0084FF] text-[#0084FF]">
+                      <li key={feature} className="flex items-center gap-2.5">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#0084FF] text-[#0084FF]">
                           <Check className="h-3 w-3 stroke-[2.5]" />
                         </span>
-                        <span className="font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#3F4B58]">
+                        <span className="whitespace-nowrap font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#3F4B58]">
                           {feature}
                         </span>
                       </li>

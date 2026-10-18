@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
         <div className="absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-b from-transparent via-white/62 to-[#F8FAFC]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex max-w-[1300px] flex-col items-center px-5 pt-12 sm:px-8 sm:pt-16 lg:px-10 lg:pt-[72px]">
+      <div className="relative z-10 mx-auto flex max-w-[1360px] flex-col items-center px-5 pt-12 sm:px-8 sm:pt-16 lg:px-10 lg:pt-[72px]">
         <div className="mx-auto max-w-[700px] text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
             <div className="flex w-[94px] shrink-0">
@@ -103,7 +103,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="absolute left-[14%] top-[30%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-black px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
+          <div className="absolute left-[14%] top-[30%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-[#171717] px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
             <img src="/hero/icon-secure.svg" alt="" width={16} height={16} />
             <span className="font-[family-name:var(--font-nav)] text-[14px] font-normal leading-5 tracking-[-0.28px] text-white">
               Open Banking
@@ -118,11 +118,11 @@ export const HeroSection: React.FC = () => {
               £8,350
             </p>
             <div className="mt-3 flex items-center gap-2">
-              <span className="rounded-full bg-[rgba(70,161,40,0.1)] px-1 py-0.5 font-[family-name:var(--font-nav)] text-[14px] font-medium leading-5 tracking-[-0.42px] text-[#46a128]">
+              <span className="rounded-full bg-[rgba(16,185,129,0.1)] px-1 py-0.5 font-[family-name:var(--font-nav)] text-[14px] font-medium leading-5 tracking-[-0.42px] text-[#10B981]">
                 +7%
               </span>
               <span className="font-[family-name:var(--font-nav)] text-[16px] font-normal leading-5 tracking-[-0.32px] text-[#5B6775]">
-                from last week
+                from last month
               </span>
             </div>
           </div>
@@ -135,7 +135,7 @@ export const HeroSection: React.FC = () => {
                 <p className="font-[family-name:var(--font-nav)] text-[24px] font-medium leading-8 tracking-[-0.72px] text-[#0A192F]">
                   £1,235
                 </p>
-                <span className="rounded-full bg-[rgba(70,161,40,0.1)] px-1 py-0.5 font-[family-name:var(--font-nav)] text-[14px] font-medium leading-5 tracking-[-0.42px] text-[#46a128]">
+                <span className="rounded-full bg-[rgba(16,185,129,0.1)] px-1 py-0.5 font-[family-name:var(--font-nav)] text-[14px] font-medium leading-5 tracking-[-0.42px] text-[#10B981]">
                   +2%
                 </span>
               </div>
@@ -144,7 +144,7 @@ export const HeroSection: React.FC = () => {
               </p>
           </div>
 
-          <div className="absolute right-[15%] top-[68%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-black px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
+          <div className="absolute right-[15%] top-[68%] z-20 hidden items-center gap-1.5 rounded-[40px] bg-[#171717] px-4 py-2 shadow-[4px_4px_6px_rgba(0,0,0,0.25)] lg:flex">
             <img src="/hero/icon-track.svg" alt="" width={16} height={16} />
             <span className="font-[family-name:var(--font-nav)] text-[14px] font-normal leading-5 tracking-[-0.28px] text-white">
               Track tenancies

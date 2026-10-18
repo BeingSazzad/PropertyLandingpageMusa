@@ -10,8 +10,12 @@ export const AboutPageView: React.FC = () => {
         {/* 1. Heading + wide hero photo */}
         <div className="space-y-8 text-center">
           <div className="space-y-3">
-            <h1 className="title-section">About Us</h1>
-            <p className="mx-auto max-w-xl font-[family-name:var(--font-nav)] text-[18px] font-normal leading-7 tracking-normal text-[#3F4B58]">
+            <h1 className="title-section">
+              About
+              <br />
+              <span className="text-[#0084FF]">Landlord HQ</span>
+            </h1>
+            <p className="text-subtitle mx-auto max-w-xl">
               The simpler way to run UK property — rent, tenancies, keys, and certificates in one place.
             </p>
           </div>
@@ -28,7 +32,7 @@ export const AboutPageView: React.FC = () => {
 
         {/* Statement + rating */}
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
-          <h2 className="max-w-lg font-[family-name:var(--font-display)] text-[28px] font-medium leading-9 text-[#0A192F] sm:text-[32px] sm:leading-10">
+          <h2 className="max-w-lg font-[family-name:var(--font-display)] text-[28px] font-semibold leading-9 text-[#0A192F] sm:text-[32px] sm:leading-10">
             One workflow for rent, tenancies, keys, and certificates — so every building stays audit-ready.
           </h2>
 
@@ -55,7 +59,7 @@ export const AboutPageView: React.FC = () => {
               <div className="font-[family-name:var(--font-display)] text-[36px] font-medium leading-none tracking-tight text-[#0A192F] sm:text-[44px]">
                 {stat.value}
               </div>
-              <div className="max-w-[160px] font-[family-name:var(--font-nav)] text-[14px] font-normal leading-5 text-[#3F4B58] sm:text-[15px]">
+              <div className="max-w-[160px] font-[family-name:var(--font-nav)] text-[14px] font-normal leading-5 text-[#5B6775] sm:text-[15px]">
                 {stat.label}
               </div>
             </div>
@@ -66,10 +70,10 @@ export const AboutPageView: React.FC = () => {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-10">
             <div className="space-y-3">
-              <h2 className="font-[family-name:var(--font-display)] text-[24px] font-medium leading-8 text-[#0A192F] sm:text-[28px]">
+              <h2 className="font-[family-name:var(--font-display)] text-[24px] font-semibold leading-8 text-[#0A192F] sm:text-[28px]">
                 Our Journey
               </h2>
-              <p className="max-w-md font-[family-name:var(--font-nav)] text-[18px] font-normal leading-7 tracking-normal text-[#3F4B58]">
+              <p className="text-subtitle max-w-md">
                 Landlord HQ was founded with a singular conviction: managing properties shouldn&apos;t
                 require juggling disconnected apps, spreadsheets, and midnight emergency calls. We built
                 one workflow for building registers, Open Banking rent, and contractor dispatch.
@@ -77,10 +81,10 @@ export const AboutPageView: React.FC = () => {
             </div>
 
             <div className="space-y-3">
-              <h2 className="font-[family-name:var(--font-display)] text-[24px] font-medium leading-8 text-[#0A192F] sm:text-[28px]">
+              <h2 className="font-[family-name:var(--font-display)] text-[24px] font-semibold leading-8 text-[#0A192F] sm:text-[28px]">
                 Our Vision &amp; Mission
               </h2>
-              <p className="max-w-md font-[family-name:var(--font-nav)] text-[18px] font-normal leading-7 tracking-normal text-[#3F4B58]">
+              <p className="text-subtitle max-w-md">
                 Combine flat registers, Gas Safe trades, key registers, and certificate tracking so
                 landlords, residents, and contractors stay in the same picture — organised, audit-ready,
                 and free of the spreadsheet scramble.

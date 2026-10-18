@@ -24,7 +24,7 @@ const COMPANY = [
 ] as const;
 
 const linkClass =
-  'font-[family-name:var(--font-nav)] text-[15px] font-normal leading-6 text-slate-400 transition-colors hover:text-white';
+  'font-[family-name:var(--font-nav)] text-[15px] font-normal leading-6 text-[#94A3B8] transition-colors hover:text-white';
 
 const columnTitleClass =
   'font-[family-name:var(--font-nav)] text-[15px] font-medium leading-6 text-white';

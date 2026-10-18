@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Mail, MapPin, Phone } from 'lucide-react';
 
+import { Button } from '@/components/ui/Button';
 import { PROPERTY_IMAGES } from '@/lib/brand';
 
 const CONTACT_PHOTO = PROPERTY_IMAGES.estate;
@@ -138,12 +139,9 @@ export const ContactSection: React.FC = () => {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-[#0A192F] py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-white transition-colors hover:bg-[#132A4C]"
-                >
-                  Send Message
-                </button>
+                <Button type="submit" className="w-full justify-center">
+                  Send message
+                </Button>
               </form>
             )}
           </div>

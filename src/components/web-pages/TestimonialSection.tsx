@@ -5,7 +5,7 @@ import TestimonialMarquee from '@/components/ui/marquee-01';
 export const TestimonialSection: React.FC = () => {
   return (
     <section id="testimonials" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-      <div className="mx-auto max-w-[1360px] space-y-12">
+      <div className="mx-auto max-w-[1360px]">
         <SectionHeader
           title={
             <>

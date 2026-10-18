@@ -21,14 +21,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="space-y-3 rounded-[24px] border border-[#E6EAEF] bg-white p-5 text-left">
+    <div className="space-y-3 rounded-[24px] border border-[#E6EAEF] bg-white p-6 text-left">
       <div className={`flex h-10 w-10 items-center justify-center rounded-[14px] ${iconBg} ${iconColor}`}>
         {icon}
       </div>
       <h3 className="font-[family-name:var(--font-display)] text-[18px] font-semibold leading-6 text-[#0A192F] sm:text-[20px]">
         {title}
       </h3>
-      <p className="font-[family-name:var(--font-nav)] text-[15px] font-normal leading-6 text-[#3F4B58]">
+      <p className="text-subtitle">
         {description}
       </p>
     </div>
@@ -98,7 +98,7 @@ export const MobileFeaturesShowcase: React.FC = () => {
               iconBg="bg-[#E8F3FF]"
               iconColor="text-[#0084FF]"
               title="Tenancy & Key Register"
-              description="Track active AST leases, DPS deposit IDs, and physical key loggers in one place."
+              description="Track active AST leases, DPS deposit IDs, and physical keys in one place."
             />
             <FeatureCard
               icon={<Lock className="w-5 h-5" />}
