@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { CreditCard, Wrench, ShieldCheck, Lock } from 'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
+import { Reveal } from '@/components/ui/Reveal';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -21,7 +22,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="space-y-3 rounded-[24px] border border-[#E6EAEF] bg-white p-6 text-left">
+    <div className="lhq-card space-y-3 rounded-[24px] border border-[#E6EAEF] bg-white p-6 text-left">
       <div className={`flex h-10 w-10 items-center justify-center rounded-[14px] ${iconBg} ${iconColor}`}>
         {icon}
       </div>
@@ -39,17 +40,19 @@ export const MobileFeaturesShowcase: React.FC = () => {
   return (
     <section id="features" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto max-w-[1360px] space-y-16">
-        <SectionHeader
-          title={
-            <>
-              Powerful features for
-              <br />
-              <span className="text-[#0084FF]">every tenancy</span>
-            </>
-          }
-          subtitle="Rent, repairs, keys, and certificates — for landlords, tenants, and certified trades."
-          align="center"
-        />
+        <Reveal>
+          <SectionHeader
+            title={
+              <>
+                Powerful features for
+                <br />
+                <span className="text-[#0084FF]">every tenancy</span>
+              </>
+            }
+            subtitle="Rent, repairs, keys, and certificates — for landlords, tenants, and certified trades."
+            align="center"
+          />
+        </Reveal>
 
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-6 xl:gap-8">
           <div className="order-2 space-y-5 lg:order-1 lg:col-span-3">

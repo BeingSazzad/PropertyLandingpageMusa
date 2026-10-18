@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
+import { Reveal } from '@/components/ui/Reveal';
 
 const STATS = [
   { value: '99.4%', label: 'On-time rent' },
@@ -11,7 +12,7 @@ export const AppShowcaseSection: React.FC = () => {
   return (
     <section id="app-showcase" className="scroll-mt-[88px] bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto grid max-w-[1360px] items-center gap-10 lg:grid-cols-2 lg:gap-12">
-        <div className="space-y-6">
+        <Reveal className="space-y-6">
           <div className="space-y-4">
             <h2 className="title-section">
               One app for
@@ -36,7 +37,7 @@ export const AppShowcaseSection: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
         <div className="relative mx-auto w-full max-w-[560px] lg:max-w-none">
           <div

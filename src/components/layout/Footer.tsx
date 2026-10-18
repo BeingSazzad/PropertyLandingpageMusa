@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer id="footer" className="w-full bg-[#F8FAFC]">
-      <div className="relative overflow-hidden rounded-t-[40px] bg-[#071324] px-5 pt-12 pb-16 sm:rounded-t-[64px] sm:px-10 sm:pt-16 sm:pb-20 lg:rounded-t-[80px] lg:px-16 lg:pt-16 lg:pb-24">
+      <div className="relative overflow-x-hidden overflow-y-visible rounded-t-[40px] bg-[#071324] px-5 pt-12 pb-20 sm:rounded-t-[64px] sm:px-10 sm:pt-16 sm:pb-24 lg:rounded-t-[80px] lg:px-16 lg:pt-16 lg:pb-28">
         <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-t-[40px] sm:rounded-t-[64px] lg:rounded-t-[80px]">
           <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[#0084FF]/16 blur-3xl" />
           <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-[#00C2FF]/10 blur-3xl" />
@@ -63,17 +63,19 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative flex w-full flex-col items-center justify-center overflow-visible px-2 pb-2 text-center sm:px-4">
-            <WordmarkLockup />
-            <div className="footer-wordmark-reflection flex w-full justify-center" aria-hidden>
+          <div className="relative w-full overflow-visible px-2 text-center sm:px-4">
+            <div className="footer-wordmark-block">
               <WordmarkLockup />
+              <div className="footer-wordmark-reflection" aria-hidden>
+                <WordmarkLockup />
+              </div>
             </div>
 
             <button
               type="button"
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="absolute right-0 bottom-[42%] hidden h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-[#0084FF] sm:flex"
+              className="absolute right-0 top-[18%] hidden h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-colors hover:bg-[#0084FF] sm:flex"
             >
               <ArrowUp className="h-4 w-4" />
             </button>
@@ -86,9 +88,11 @@ export const Footer: React.FC = () => {
 
 function WordmarkLockup() {
   return (
-    <div className="mx-auto flex w-max shrink-0 items-end justify-center gap-3 overflow-visible sm:gap-5 lg:gap-7">
-      <BrandMark className="mb-1 h-8 w-8 shrink-0 sm:mb-1.5 sm:h-12 sm:w-12 lg:h-16 lg:w-16" />
-      <p className="footer-wordmark overflow-visible whitespace-nowrap">Landlord HQ</p>
+    <div className="footer-wordmark-lockup flex flex-row flex-nowrap items-center">
+      <span className="footer-wordmark-mark">
+        <BrandMark className="h-full w-full max-w-none" alt="" />
+      </span>
+      <p className="footer-wordmark">Landlord HQ</p>
     </div>
   );
 }

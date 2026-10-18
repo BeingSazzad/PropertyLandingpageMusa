@@ -68,7 +68,7 @@ const ReviewCard = ({
   body: string;
 }) => {
   return (
-    <Card className={`relative h-full w-[320px] cursor-default overflow-hidden p-5 shadow-none ${CARD}`}>
+    <Card className={`lhq-card relative h-full w-[320px] cursor-default overflow-hidden p-5 shadow-none ${CARD}`}>
       <CardContent className="flex flex-col gap-3 p-0">
         <div className="flex flex-row items-center gap-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}

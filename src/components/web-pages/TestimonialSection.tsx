@@ -1,11 +1,12 @@
 import React from 'react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import TestimonialMarquee from '@/components/ui/marquee-01';
+import { Reveal } from '@/components/ui/Reveal';
 
 export const TestimonialSection: React.FC = () => {
   return (
     <section id="testimonials" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
-      <div className="mx-auto max-w-[1360px]">
+      <Reveal className="mx-auto max-w-[1360px]">
         <SectionHeader
           title={
             <>
@@ -17,7 +18,7 @@ export const TestimonialSection: React.FC = () => {
           subtitle="Landlords and tenants who collect rent, keep certificates current, and book Gas Safe jobs without chasing WhatsApp threads."
           align="center"
         />
-      </div>
+      </Reveal>
       <div className="mt-12">
         <TestimonialMarquee />
       </div>

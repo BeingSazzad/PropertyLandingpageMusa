@@ -6,7 +6,7 @@ import { ArrowRight, Headset, Plus, X } from 'lucide-react';
 import { BrandCtaLink } from '@/components/ui/Button';
 
 const FAQ_SUBTITLE =
-  'Rent, Gas Safe jobs, certificates, and keys — answered for UK landlords.';
+  'How subscriptions, rent collection, and certificates work before you move a portfolio in.';
 
 interface FAQItem {
   question: string;
@@ -123,10 +123,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
           <FAQList faqs={faqs} openIdx={openIdx} setOpenIdx={setOpenIdx} />
           <Link
             href="/faq"
-            className="mt-3 inline-flex items-center gap-1.5 self-start font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-[#0084FF] transition-colors hover:text-[#0070DE]"
+            className="group mt-3 inline-flex items-center gap-1.5 self-start font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-[#0084FF] transition-colors hover:text-[#0070DE]"
           >
             See all questions
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
         </div>
       </div>

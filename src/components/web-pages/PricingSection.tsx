@@ -6,6 +6,7 @@ import { openDownloadModal } from '@/redux/features/uiSlice';
 import { Check } from 'lucide-react';
 import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 import { Button } from '@/components/ui/Button';
+import { Reveal } from '@/components/ui/Reveal';
 
 interface PricingTier {
   id: string;
@@ -69,7 +70,7 @@ export const PricingSection: React.FC = () => {
   return (
     <section id="pricing" className="scroll-mt-[88px] bg-white px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto max-w-[1120px] space-y-12">
-        <header className="mx-auto max-w-2xl space-y-4 text-center">
+        <Reveal className="mx-auto max-w-2xl space-y-4 text-center">
           <h2 className="title-section mx-auto">
             Simple, transparent pricing
             <br />
@@ -105,7 +106,7 @@ export const PricingSection: React.FC = () => {
               </button>
             </div>
           </div>
-        </header>
+        </Reveal>
 
         <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-3">
           {PRICING_TIERS.map((tier) => {
@@ -114,7 +115,7 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`flex flex-col rounded-[24px] border bg-white p-7 sm:p-8 ${
+                className={`lhq-card flex flex-col rounded-[24px] border bg-white p-7 sm:p-8 ${
                   tier.isPopular
                     ? 'border-[#0084FF]/30 shadow-[0_20px_50px_rgba(10,25,47,0.08)]'
                     : 'border-[#E6EAEF]'
