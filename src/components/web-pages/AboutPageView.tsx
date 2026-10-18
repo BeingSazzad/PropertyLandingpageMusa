@@ -6,7 +6,7 @@ const STATS = [
   { value: '28,000+', label: 'Active Tenancies Managed' },
   { value: '99.4%', label: 'On-Time Rent Collection' },
   { value: '14 Mins', label: 'Avg Contractor Dispatch' },
-  { value: '4.9 / 5', label: 'Tenant & Landlord Rating' },
+  { value: '4.8 / 5', label: 'Tenant & Landlord Rating' },
 ] as const;
 
 export const AboutPageView: React.FC = () => {
@@ -43,7 +43,7 @@ export const AboutPageView: React.FC = () => {
           </h2>
 
           <div className="flex flex-col items-start gap-3 lg:items-end">
-            <div className="flex items-center gap-1" aria-label="4.9 out of 5 rating">
+            <div className="flex items-center gap-1" aria-label="4.8 out of 5 rating">
               {Array.from({ length: 5 }).map((_, index) => (
                 <Star
                   key={index}
@@ -53,7 +53,7 @@ export const AboutPageView: React.FC = () => {
               ))}
             </div>
             <p className="font-[family-name:var(--font-nav)] text-[16px] leading-6 text-[#3F4B58]">
-              4.9 / 5 from UK landlords
+              4.8 / 5 from UK landlords
             </p>
           </div>
         </div>

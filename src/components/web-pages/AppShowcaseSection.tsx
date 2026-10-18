@@ -5,7 +5,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 const STATS = [
   { value: '99.4%', label: 'On-time rent' },
-  { value: '4.9', label: 'Rating out of 5' },
+  { value: '4.8', label: 'Rating out of 5' },
 ] as const;
 
 export const AppShowcaseSection: React.FC = () => {
@@ -30,7 +30,7 @@ export const AppShowcaseSection: React.FC = () => {
               <div key={stat.label}>
                 <p className="flex items-center gap-2 font-[family-name:var(--font-display)] text-[36px] font-semibold leading-none tracking-tight text-[#0A192F] sm:text-[40px]">
                   {stat.value}
-                  {stat.value === '4.9' ? (
+                  {stat.value === '4.8' ? (
                     <img src="/hero/icon-star.svg" alt="" width={28} height={28} className="shrink-0" />
                   ) : null}
                 </p>
