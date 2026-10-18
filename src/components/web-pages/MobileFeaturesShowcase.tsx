@@ -21,7 +21,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="space-y-3 rounded-[20px] border border-[#E6EAEF] bg-white p-5 text-left">
+    <div className="space-y-3 rounded-[24px] border border-[#E6EAEF] bg-white p-5 text-left">
       <div className={`flex h-10 w-10 items-center justify-center rounded-[14px] ${iconBg} ${iconColor}`}>
         {icon}
       </div>
@@ -37,7 +37,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 export const MobileFeaturesShowcase: React.FC = () => {
   return (
-    <section id="features" className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-10">
+    <section id="features" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto max-w-[1360px] space-y-16">
         <SectionHeader
           title={
@@ -69,26 +69,27 @@ export const MobileFeaturesShowcase: React.FC = () => {
             />
           </div>
 
-          <div className="order-1 relative mx-auto w-full max-w-[520px] overflow-hidden lg:order-2 lg:col-span-6 lg:max-w-[640px]">
+          <div className="order-1 relative mx-auto w-full max-w-[560px] overflow-hidden lg:order-2 lg:col-span-6 lg:max-w-[760px]">
             <div
               className="relative"
               style={{
                 maskImage:
-                  'linear-gradient(to bottom, #000 52%, rgba(0,0,0,0.55) 76%, transparent 100%)',
+                  'linear-gradient(to bottom, #000 68%, rgba(0,0,0,0.55) 86%, transparent 100%)',
                 WebkitMaskImage:
-                  'linear-gradient(to bottom, #000 52%, rgba(0,0,0,0.55) 76%, transparent 100%)',
+                  'linear-gradient(to bottom, #000 68%, rgba(0,0,0,0.55) 86%, transparent 100%)',
               }}
             >
               <Image
                 src="/features/app-phones.webp"
-                alt="Landlord HQ on iPhone — Insights, Properties, and a flat overview"
+                alt="Landlord HQ home screens — meters, a flat overview, and properties"
                 width={1400}
                 height={1046}
-                className="h-auto w-full"
-                sizes="(max-width: 1023px) 90vw, 640px"
+                className="mx-auto h-auto w-full object-contain"
+                sizes="(max-width: 1023px) 92vw, 760px"
+                priority={false}
               />
             </div>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[46%] bg-gradient-to-b from-transparent via-[#F8FAFC]/70 to-[#F8FAFC]" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-b from-transparent via-[#F8FAFC]/55 to-[#F8FAFC]" />
           </div>
 
           <div className="order-3 space-y-5 lg:col-span-3">

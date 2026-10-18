@@ -3,6 +3,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Headset, Plus, X } from 'lucide-react';
+import { BrandCtaLink } from '@/components/ui/Button';
+
+const FAQ_SUBTITLE =
+  'Rent, Gas Safe jobs, certificates, and keys — answered for UK landlords.';
 
 interface FAQItem {
   question: string;
@@ -75,10 +79,15 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
 
   if (variant === 'page') {
     return (
-      <section id="faq" className="bg-[#F8FAFC] px-4 pb-20 pt-10 sm:px-6 sm:pb-24 sm:pt-14 lg:px-10">
+      <section id="faq" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 pb-20 pt-10 sm:px-8 sm:pb-24 sm:pt-14 lg:px-10">
         <div className="mx-auto max-w-[800px] space-y-12 sm:space-y-16">
-          <header className="mx-auto max-w-2xl text-center">
-            <h1 className="title-section mx-auto">Frequently asked questions</h1>
+          <header className="mx-auto max-w-2xl space-y-4 text-center">
+            <h1 className="title-section mx-auto">
+              Frequently asked
+              <br />
+              <span className="text-[#0084FF]">questions</span>
+            </h1>
+            <p className="text-subtitle mx-auto max-w-lg">{FAQ_SUBTITLE}</p>
           </header>
           <FAQList faqs={faqs} openIdx={openIdx} setOpenIdx={setOpenIdx} />
         </div>
@@ -87,30 +96,26 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ variant = 'home' }) => {
   }
 
   return (
-    <section id="faq" className="bg-[#F4F7FB] py-20 px-4 sm:px-6 lg:px-10">
+    <section id="faq" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto grid max-w-[1120px] items-start gap-10 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-16">
         <div>
-          <span className="inline-flex rounded-full border border-[#E6EAEF] bg-white px-3.5 py-1.5 font-[family-name:var(--font-nav)] text-[14px] font-normal leading-5 text-[#494d4d]">
-            Common questions
-          </span>
-
-          <h2 className="title-section mt-5 max-w-[320px]">
-            Frequently asked questions
+          <h2 className="title-section max-w-[320px]">
+            Frequently asked
+            <br />
+            <span className="text-[#0084FF]">questions</span>
           </h2>
+          <p className="text-subtitle mt-4 max-w-[320px]">{FAQ_SUBTITLE}</p>
 
-          <div className="mt-8 max-w-[320px] rounded-[24px] border border-white bg-white px-6 py-7 shadow-[0_12px_40px_rgba(10,25,47,0.06)]">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0084FF] text-white shadow-[0_8px_18px_rgba(0,132,255,0.35)]">
+          <div className="mt-8 max-w-[320px] rounded-[24px] border border-[#E6EAEF] bg-white px-6 py-7">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0084FF] text-white">
               <Headset className="h-6 w-6" strokeWidth={2.25} />
             </div>
-            <p className="mt-5 font-[family-name:var(--font-display)] text-[20px] font-medium leading-6 text-[#0A192F]">
+            <p className="mt-5 font-[family-name:var(--font-display)] text-[20px] font-semibold leading-6 text-[#0A192F]">
               Can&apos;t find your answer?
             </p>
-            <Link
-              href="/contact"
-              className="mt-5 inline-flex items-center justify-center rounded-full bg-[#0A192F] px-5 py-2.5 font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-white shadow-[0_10px_24px_rgba(10,25,47,0.28)] transition-colors hover:bg-[#132A4C]"
-            >
+            <BrandCtaLink href="/contact" size="sm" className="mt-5">
               Contact us
-            </Link>
+            </BrandCtaLink>
           </div>
         </div>
 
@@ -154,7 +159,7 @@ function FAQList({
               className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-[18px]"
               aria-expanded={isOpen}
             >
-              <span className="font-[family-name:var(--font-display)] text-[18px] font-medium leading-6 text-[#0A192F] sm:text-[20px] sm:leading-6">
+              <span className="min-w-0 font-[family-name:var(--font-display)] text-[16px] font-medium leading-6 text-[#0A192F] sm:text-[18px] sm:leading-6">
                 {faq.question}
               </span>
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A192F] text-white">
@@ -168,7 +173,7 @@ function FAQList({
               }`}
             >
               <div className="overflow-hidden">
-                <p className="px-5 pb-5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 tracking-normal [word-spacing:normal] text-[#494d4d] sm:px-6 sm:pb-6">
+                <p className="text-subtitle px-5 pb-5 sm:px-6 sm:pb-6">
                   {faq.answer}
                 </p>
               </div>

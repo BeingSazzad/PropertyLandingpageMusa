@@ -67,7 +67,7 @@ export const PricingSection: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
 
   return (
-    <section id="pricing" className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-10">
+    <section id="pricing" className="scroll-mt-[88px] bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
       <div className="mx-auto max-w-[1120px] space-y-12">
         <header className="mx-auto max-w-2xl space-y-4 text-center">
           <h2 className="title-section mx-auto">
@@ -87,7 +87,7 @@ export const PricingSection: React.FC = () => {
                 className={`rounded-full px-4 py-2 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 transition-colors ${
                   billingCycle === 'monthly'
                     ? 'bg-[#0084FF] text-white'
-                    : 'text-[#494d4d] hover:text-[#131515]'
+                    : 'text-[#5B6775] hover:text-[#0A192F]'
                 }`}
               >
                 Monthly
@@ -98,7 +98,7 @@ export const PricingSection: React.FC = () => {
                 className={`rounded-full px-4 py-2 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 transition-colors ${
                   billingCycle === 'annual'
                     ? 'bg-[#0084FF] text-white'
-                    : 'text-[#494d4d] hover:text-[#131515]'
+                    : 'text-[#5B6775] hover:text-[#0A192F]'
                 }`}
               >
                 Annual · Save 20%
@@ -114,12 +114,14 @@ export const PricingSection: React.FC = () => {
             return (
               <div
                 key={tier.id}
-                className={`flex flex-col rounded-[24px] border border-[#E6EAEF] bg-white p-7 sm:p-8 ${
-                  tier.isPopular ? 'shadow-[0_20px_50px_rgba(10,25,47,0.08)]' : ''
+                className={`flex flex-col rounded-[24px] border bg-white p-7 sm:p-8 ${
+                  tier.isPopular
+                    ? 'border-[#0084FF]/30 shadow-[0_20px_50px_rgba(10,25,47,0.08)]'
+                    : 'border-[#E6EAEF]'
                 }`}
               >
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                  <h3 className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#0A192F]">
                     {tier.name}
                   </h3>
                   {tier.badge ? (
@@ -130,20 +132,20 @@ export const PricingSection: React.FC = () => {
                 </div>
 
                 <div className="mt-5 flex items-end gap-1">
-                  <span className="font-[family-name:var(--font-display)] text-[40px] font-semibold leading-none tracking-tight text-[#131515]">
+                  <span className="font-[family-name:var(--font-display)] text-[40px] font-semibold leading-none tracking-tight text-[#0A192F]">
                     £{price}
                   </span>
-                  <span className="pb-1 font-[family-name:var(--font-nav)] text-[16px] leading-5 text-[#494d4d]">
+                  <span className="pb-1 font-[family-name:var(--font-nav)] text-[16px] leading-5 text-[#5B6775]">
                     /month
                   </span>
                 </div>
 
-                <p className="mt-5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#494d4d]">
+                <p className="mt-5 font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#3F4B58]">
                   {tier.description}
                 </p>
 
                 <div className="mt-6 border-t border-[#E6EAEF] pt-6">
-                  <p className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#131515]">
+                  <p className="font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-[#0A192F]">
                     Features included:
                   </p>
                   <ul className="mt-4 space-y-3">
@@ -152,7 +154,7 @@ export const PricingSection: React.FC = () => {
                         <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#0084FF] text-[#0084FF]">
                           <Check className="h-3 w-3 stroke-[2.5]" />
                         </span>
-                        <span className="font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#494d4d]">
+                        <span className="font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 text-[#3F4B58]">
                           {feature}
                         </span>
                       </li>
@@ -163,7 +165,7 @@ export const PricingSection: React.FC = () => {
                 {tier.isPopular ? (
                   <Button
                     type="button"
-                    className="mt-8 w-full justify-center"
+                    className="mt-auto w-full justify-center pt-8"
                     onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
                   >
                     Get started
@@ -172,7 +174,7 @@ export const PricingSection: React.FC = () => {
                   <Button
                     type="button"
                     variant="outline"
-                    className="mt-8 w-full"
+                    className="mt-auto w-full pt-8"
                     onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
                   >
                     Get started

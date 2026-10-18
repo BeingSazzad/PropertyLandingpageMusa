@@ -9,6 +9,7 @@ const googleSansFlex = Google_Sans_Flex({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-nav',
+  adjustFontFallback: false,
 });
 
 const stackSansHeadline = Stack_Sans_Headline({
@@ -16,6 +17,7 @@ const stackSansHeadline = Stack_Sans_Headline({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-display',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {

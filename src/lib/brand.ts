@@ -24,9 +24,10 @@ export const PEOPLE_IMAGES = {
   hannah: '/testimonials/hannah.jpg',
 } as const;
 
-/** About / lifestyle: a UK home from the portfolio, not a personal phone screen. */
+/** About / lifestyle: a well-kept home and a calm interior. */
 export const LIFESTYLE_IMAGES = {
-  phoneUse: '/about/uk-home.jpg',
+  phoneUse: '/about/home-dusk.jpg',
+  interior: '/about/home-interior.jpg',
 } as const;
 
 export const BORDER = 'border-[#E6EAEF]';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { BRAND_CTA } from '@/lib/brand';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,22 +17,24 @@ function ctaClass(size: 'sm' | 'md' | 'lg', className: string) {
 export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
-  withArrow = false,
+  withArrow,
   children,
   className = '',
   ...props
 }) => {
+  const showArrow = withArrow ?? variant === 'primary';
+
   if (variant === 'primary') {
     return (
       <button className={ctaClass(size, className)} {...props}>
         <span>{children}</span>
-        {withArrow ? <ArrowRight className="h-4 w-4" /> : null}
+        {showArrow ? <ArrowUpRight strokeWidth={2.25} /> : null}
       </button>
     );
   }
 
   const baseStyles =
-    'inline-flex items-center justify-center rounded-[var(--cta-radius)] font-[family-name:var(--font-nav)] font-medium leading-5 transition-colors disabled:cursor-not-allowed disabled:opacity-50';
+    'inline-flex items-center justify-center rounded-[var(--cta-radius)] font-[family-name:var(--font-nav)] font-medium leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#0084FF] disabled:cursor-not-allowed disabled:opacity-50';
 
   const sizeStyles = {
     sm: 'gap-1.5 px-5 py-2.5 text-[15px]',
@@ -43,8 +45,8 @@ export const Button: React.FC<ButtonProps> = ({
   const variantStyles = {
     dark: 'bg-[#0A192F] text-white hover:bg-[#132A4C]',
     outline:
-      'border border-[#E6EAEF] bg-white text-[#131515] hover:border-[#0084FF]/40 hover:text-[#0084FF]',
-    ghost: 'text-[#494d4d] hover:text-[#0084FF]',
+      'border border-[#E6EAEF] bg-white text-[#0A192F] hover:border-[#0084FF]/40 hover:text-[#0084FF]',
+    ghost: 'text-[#5B6775] hover:text-[#0084FF]',
   };
 
   return (
@@ -53,7 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       <span>{children}</span>
-      {withArrow ? <ArrowRight className="h-4 w-4" /> : null}
+      {showArrow ? <ArrowUpRight className="h-4 w-4" strokeWidth={2.25} /> : null}
     </button>
   );
 };
@@ -74,6 +76,7 @@ export function BrandCtaLink({
   return (
     <a href={href} className={ctaClass(size, className)}>
       <span>{children}</span>
+      <ArrowUpRight strokeWidth={2.25} />
     </a>
   );
 }

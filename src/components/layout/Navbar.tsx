@@ -14,6 +14,7 @@ const LINKS = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/#features', label: 'Features' },
+  { href: '/#pricing', label: 'Pricing' },
   { href: '/contact', label: 'Contact' },
 ] as const;
 
@@ -31,8 +32,9 @@ export const Navbar: React.FC = () => {
   }, [pathname]);
 
   const isActive = (href: string) => {
-    if (href === '/') return pathname === '/' && hash !== '#features';
+    if (href === '/') return pathname === '/' && hash !== '#features' && hash !== '#pricing';
     if (href === '/#features') return pathname === '/' && hash === '#features';
+    if (href === '/#pricing') return pathname === '/' && hash === '#pricing';
     return pathname === href;
   };
 
@@ -41,7 +43,7 @@ export const Navbar: React.FC = () => {
       <div className="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-10">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <BrandMark className="h-9 w-9" />
-          <span className="font-[family-name:var(--font-display)] text-[20px] font-semibold leading-6 tracking-tight text-[#131515]">
+          <span className="font-[family-name:var(--font-display)] text-[20px] font-semibold leading-6 tracking-tight text-[#0A192F]">
             Landlord <span className="text-[#0084FF]">HQ</span>
           </span>
         </Link>
@@ -57,10 +59,10 @@ export const Navbar: React.FC = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-full px-5 py-2 font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 transition-colors ${
+                className={`rounded-full px-4 py-2 font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0084FF] ${
                   active
-                    ? 'bg-white text-[#131515] shadow-[0_1px_3px_rgba(10,25,47,0.08)]'
-                    : 'text-[#494d4d] hover:text-[#131515]'
+                    ? 'bg-white text-[#0A192F] shadow-[0_1px_3px_rgba(10,25,47,0.08)]'
+                    : 'text-[#5B6775] hover:text-[#0A192F]'
                 }`}
               >
                 {link.label}
@@ -82,7 +84,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={() => dispatch(toggleMobileMenu())}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E6EAEF] bg-white text-[#131515] md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E6EAEF] bg-[#F8FAFC] text-[#0A192F] md:hidden"
             aria-label="Toggle navigation"
             aria-expanded={isMobileMenuOpen}
           >
@@ -103,7 +105,7 @@ export const Navbar: React.FC = () => {
                   href={link.href}
                   onClick={() => dispatch(toggleMobileMenu())}
                   className={`rounded-[16px] px-4 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 ${
-                    active ? 'bg-[#E8F3FF] text-[#131515]' : 'text-[#494d4d] hover:bg-[#F8FAFC]'
+                    active ? 'bg-[#E8F3FF] text-[#0A192F]' : 'text-[#5B6775] hover:bg-[#F8FAFC] hover:text-[#0A192F]'
                   }`}
                 >
                   {link.label}

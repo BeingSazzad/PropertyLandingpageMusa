@@ -7,7 +7,6 @@ import { AppShowcaseSection } from '@/components/web-pages/AppShowcaseSection';
 import { TestimonialSection } from '@/components/web-pages/TestimonialSection';
 import { PricingSection } from '@/components/web-pages/PricingSection';
 import { FAQSection } from '@/components/web-pages/FAQSection';
-import { AppDownloadCTA } from '@/components/web-pages/AppDownloadCTA';
 import { Footer } from '@/components/layout/Footer';
 
 export default function WebsiteHomePage() {
@@ -16,14 +15,13 @@ export default function WebsiteHomePage() {
       <Navbar />
       <div className="flex-1">
         <HeroSection />
-        <div className="space-y-6 sm:space-y-10">
+        <div>
           <AboutSection />
           <MobileFeaturesShowcase />
           <AppShowcaseSection />
           <TestimonialSection />
           <PricingSection />
           <FAQSection />
-          <AppDownloadCTA />
         </div>
       </div>
       <Footer />
