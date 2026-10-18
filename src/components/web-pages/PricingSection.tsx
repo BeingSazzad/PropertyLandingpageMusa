@@ -162,24 +162,15 @@ export const PricingSection: React.FC = () => {
                   </ul>
                 </div>
 
-                {tier.isPopular ? (
+                <div className="mt-auto pt-8">
                   <Button
                     type="button"
-                    className="mt-auto w-full justify-center pt-8"
+                    className="w-full justify-center"
                     onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
                   >
                     Get started
                   </Button>
-                ) : (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="mt-auto w-full pt-8"
-                    onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
-                  >
-                    Get started
-                  </Button>
-                )}
+                </div>
               </div>
             );
           })}
