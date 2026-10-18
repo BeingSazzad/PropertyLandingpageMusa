@@ -1,51 +1,86 @@
 import React from 'react';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { MOCK_DATA } from '@/Mockdata';
+import Image from 'next/image';
+import { Building2, Clock, ShieldCheck, Wallet } from 'lucide-react';
+import { BrandCtaLink } from '@/components/ui/Button';
 import { LIFESTYLE_IMAGES } from '@/lib/brand';
 
-const STAT = MOCK_DATA.stats[1];
+const STATS = [
+  {
+    value: '10K+',
+    label: 'Active tenancies',
+    detail: 'Leases, deposits, and units kept in one register.',
+    icon: Building2,
+  },
+  {
+    value: '99.4%',
+    label: 'On-time rent',
+    detail: 'Collected through Open Banking, not chased by hand.',
+    icon: Wallet,
+  },
+  {
+    value: '14 mins',
+    label: 'Average dispatch',
+    detail: 'Gas Safe trades sent when a tenant reports a job.',
+    icon: Clock,
+  },
+  {
+    value: '4.9 / 5',
+    label: 'Landlord rating',
+    detail: 'From landlords running their portfolio in the app.',
+    icon: ShieldCheck,
+  },
+] as const;
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="bg-[#F8FAFC] px-4 py-20 sm:px-6 sm:py-24 lg:px-10 lg:py-28">
-      <div className="mx-auto max-w-[1360px]">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20 xl:gap-28">
-          <div className="flex min-h-0 flex-col justify-between gap-14 lg:min-h-[420px]">
-            <div className="space-y-6">
-              <h2 className="title-section">About Us</h2>
-              <p className="max-w-[460px] font-[family-name:var(--font-nav)] text-[18px] font-normal leading-7 tracking-normal text-[#494d4d]">
-                We built Landlord HQ so UK landlords can collect rent via Open Banking,
-                dispatch Gas Safe contractors, and keep tenancies, keys, and certificates
-                in one simple workflow.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#0084FF] px-6 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 text-white hover:bg-[#0070DE]"
-              >
-                About us
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-
-            <div>
-              <p className="font-[family-name:var(--font-display)] text-[48px] font-medium leading-none tracking-tight text-[#131515] sm:text-[56px]">
-                {STAT.value}
-              </p>
-              <p className="mt-2 max-w-[220px] font-[family-name:var(--font-nav)] text-[16px] font-normal leading-6 tracking-normal text-[#494d4d]">
-                {STAT.label}
-              </p>
-            </div>
+    <section id="about" className="bg-[#F8FAFC] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-[1360px] space-y-16 sm:space-y-20">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="space-y-6 lg:col-span-5">
+            <h2 className="title-section">
+              About
+              <br />
+              <span className="text-[#0084FF]">Landlord HQ</span>
+            </h2>
+            <p className="text-subtitle max-w-[440px]">
+              Landlord HQ helps UK landlords collect rent, send Gas Safe jobs,
+              and keep every tenancy record in one app.
+            </p>
+            <BrandCtaLink href="/about">Learn more</BrandCtaLink>
           </div>
 
-          <div className="mx-auto w-full max-w-[480px] overflow-hidden rounded-[24px] border border-[#E6EAEF] bg-[#E8F3FF] sm:max-w-[520px] lg:ml-auto lg:max-w-[540px]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="lg:col-span-7">
+            <Image
               src={LIFESTYLE_IMAGES.phoneUse}
-              alt="A landlord managing their portfolio on the Landlord HQ app"
-              className="h-[300px] w-full object-cover object-center sm:h-[400px] lg:h-[460px]"
+              alt="A UK home managed with Landlord HQ"
+              width={1600}
+              height={1200}
+              className="h-[280px] w-full rounded-[24px] object-cover object-[center_78%] sm:h-[380px] lg:h-[440px]"
+              sizes="(max-width: 1023px) 100vw, 720px"
             />
           </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-10 border-t border-[#E6EAEF] pt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {STATS.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div key={stat.label} className="space-y-3">
+                <Icon className="h-5 w-5 text-[#0084FF]" strokeWidth={1.8} />
+                <p className="font-[family-name:var(--font-display)] text-[36px] font-medium leading-none text-[#0A192F] sm:text-[40px]">
+                  {stat.value}
+                </p>
+                <div className="space-y-1.5">
+                  <p className="font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-[#0A192F]">
+                    {stat.label}
+                  </p>
+                  <p className="max-w-[220px] font-[family-name:var(--font-nav)] text-[14px] leading-5 text-[#5B6775]">
+                    {stat.detail}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -14,15 +14,17 @@ export default function WebsiteHomePage() {
   return (
     <main className="min-h-screen flex flex-col justify-between">
       <Navbar />
-      <div className="flex-1 space-y-6 sm:space-y-10">
+      <div className="flex-1">
         <HeroSection />
-        <AboutSection />
-        <MobileFeaturesShowcase />
-        <AppShowcaseSection />
-        <TestimonialSection />
-        <PricingSection />
-        <FAQSection />
-        <AppDownloadCTA />
+        <div className="space-y-6 sm:space-y-10">
+          <AboutSection />
+          <MobileFeaturesShowcase />
+          <AppShowcaseSection />
+          <TestimonialSection />
+          <PricingSection />
+          <FAQSection />
+          <AppDownloadCTA />
+        </div>
       </div>
       <Footer />
     </main>

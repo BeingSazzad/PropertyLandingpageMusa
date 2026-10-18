@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Building2, Lock, Mail, ArrowUpRight } from 'lucide-react';
+import { ArrowLeft, Lock, Mail, ArrowUpRight } from 'lucide-react';
+import { BrandMark } from '@/components/ui/BrandMark';
 import { Button } from '@/components/ui/Button';
 
 export default function LoginPage() {
@@ -22,9 +23,7 @@ export default function LoginPage() {
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to Home
           </Link>
-          <div className="w-7 h-7 rounded-full bg-[#0B0F0E] flex items-center justify-center text-[#2563EB]">
-            <Building2 className="w-4 h-4" />
-          </div>
+          <BrandMark className="h-7 w-7" />
         </div>
 
         {/* Title */}

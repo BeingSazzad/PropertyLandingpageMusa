@@ -5,6 +5,7 @@ import { useAppDispatch } from '@/redux/hooks';
 import { openDownloadModal } from '@/redux/features/uiSlice';
 import { Check } from 'lucide-react';
 import { triggerSmartAppDownload } from '@/utils/deviceDownload';
+import { Button } from '@/components/ui/Button';
 
 interface PricingTier {
   id: string;
@@ -159,17 +160,24 @@ export const PricingSection: React.FC = () => {
                   </ul>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
-                  className={`mt-8 w-full rounded-full py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-medium leading-5 transition-colors ${
-                    tier.isPopular
-                      ? 'bg-[#0084FF] text-white hover:bg-[#0070DE]'
-                      : 'border border-[#E6EAEF] bg-white text-[#131515] hover:border-[#0084FF]/40 hover:text-[#0084FF]'
-                  }`}
-                >
-                  Get started
-                </button>
+                {tier.isPopular ? (
+                  <Button
+                    type="button"
+                    className="mt-8 w-full justify-center"
+                    onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
+                  >
+                    Get started
+                  </Button>
+                ) : (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    className="mt-8 w-full"
+                    onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
+                  >
+                    Get started
+                  </Button>
+                )}
               </div>
             );
           })}

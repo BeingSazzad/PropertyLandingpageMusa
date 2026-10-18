@@ -14,18 +14,19 @@ export const PROPERTY_IMAGES = {
 
 /** Review portraits only — landlords and tenants, not product shots. */
 export const PEOPLE_IMAGES = {
-  marcus:
-    'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop&crop=faces',
-  sarah:
-    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&auto=format&fit=crop&crop=faces',
-  david:
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop&crop=faces',
+  marcus: '/testimonials/marcus.jpg',
+  sarah: '/testimonials/sarah.jpg',
+  david: '/testimonials/david.jpg',
+  sophie: '/testimonials/sophie.jpg',
+  james: '/testimonials/james.jpg',
+  amira: '/testimonials/amira.jpg',
+  oliver: '/testimonials/oliver.jpg',
+  hannah: '/testimonials/hannah.jpg',
 } as const;
 
-/** Product-in-use: landlord managing the portfolio from a phone. */
+/** About / lifestyle: a UK home from the portfolio, not a personal phone screen. */
 export const LIFESTYLE_IMAGES = {
-  phoneUse:
-    'https://images.unsplash.com/photo-1760349748488-bd2a7ef25ea0?q=80&w=1600&auto=format&fit=crop',
+  phoneUse: '/about/uk-home.jpg',
 } as const;
 
 export const BORDER = 'border-[#E6EAEF]';
@@ -38,3 +39,15 @@ export const RADIUS = {
 } as const;
 
 export const CARD = `${RADIUS.card} border border-[#E6EAEF] bg-white`;
+
+/** Primary button classes. Colors/radius live in globals.css --cta-* tokens. */
+export const BRAND_CTA = {
+  root: 'brand-cta',
+  sm: '',
+  md: 'brand-cta-md',
+  lg: 'brand-cta-lg',
+} as const;
+
+/** Store destinations — swap these when the live listings are ready. */
+export const APP_STORE_URL = 'https://apps.apple.com';
+export const PLAY_STORE_URL = 'https://play.google.com/store';

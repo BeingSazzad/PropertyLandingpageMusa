@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { ArrowUp } from 'lucide-react';
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges';
+import { BrandMark } from '@/components/ui/BrandMark';
 
 const MAIN_PAGES = [
   { label: 'Home', href: '/' },
@@ -36,15 +37,6 @@ const columnTitleClass =
   'font-[family-name:var(--font-nav)] text-[15px] font-medium leading-6 text-white';
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!email.trim()) return;
-    setSubscribed(true);
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -65,7 +57,7 @@ export const Footer: React.FC = () => {
                   Keep every tenancy under control.
                 </h2>
                 <p className="text-body text-body-inverse max-w-sm">
-                  Open Banking rent, Gas Safe dispatch, and tenancy records — in one app.
+                  Collect rent, book Gas Safe jobs, and keep every tenancy file in one place.
                 </p>
                 <AppStoreBadges onDark />
               </div>
@@ -91,42 +83,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-10 lg:col-span-7">
-              <div className="space-y-4">
-                <p className="font-[family-name:var(--font-nav)] text-[15px] font-medium text-white">
-                  Subscribe to our Newsletter
-                </p>
-                {subscribed ? (
-                  <p className="font-[family-name:var(--font-nav)] text-[15px] text-slate-300">
-                    You&apos;re on the list. We&apos;ll be in touch.
-                  </p>
-                ) : (
-                  <form
-                    onSubmit={handleSubscribe}
-                    className="flex w-full max-w-md flex-col gap-3 sm:h-12 sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:bg-white sm:p-1.5 sm:pl-5 sm:focus-within:ring-2 sm:focus-within:ring-[#0084FF]/35"
-                  >
-                    <label htmlFor="footer-newsletter" className="sr-only">
-                      Email address
-                    </label>
-                    <input
-                      id="footer-newsletter"
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(event) => setEmail(event.target.value)}
-                      placeholder="you@company.com"
-                      className="h-12 w-full rounded-full bg-white px-5 font-[family-name:var(--font-nav)] text-[15px] text-[#0A192F] outline-none placeholder:text-slate-400 sm:h-auto sm:min-w-0 sm:flex-1 sm:bg-transparent sm:px-0"
-                    />
-                    <button
-                      type="submit"
-                      className="h-12 w-full rounded-full bg-[#0084FF] px-5 font-[family-name:var(--font-nav)] text-[15px] font-medium text-white transition-colors hover:bg-[#0070DE] sm:h-9 sm:w-auto sm:text-[14px]"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                )}
-              </div>
-
+            <div className="lg:col-span-7 lg:pt-2">
               <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
                 <FooterColumn title="Main Pages" links={MAIN_PAGES} />
                 <FooterColumn title="Resources" links={RESOURCES} />
@@ -159,11 +116,7 @@ export const Footer: React.FC = () => {
 function WordmarkLockup() {
   return (
     <div className="mx-auto flex w-max shrink-0 items-end justify-center gap-3 sm:gap-5 lg:gap-7">
-      <div className="relative mb-1 h-10 w-10 shrink-0 overflow-hidden rounded-full shadow-lg shadow-sky-500/40 sm:mb-1.5 sm:h-16 sm:w-16 lg:h-[5.5rem] lg:w-[5.5rem]">
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
-        <div className="absolute top-1.5 left-2 h-3.5 w-3.5 rounded-full bg-white/70 blur-[0.5px] sm:top-2.5 sm:left-3 sm:h-5 sm:w-5" />
-        <div className="absolute right-2 bottom-1.5 h-2.5 w-2.5 rounded-full bg-[#0040B8]/40 blur-[0.5px] sm:right-3 sm:bottom-2.5 sm:h-4 sm:w-4" />
-      </div>
+      <BrandMark className="mb-1 h-10 w-10 shrink-0 sm:mb-1.5 sm:h-16 sm:w-16 lg:h-[5.5rem] lg:w-[5.5rem]" />
       <p className="footer-wordmark overflow-visible whitespace-nowrap">Landlord HQ</p>
     </div>
   );

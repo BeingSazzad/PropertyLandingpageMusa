@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { openDownloadModal, toggleMobileMenu } from '@/redux/features/uiSlice';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 import { triggerSmartAppDownload } from '@/utils/deviceDownload';
+import { BrandMark } from '@/components/ui/BrandMark';
 
 const LINKS = [
   { href: '/', label: 'Home' },
@@ -38,10 +40,7 @@ export const Navbar: React.FC = () => {
     <header className="sticky top-0 z-40 w-full border-b border-[#E6EAEF] bg-white/85 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-[1360px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-10">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full shadow-[0_4px_12px_rgba(0,132,255,0.28)]">
-            <span className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
-            <span className="absolute top-1 left-1.5 h-2.5 w-2.5 rounded-full bg-white/70 blur-[0.5px]" />
-          </span>
+          <BrandMark className="h-9 w-9" />
           <span className="font-[family-name:var(--font-display)] text-[20px] font-semibold leading-6 tracking-tight text-[#131515]">
             Landlord <span className="text-[#0084FF]">HQ</span>
           </span>
@@ -71,14 +70,14 @@ export const Navbar: React.FC = () => {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
-          <button
+          <Button
             type="button"
+            size="sm"
             onClick={() => triggerSmartAppDownload(() => dispatch(openDownloadModal()))}
-            className="hidden items-center gap-1.5 rounded-full bg-[#0084FF] px-5 py-2.5 font-[family-name:var(--font-nav)] text-[15px] font-medium leading-5 text-white transition-colors hover:bg-[#0070DE] sm:inline-flex"
+            className="hidden sm:inline-flex"
           >
             Download App
-            <ArrowRight className="h-4 w-4" />
-          </button>
+          </Button>
 
           <button
             type="button"
@@ -111,17 +110,16 @@ export const Navbar: React.FC = () => {
                 </Link>
               );
             })}
-            <button
+            <Button
               type="button"
+              className="mt-3 w-full justify-center"
               onClick={() => {
                 dispatch(toggleMobileMenu());
                 triggerSmartAppDownload(() => dispatch(openDownloadModal()));
               }}
-              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[#0084FF] px-5 py-3.5 font-[family-name:var(--font-nav)] text-[16px] font-medium text-white"
             >
               Download App
-              <ArrowRight className="h-4 w-4" />
-            </button>
+            </Button>
           </div>
         </div>
       ) : null}

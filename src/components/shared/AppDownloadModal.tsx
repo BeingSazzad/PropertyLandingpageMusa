@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { closeDownloadModal } from '@/redux/features/uiSlice';
 import { X } from 'lucide-react';
 import { AppStoreBadges } from '../ui/AppStoreBadges';
+import { BrandMark } from '@/components/ui/BrandMark';
 
 export const AppDownloadModal: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -32,10 +33,7 @@ export const AppDownloadModal: React.FC = () => {
 
         {/* Minimal Header */}
         <div className="space-y-1.5 pt-1">
-          <div className="relative w-10 h-10 rounded-full mx-auto overflow-hidden shadow-md shadow-sky-500/30 flex items-center justify-center mb-2">
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
-            <div className="absolute top-1.5 left-2 w-3 h-3 rounded-full bg-white/70 blur-[0.5px]" />
-          </div>
+          <BrandMark className="mx-auto mb-2 h-10 w-10" />
           <h3 className="text-xl font-bold text-[#0A192F] font-[family-name:var(--font-display)]">
             Get Landlord HQ
           </h3>

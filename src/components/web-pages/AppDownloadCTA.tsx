@@ -6,6 +6,7 @@ import { openDownloadModal } from '@/redux/features/uiSlice';
 import { triggerSmartAppDownload } from '@/utils/deviceDownload';
 import { AppStoreBadges } from '../ui/AppStoreBadges';
 import { PhoneMock } from '../ui/PhoneMock';
+import { BrandMark } from '@/components/ui/BrandMark';
 
 /** Drop a UI screenshot in /public/phones and set this path, e.g. '/phones/download.png' */
 const DOWNLOAD_PHONE_SRC: string | undefined = undefined;
@@ -123,10 +124,7 @@ function DownloadQr() {
         )}
       </svg>
       <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-sm">
-        <div className="relative h-7 w-7 overflow-hidden rounded-full">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0066FF] via-[#00A3FF] to-[#67E8F9]" />
-          <div className="absolute left-1.5 top-1 h-2 w-2 rounded-full bg-white/70 blur-[0.5px]" />
-        </div>
+        <BrandMark className="h-7 w-7" />
       </div>
     </div>
   );
